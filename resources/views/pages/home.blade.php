@@ -14,6 +14,9 @@
 
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 
+    <!--Font Aweasome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -95,18 +98,71 @@
         </nav>
 
         <div class="container">
-            <div class="row">
-                <div class="col-md-7">
-                    <img src="{{asset('img/sample.png')}}" width="100%">
-                </div>
-                <div class="col-md-1">
-                    
-                </div>
-                <div class="col-md-4">
+            <div class="row padding-ver-2">
+                <div class="col-lg-5 col-md-6 padding-top-3">
+                  <div>
                     <h2 class="title">Welcome to</h2>
                     <h1 class="title">World Dawn Wiki</h1>
-                    <p class="title">Here you can get any information about the game.</p>
+                    <p class="title">Here you can get any information about the developement of the game and get to know what was added/modified lately.</p>
+                    <p class="title">The GameMaster hopes that you like this little present.</p>
+                  </div>
                 </div>
+                <div class="col-md-6 col-lg-offset-1">
+                    <img class="home-img-top" src="{{asset('img/sample.png')}}">
+                </div>
+            </div>
+
+            <h2 class="title padding-ver-2">Latest Addictions</h2>
+
+            <div class="row padding-ver-2">
+              <div class="col-md-3" style="height:100px;">
+                <div class="boxes">
+                  <i class="fas fa-camera-retro"></i>
+                  <hr>
+                  <h4>Exemplo</h4>
+                  <p>Type</p>
+                  <div class="btn-group" style="padding-bottom:2em;" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default">Left</button>
+                    <button type="button" class="btn btn-default">Right</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="boxes">
+                  <i class="fas fa-camera-retro"></i>
+                  <hr>
+                  <h4>Exemplo</h4>
+                  <p>Type</p>
+                  <div class="btn-group" style="padding-bottom:2em;" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default">Left</button>
+                    <button type="button" class="btn btn-default">Right</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="boxes">
+                  <i class="fas fa-camera-retro"></i>
+                  <hr>
+                  <h4>Exemplo</h4>
+                  <p>Type</p>
+                  <div class="btn-group" style="padding-bottom:2em;" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default">Left</button>
+                    <button type="button" class="btn btn-default">Right</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="boxes">
+                  <i class="fas fa-camera-retro"></i>
+                  <hr>
+                  <h4>Exemplo</h4>
+                  <p>Type</p>
+                  <div class="btn-group" style="padding-bottom:2em;" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default">Left</button>
+                    <button type="button" class="btn btn-default">Right</button>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
 
