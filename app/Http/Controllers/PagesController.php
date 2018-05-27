@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
@@ -9,18 +9,11 @@ class PagesController extends Controller{
 	}
 
 	public function getAbout(){
-
-		$first = "Hello";
-		$last = "World";
-
-		$complete = $first. " " . $last;
-
-
-		return view('pages.about')->with("all", $complete);
+		return view('pages.about');
 	}
 
 	public function getContact() {
 		return view('pages.contact');
 	}
 
-} 
+}
