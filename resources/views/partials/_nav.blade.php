@@ -54,7 +54,15 @@
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                            @if(Auth::guard('admin')->check()&&Auth::guard('web')->check())
+                                Hello {{Auth::guard('web')->user()->name}} A.K.A {{Auth::guard('admin')->user()->name}}
+                            @elseif(Auth::guard('admin')->check())
+                                Hello {{Auth::guard('admin')->user()->name}}
+                            @else
+                                Hello {{Auth::guard('web')->user()->name}}
+                            @endif
+
+                            
                         </a>
 
                         <ul class="dropdown-menu force-list-style">
