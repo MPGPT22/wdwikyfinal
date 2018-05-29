@@ -11,18 +11,20 @@
 |
 */
 
-Route::get('/', 'PagesController@getIndex');
-Route::get('/about','PagesController@getAbout');
-Route::get('/contact', 'PagesController@getContact');
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'PagesController@getIndex')->name('homepage');
+Route::get('/about','PagesController@getAbout')->name('about');
+Route::get('/contact', 'PagesController@getContact')->name('contact');
+Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+
 
 Route::prefix('admin')->group(function(){
 
 Route::get('/', 'AdminController@index')->name('admin.dashboard');
+Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
 Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
 
