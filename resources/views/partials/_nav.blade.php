@@ -54,58 +54,27 @@
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                            @if(Auth::guard('admin')->check()&&Auth::guard('web')->check())
-                                {{Auth::guard('web')->user()->name}} A.K.A {{Auth::guard('admin')->user()->name}}
-                            @elseif(Auth::guard('admin')->check())
-                                {{Auth::guard('admin')->user()->name}}
+                            @if(Auth::user()&&Auth::user()->isAdmin == 1)
+                                {{Auth::user()->name}} -- {{Auth::user()->adminRole}}
                             @else
-                                {{Auth::guard('web')->user()->name}}
+                                {{Auth::user()->name}}
                             @endif
 
-                            
+
                         </a>
 
                         <ul class="dropdown-menu force-list-style">
-
-                          @if(Auth::guard('admin')->check()&&Auth::guard('web')->check())
-
-
-                            <li>
-                                <a href="{{ route('user.logout') }}">
-                                    Logout User
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('admin.logout') }}">
-                                    Logout Admin
-                                </a>
-                            </li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                    Logout Both
+                                    Logout
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
                             </li>
-                          @elseif(Auth::guard('admin')->check())
-                            <li>
-                                <a href="{{ route('admin.logout') }}">
-                                    Logout Admin
-                                </a>
-                            </li>
-                          @else
-                            <li>
-                                <a href="{{ route('user.logout') }}">
-                                    Logout User
-                                </a>
-                            </li>
-                          @endif
-                          
-                           
                         </ul>
                     </li>
                 @endguest
