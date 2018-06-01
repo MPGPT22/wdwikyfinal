@@ -4,7 +4,7 @@ html{
 }
 
 body{
-	margin-bottom: 3em;
+	margin-bottom: 6em;
 }
 
 img{
@@ -18,6 +18,9 @@ a:link,a:visited,a:hover,a:active{
 
 .force-list-style{
 	list-style: none !important ;
+}
+.navbar-text-right{
+	text-align: right;
 }
 .button-margin-bot{
 	margin-bottom: 0.5em;
@@ -76,6 +79,23 @@ a:link,a:visited,a:hover,a:active{
 	padding-top:0.2em;
 	font-size: 8em;
 }
+
+.btngroup-25{
+	width: 25%;
+}
+.btngroup-100{
+	width: 100%;
+}
+.btn75{
+	width: 75%;
+}
+.btn25{
+	width: 25%;
+}
+.btn100{
+	width: 100%;
+}
+
 .footer{
 	position: absolute;
 	bottom: 0px;

@@ -63,7 +63,7 @@
 
                         </a>
 
-                        <ul class="dropdown-menu force-list-style">
+                        <ul class="dropdown-menu force-list-style navbar-text-right">
                             <li>
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();

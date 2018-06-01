@@ -19,6 +19,8 @@ Route::get('/', 'PagesController@getIndex')->name('homepage');
 Route::get('/about','PagesController@getAbout')->name('about');
 Route::get('/contact', 'PagesController@getContact')->name('contact');
 
+Route::get('/skills', 'PagesController@getSkills')->name('skills');
+
 
 Route::prefix('admin')->group(function(){
 
