@@ -1,7 +1,7 @@
 @extends('main')
 
 
-@section('title', '- Contacts')
+@section('title', '- Skills')
 
 @section('content')
 
@@ -56,20 +56,6 @@
             </div>
             <div class="row">
                 <div class="col-md-2 col-xs-6">
-                <div class="boxes">
-                  <i class="fas fa-camera-retro"></i>
-                  <hr>
-                  <h4>Exemplo</h4>
-                </div>
-              </div>
-              <div class="col-md-2 col-xs-6">
-                <div class="boxes">
-                  <i class="fas fa-camera-retro"></i>
-                  <hr>
-                  <h4>Exemplo</h4>
-                </div>
-              </div>
-              <div class="col-md-2 col-xs-6">
                 <div class="boxes">
                   <i class="fas fa-camera-retro"></i>
                   <hr>

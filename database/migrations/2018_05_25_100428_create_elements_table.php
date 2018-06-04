@@ -17,7 +17,9 @@ class CreateElementsTable extends Migration
             $table->increments('id');
             $table->boolean('public')->default(false);
             $table->string('name');
-            $table->text('description')->nullable();
+            $table->string('imgIconUrl');
+            $table->text('descriptionInicial')->nullable();
+            $table->text('descriptionSecond')->nullable();
             $table->timestamps();
         });
     }

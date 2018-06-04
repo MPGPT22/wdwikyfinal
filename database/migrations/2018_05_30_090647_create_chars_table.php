@@ -16,8 +16,22 @@ class CreateCharsTable extends Migration
         Schema::create('chars', function (Blueprint $table) {
             $table->increments('id');
             $table->boolean('public')->default(false);
+            $table->string('type');
             $table->string('name');
-            $table->text('description')->nullable();
+            $table->boolean('evolClass')->default(false);
+            $table->string('classStart')->nullable();
+            $table->string('classSecund')->nullable();
+            $table->string('classThird')->nullable();
+            $table->string('classForth')->nullable();
+            $table->string('element');
+            $table->text('descriptionInicial')->nullable();
+            $table->text('descriptionSecond')->nullable();
+            $table->text('descriptionThird')->nullable();
+            $table->text('descriptionForth')->nullable();
+            $table->boolean('multyForm')->default(false);
+            $table->string('imgFormUrlFirst');
+            $table->string('imgFormUrlSecund')->nullable();
+            $table->string('imgFormUrlThird')->nullable();
             $table->timestamps();
         });
     }

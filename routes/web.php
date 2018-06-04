@@ -22,6 +22,7 @@ Route::get('/contact', 'PagesController@getContact')->name('contact');
 Route::get('/skills', 'PagesController@getSkills')->name('skills');
 
 
+
 Route::prefix('admin')->group(function(){
 
 Route::get('/', 'AdminController@index')->name('admin.dashboard');

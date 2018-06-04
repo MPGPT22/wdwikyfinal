@@ -28,7 +28,7 @@
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">W.A.I <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" title="Weapons, Armors & Items">W.A.I <span class="caret"></span></a>
                   <ul class="dropdown-menu force-list-style">
                     <li><a href="#">Weapons</a></li>
                     <li><a href="#">Armors</a></li>
@@ -36,10 +36,16 @@
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">S.S.S <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" title="Spells & Skills">S.S<span class="caret"></span></a>
                   <ul class="dropdown-menu force-list-style">
                     <li><a href="#">Spells</a></li>
                     <li><a href="#">Skills</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" title="Elements & States">E.S<span class="caret"></span></a>
+                  <ul class="dropdown-menu force-list-style">
+                    <li><a href="#">Elements</a></li>
                     <li><a href="#">States</a></li>
                   </ul>
                 </li>

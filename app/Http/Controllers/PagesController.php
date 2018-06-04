@@ -20,5 +20,8 @@ class PagesController extends Controller{
 	public function getSkills() {
 		return view('pages.skills');
 	}
+	public function getItemDesc() {
+		return view('pages.item-descreption');
+	}
 
 }

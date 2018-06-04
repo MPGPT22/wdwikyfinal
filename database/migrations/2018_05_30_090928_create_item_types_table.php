@@ -17,7 +17,7 @@ class CreateItemTypesTable extends Migration
             $table->increments('id');
             $table->boolean('public')->default(false);
             $table->string('name');
-            $table->text('description')->nullable();
+            $table->string('imgIconUrl');
             $table->timestamps();
         });
     }

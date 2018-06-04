@@ -16,8 +16,12 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
             $table->boolean('public')->default(false);
+            $table->string('type');
             $table->string('name');
-            $table->text('description')->nullable();
+            $table->string('imgBigUrl');
+            $table->string('imgIconUrl');
+            $table->text('descriptionInicial')->nullable();
+            $table->text('descriptionSecond')->nullable();
             $table->timestamps();
         });
     }
