@@ -6,84 +6,82 @@
 
 						<li class="has-sub ">
 							<a href="javascript:;">
-
-
 								<b class="caret"></b>
-								<i class="fa fa-table"></i>
-								<span>Tables</span>
+								<i class="fas fa-users"></i>
+								<span>Characters</span>
 							</a>
 							<ul class="sub-menu">
-							<li class=" ">
-								<a href="/table/basic">Basic</a>
+								<li class=" ">
+									<a href="#">Main</a>
 
-							</li>
+								</li>
+								<li class=" ">
+									<a href="#">Secundary</a>
 
-							<li class="has-sub ">
-								<a href="javascript:;"><b class="caret pull-right"></b>Managed Tables</a>
-								<ul class="sub-menu">
-							<li class=" ">
-								<a href="/table/manage/default">Default</a>
+								</li>
+								<li class=" ">
+									<a href="#">Extra</a>
 
-							</li>
+								</li>
+								<li class=" ">
+									<a href="#">Enemies</a>
 
-							<li class=" ">
-								<a href="/table/manage/autofill">Autofill</a>
+								</li>
+								<li class=" ">
+									<a href="#">Bosses</a>
 
-							</li>
+								</li>
+								<li class=" ">
+									<a href="#">Secret</a>
 
-							<li class=" ">
-								<a href="/table/manage/buttons">Buttons</a>
-
-							</li>
-
-							<li class=" ">
-								<a href="/table/manage/colreorder">ColReorder</a>
-
-							</li>
-
-							<li class=" ">
-								<a href="/table/manage/fixed-column">Fixed Column</a>
-
-							</li>
-
-							<li class=" ">
-								<a href="/table/manage/fixed-header">Fixed Header</a>
-
-							</li>
-
-							<li class=" ">
-								<a href="/table/manage/keytable">KeyTable</a>
-
-							</li>
-
-							<li class=" ">
-								<a href="/table/manage/responsive">Responsive</a>
-
-							</li>
-
-							<li class=" ">
-								<a href="/table/manage/rowreorder">RowReorder</a>
-
-							</li>
-
-							<li class=" ">
-								<a href="/table/manage/scroller">Scroller</a>
-
-							</li>
-
-							<li class=" ">
-								<a href="/table/manage/select">Select</a>
-
-							</li>
-
-							<li class=" ">
-								<a href="/table/manage/combine">Extension Combination</a>
-
-							</li>
-						</ul>
-							</li>
-						</ul>
+								</li>					
+							</ul>
 						</li>
+						<li class="">
+							<a href="javascript:;">
+								<i class="fas fa-users"></i>
+								<span>Classes</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="javascript:;">
+								<i class="fas fa-users"></i>
+								<span>Elements</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="javascript:;">
+								<i class="fas fa-users"></i>
+								<span>Skills</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="javascript:;">
+								<i class="fas fa-users"></i>
+								<span>Spells</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="javascript:;">
+								<i class="fas fa-users"></i>
+								<span>Weapons</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="javascript:;">
+								<i class="fas fa-users"></i>
+								<span>Armors</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="javascript:;">
+								<i class="fas fa-users"></i>
+								<span>Items</span>
+							</a>
+						</li>
+						
+
+
 
 								<!-- begin sidebar minify button -->
 			<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>

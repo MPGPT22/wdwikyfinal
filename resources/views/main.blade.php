@@ -23,6 +23,8 @@
 
     </div>
 
+    @include('partials._footer')
+
     </div>
 
     @include('partials._scripts')
