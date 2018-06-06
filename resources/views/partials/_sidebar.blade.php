@@ -7,7 +7,7 @@
 						<li class="has-sub ">
 							<a href="javascript:;">
 								<b class="caret"></b>
-								<i class="fas fa-users"></i>
+								<i class="ra ra-double-team"></i>
 								<span>Characters</span>
 							</a>
 							<ul class="sub-menu">
@@ -34,52 +34,70 @@
 								<li class=" ">
 									<a href="#">Secret</a>
 
-								</li>					
+								</li>
 							</ul>
 						</li>
 						<li class="">
 							<a href="javascript:;">
-								<i class="fas fa-users"></i>
+								<i class="ra ra-aura "></i>
 								<span>Classes</span>
 							</a>
 						</li>
 						<li class="">
 							<a href="javascript:;">
-								<i class="fas fa-users"></i>
+								<i class="ra ra-fire-symbol"></i>
 								<span>Elements</span>
 							</a>
 						</li>
 						<li class="">
 							<a href="javascript:;">
-								<i class="fas fa-users"></i>
+								<i class="ra ra-spinning-sword"></i>
 								<span>Skills</span>
 							</a>
 						</li>
 						<li class="">
 							<a href="javascript:;">
-								<i class="fas fa-users"></i>
+								<i class="ra  ra-frostfire "></i>
 								<span>Spells</span>
 							</a>
 						</li>
 						<li class="">
 							<a href="javascript:;">
-								<i class="fas fa-users"></i>
+								<i class="ra ra-crossed-swords"></i>
 								<span>Weapons</span>
 							</a>
 						</li>
 						<li class="">
 							<a href="javascript:;">
-								<i class="fas fa-users"></i>
+								<i class="ra ra-vest "></i>
 								<span>Armors</span>
 							</a>
 						</li>
 						<li class="">
 							<a href="javascript:;">
-								<i class="fas fa-users"></i>
+								<i class="ra ra-heart-bottle "></i>
 								<span>Items</span>
 							</a>
 						</li>
-						
+            <li class="">
+							<a href="#">
+								<i class="ra ra-scroll-unfurled "></i>
+								<span>History / Maps</span>
+							</a>
+						</li>
+            <li class="">
+							<a href="{{route('about')}}">
+								<i class="far fa-list-alt"></i>
+								<span>About</span>
+							</a>
+						</li>
+            <li class="">
+							<a href="{{route('contact')}}">
+								<i class="fas fa-mobile-alt"></i>
+								<span>Contacts</span>
+							</a>
+						</li>
+
 
 
 

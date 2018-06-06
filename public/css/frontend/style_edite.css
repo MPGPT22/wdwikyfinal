@@ -96,7 +96,7 @@ a:link,a:visited,a:hover,a:active{
 }
 .footer-text{
 	padding-top: 0.8em;
-} 
+}
 
 @media (max-width:415px) {
   .float-right-now li{
@@ -122,6 +122,9 @@ a:link,a:visited,a:hover,a:active{
   width: auto !important;
 }
 .sidebar{
+  background-color: #ececec;
+}
+.sidebar-bg{
   background-color: #ececec;
 }
 .nav-header{
@@ -191,4 +194,14 @@ a:link,a:visited,a:hover,a:active{
 }
 .btn-colormode:hover {
 	color:white !important;
+}
+.page-sidebar-minified .sidebar .nav li.has-sub > .sub-menu{
+	background-color: #ececec !important;
+}
+.float-sub-menu-container{
+	background: #ececec !important;
+}
+.input-group .form-control:last-child{
+	border-bottom-right-radius: 4px !important;
+	border-top-right-radius: 4px !important;
 }

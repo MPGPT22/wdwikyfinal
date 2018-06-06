@@ -4,86 +4,158 @@
 		<ul class="nav">
 			<li class="nav-header">Navigation</li>
 
-						<li class="has-sub ">
-							<a href="javascript:;">
+      <li class="has-sub ">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="ra ra-double-team"></i>
+          <span>Characters</span>
+        </a>
+        <ul class="sub-menu">
+          <li class=" ">
+            <a href="#">Create</a>
 
+          </li>
+          <li class=" ">
+            <a href="#">List</a>
 
-								<b class="caret"></b>
-								<i class="fa fa-table"></i>
-								<span>Tables</span>
-							</a>
-							<ul class="sub-menu">
-							<li class=" ">
-								<a href="/table/basic">Basic</a>
+          </li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="ra ra-aura "></i>
+          <span>Classes</span>
+        </a>
+        <ul class="sub-menu">
+          <li class=" ">
+            <a href="#">Create</a>
 
-							</li>
+          </li>
+          <li class=" ">
+            <a href="#">List</a>
 
-							<li class="has-sub ">
-								<a href="javascript:;"><b class="caret pull-right"></b>Managed Tables</a>
-								<ul class="sub-menu">
-							<li class=" ">
-								<a href="/table/manage/default">Default</a>
+          </li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="ra ra-fire-symbol"></i>
+          <span>Elements</span>
+        </a>
+        <ul class="sub-menu">
+          <li class=" ">
+            <a href="#">Create</a>
 
-							</li>
+          </li>
+          <li class=" ">
+            <a href="#">List</a>
 
-							<li class=" ">
-								<a href="/table/manage/autofill">Autofill</a>
+          </li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="ra ra-spinning-sword"></i>
+          <span>Skills</span>
+        </a>
+        <ul class="sub-menu">
+          <li class=" ">
+            <a href="#">Create</a>
 
-							</li>
+          </li>
+          <li class=" ">
+            <a href="#">List</a>
 
-							<li class=" ">
-								<a href="/table/manage/buttons">Buttons</a>
+          </li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="ra  ra-frostfire "></i>
+          <span>Spells</span>
+        </a>
+        <ul class="sub-menu">
+          <li class=" ">
+            <a href="#">Create</a>
 
-							</li>
+          </li>
+          <li class=" ">
+            <a href="#">List</a>
 
-							<li class=" ">
-								<a href="/table/manage/colreorder">ColReorder</a>
+          </li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="ra ra-crossed-swords"></i>
+          <span>Weapons</span>
+        </a>
+        <ul class="sub-menu">
+          <li class=" ">
+            <a href="#">Create</a>
 
-							</li>
+          </li>
+          <li class=" ">
+            <a href="#">List</a>
 
-							<li class=" ">
-								<a href="/table/manage/fixed-column">Fixed Column</a>
+          </li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="ra ra-vest "></i>
+          <span>Armors</span>
+        </a>
+        <ul class="sub-menu">
+          <li class=" ">
+            <a href="#">Create</a>
 
-							</li>
+          </li>
+          <li class=" ">
+            <a href="#">List</a>
 
-							<li class=" ">
-								<a href="/table/manage/fixed-header">Fixed Header</a>
+          </li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="ra ra-heart-bottle "></i>
+          <span>Items</span>
+        </a>
+        <ul class="sub-menu">
+          <li class=" ">
+            <a href="#">Create</a>
 
-							</li>
+          </li>
+          <li class=" ">
+            <a href="#">List</a>
 
-							<li class=" ">
-								<a href="/table/manage/keytable">KeyTable</a>
+          </li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="#">
+          <b class="caret"></b>
+          <i class="ra ra-scroll-unfurled "></i>
+          <span>History / Maps</span>
+        </a>
+        <ul class="sub-menu">
+          <li class=" ">
+            <a href="#">Create</a>
 
-							</li>
-
-							<li class=" ">
-								<a href="/table/manage/responsive">Responsive</a>
-
-							</li>
-
-							<li class=" ">
-								<a href="/table/manage/rowreorder">RowReorder</a>
-
-							</li>
-
-							<li class=" ">
-								<a href="/table/manage/scroller">Scroller</a>
-
-							</li>
-
-							<li class=" ">
-								<a href="/table/manage/select">Select</a>
-
-							</li>
-
-							<li class=" ">
-								<a href="/table/manage/combine">Extension Combination</a>
-
-							</li>
-						</ul>
-							</li>
-						</ul>
-						</li>
+          </li>
+          <li class=" ">
+            <a href="#">List</a>
+          </li>
+        </ul>
+      </li>
 
 								<!-- begin sidebar minify button -->
 			<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
