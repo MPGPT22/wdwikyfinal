@@ -9,32 +9,23 @@
 
   <body>
 
-    <div id="page-container" class="page-container page-sidebar-fixed page-header-fixed">
+    <div id="page-container" class="page-container page-header-fixed">
 
     @include('partials._nav-admin')
-    
 
-    <div class="container-fluid">
-
-    <div class="row">
-      
     @include('partials._sidebar-admin')
 
-    
+    <div class="content">
 
-    @yield('content')
 
-    </div>
+    {{-- @yield('content') --}}
 
-    </div>
-
-    @include('partials._footer')
 
     </div>
 
-    @include('partials._scripts')
+    </div>
 
-    @yield('scripts')
+    @include('partials._scripts-admin')
 
   </body>
 </html>

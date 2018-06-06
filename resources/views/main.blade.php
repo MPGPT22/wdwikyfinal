@@ -9,19 +9,23 @@
 
   <body>
 
+    <div id="page-container" class="page-container page-header-fixed">
+
     @include('partials._nav')
 
-    <div class="container">
+    @include('partials._sidebar')
 
-      @yield('content')
+    <div class="content">
+
+
+    @yield('content')
+
 
     </div>
 
-    @include('partials._footer')
+    </div>
 
     @include('partials._scripts')
-
-    @yield('scripts')
 
   </body>
 </html>

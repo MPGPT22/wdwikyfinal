@@ -1,102 +1,52 @@
-<nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="/">WDWiky</a>
-            </div>
+<div id="header" class="header navbar-default">
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Characters <span class="caret"></span></a>
-                  <ul class="dropdown-menu force-list-style">
-                    <li><a href="#">Main</a></li>
-                    <li><a href="#">Secundary</a></li>
-                    <li><a href="#">Extra</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Bosses</a></li>
-                    <li><a href="#">Enemies</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Secrets</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" title="Weapons, Armors & Items">W.A.I <span class="caret"></span></a>
-                  <ul class="dropdown-menu force-list-style">
-                    <li><a href="#">Weapons</a></li>
-                    <li><a href="#">Armors</a></li>
-                    <li><a href="#">Items</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" title="Spells & Skills">S.S<span class="caret"></span></a>
-                  <ul class="dropdown-menu force-list-style">
-                    <li><a href="#">Spells</a></li>
-                    <li><a href="#">Skills</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" title="Elements & States">E.S<span class="caret"></span></a>
-                  <ul class="dropdown-menu force-list-style">
-                    <li><a href="#">Elements</a></li>
-                    <li><a href="#">States</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">History/Maps</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contacts</a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                @guest
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Register</a></li>
-                @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                            @if(Auth::user()&&Auth::user()->isAdmin == 1)
-                                {{Auth::user()->name}} | {{Auth::user()->adminRole}}
-                            @else
-                                {{Auth::user()->name}}
-                            @endif
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/"><b>WDWiky</b></a>
+  </div>
+  <ul class="navbar-nav navbar-right float-right-now">
+    <li>
+      <form class="navbar-form">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter keyword">
+          <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+        </div>
+      </form>
+    </li>
+    <li>
+      <button id="showSideBar" class="btn navbar-btn substitute">Click</button>
+    </li>
+    @guest
+      <li>
+        <a href="{{route('login')}}">Login</a>
+      </li>
+      <li>
+        <a href="{{route('register')}}">Register</a>
+      </li>
+    @else
+      <li class="dropdown navbar-user">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <span class="d-md-inline">{{Auth::user()->name}} | {{Auth::user()->adminRole}}</span> <b class="caret"></b>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(4px, 50px, 0px); top: 0px; left: 0px; will-change: transform;">
+          <a href="{{ route('logout') }}"
+                                      onclick="event.preventDefault();
+                                               document.getElementById('logout-form').submit();" class="dropdown-item">
+                                      Logout
+                                  </a>
+                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                      {{ csrf_field() }}
+                                  </form>
+        </div>
+      </li>
 
+    @endguest
 
-                        </a>
+  </ul>
 
-                        <ul class="dropdown-menu force-list-style navbar-text-right">
-                            <li>
-                                <a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                @endguest
-              </ul>
-              <form class="navbar-form navbar-right">
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search">
-                  <span class="input-group-btn">
-                    <button type="submit" class="btn btn-default">
-                      <span class="fa fa-search"></span>
-                    </button>
-                  </span>
-                  
-                </div>
-                
-              </form>
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
-        </nav>
+</div>

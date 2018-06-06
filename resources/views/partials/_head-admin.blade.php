@@ -1,11 +1,11 @@
     <meta charset="utf-8">
     <title>World Dawm Wiki @yield('title')</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 
-    
+
 
     <!-- Animations -->
 
@@ -26,19 +26,10 @@
 
     <link rel="stylesheet" type="text/css" href="{{asset('css/admin/theme/default.css')}}">
 
-    <link rel="stylesheet" href="{{asset('plugins/nvd3/nvd3.min.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/jquery-jvectormap/jquery-jvectormap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/gritter/css/jquery.gritter.css')}}">
-
-    <link rel="stylesheet" type="text/css" href="{{asset('css/admin/style_edite.css')}}">
-
-    
-
-    @yield('stylesheet')
-
-
 
     <script src="{{asset('plugins/pace/pace.min.js')}}"></script>
+
+    @yield('stylesheet')
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
