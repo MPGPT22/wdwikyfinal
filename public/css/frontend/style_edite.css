@@ -1,4 +1,4 @@
-/* html{
+ html{
 	position:relative;
 	min-height: 100%;
 }
@@ -106,7 +106,7 @@ a:link,a:visited,a:hover,a:active{
 }
 .footer-text{
 	padding-top: 0.8em;
-} */
+} 
 
 @media (max-width:415px) {
   .float-right-now li{
@@ -122,7 +122,7 @@ a:link,a:visited,a:hover,a:active{
   .begone{
     left: -220px;
   }
-  .show{
+  .appear{
     left: 0;
     animation: slideInLeft .2s;
     -webkit-animation: slideInLeft .2s;
@@ -175,4 +175,18 @@ a:link,a:visited,a:hover,a:active{
 }
 .sidebar-minify-btn:active{
   background-color: #6d6e6f;
+}
+.noBackground{
+	background: none;
+}
+.content-padding{
+	padding: 20px 30px;
+}
+.input-group-addon{
+	width: auto !important;
+	line-height: normal !important;
+	border: solid 1px #ccc !important;
+}
+.input-group-addon .fa{
+	line-height: normal !important;
 }

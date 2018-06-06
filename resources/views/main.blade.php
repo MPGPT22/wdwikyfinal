@@ -15,7 +15,7 @@
 
     @include('partials._sidebar')
 
-    <div class="content">
+    <div class="container content-padding">
 
 
     @yield('content')

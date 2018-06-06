@@ -30,8 +30,8 @@
 		<script>
 
 		$( "#showSideBar" ).click(function() {
-		  $( "#sidebar" ).toggleClass("show");
-			$( ".sidebar-bg" ).toggleClass("show");
+		  $( "#sidebar" ).toggleClass("appear");
+			$( ".sidebar-bg" ).toggleClass("appear");
 		});
 
 		</script>
