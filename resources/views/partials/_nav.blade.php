@@ -27,7 +27,7 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           <span class="d-md-inline">Login</span> <b class="caret"></b>
         </a>
-        <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="width: 250px; padding:10px; position: absolute; transform: translate3d(-177px, 50px, 0px); top: 0px; left: 0px; will-change: transform;">
+        <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="width: 300px; padding:10px; position: absolute; transform: translate3d(-277px, 50px, 0px); top: 0px; left: 0px; will-change: transform;">
           
           <form method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
@@ -60,25 +60,27 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
+                            <div class="col-md-5">
+                                <div class="checkbox checkbox-css">
+                                        <input type="checkbox" id="remember"  name="remember" {{ old('remember') ? 'checked' : '' }}>
+                                        <label for="remember">Remember</label> 
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-7" style="padding-top: 7px; padding-left: 0px;">
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                        <div class="form-group ">
+                            <div class="col-md-12 btn-group">
+                                <button type="submit" class="btn btn-primary btn-50">
                                     Login
                                 </button>
+                                <a href="{{route('register')}}" class="btn btn-info btn-colormode btn-50">
+                                    Register
+                                </a>
 
                                 
                             </div>

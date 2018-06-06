@@ -190,3 +190,15 @@ a:link,a:visited,a:hover,a:active{
 .input-group-addon .fa{
 	line-height: normal !important;
 }
+.btn-50{
+	width: 50%;
+}
+.btn-colormode {
+	color:white !important;
+}
+.btn-colormode:visited {
+	color:white !important;
+}
+.btn-colormode:hover {
+	color:white !important;
+}
