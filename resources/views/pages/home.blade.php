@@ -24,7 +24,7 @@
   
 <div class="container">
 
-            <h2 class="title padding-ver-1-5 animated fadeIn">Latest Addictions</h2>
+            <h2 class="title padding-ver-1-5 animated fadeIn">Latest News and Updates</h2>
 
             <div class="row padding-ver-2 animated fadeIn">
               <div class="col-md-2 col-md-offset-2">
@@ -33,17 +33,15 @@
               <div class="panel-heading ui-sortable-handle">
                 <h4 class="panel-title"><span class="label label-success m-r-10 pull-left">NEW</span> Nome</h4>
               </div>
-              <div class="panel-body">
+              <div class="panel-body alignThisCenter">
                 <i class="ra ra-crossed-swords ra-5x"></i>
               </div>
               <div class="hljs-wrapper">
-                <pre>
-                  <code class="html hljs xml">
+                <div class="hljs">
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                   <br>
-                  <button class="btn btn-info">Click</button>
-                  </code>
-                </pre>
+                  <button class="btn btn-info">Class</button>
+                </div>
               </div>
             </div>
             </div>
