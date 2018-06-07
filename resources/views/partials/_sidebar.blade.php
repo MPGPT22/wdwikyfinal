@@ -1,4 +1,4 @@
-<div class="sidebar sidebar-grid begone" id="sidebar">
+<div class="sidebar sidebar-grid begone" id="sidebar" style="position: fixed;">
     <div data-scrollbar="true" data-height="100%">
 		<!-- begin sidebar nav -->
 		<ul class="nav">

@@ -13,93 +13,43 @@
 
 @section('content')
 
-            <div class="row padding-ver-2">
-                <div class="col-lg-5 col-md-6 padding-top-3 animated slideInLeft">
-                  <div>
-                    <h2 class="title">Welcome to</h2>
-                    <h1 class="title">World Dawn Wiki</h1>
-                    <p class="title">Here you can get any information about the developement of the game and get to know what was added/modified lately.</p>
-                    <p class="title">The GameMaster hopes that you like this little present.</p>
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-offset-1 animated slideInRight">
-                    <img class="home-img-top" src="{{asset('img/sample.png')}}">
-                </div>
-            </div>
+<div class="parallax" style="background-image: url({{asset('img/sample.png')}});">
+  <div>
+  <h2 class="title">Welcome to</h2>
+  <h1 class="title">World Dawn Wiki</h1>
+  <p class="lead">Here you can get any information about the developement of the game and get to know what was added/modified lately.</p>
+  <p class="lead">The GameMaster hopes that you like this little present.</p>
+  </div>
+</div>
+  
+<div class="container">
 
-            <h2 class="title padding-ver-0-5 animated zoomIn">Latest Addictions</h2>
+            <h2 class="title padding-ver-1-5 animated fadeIn">Latest Addictions</h2>
 
-            <div class="row padding-ver-2 animated slideInLeft">
-              <div class="col-md-2 col-md-offset-2 col-xs-6" >
-                <div class="boxes">
-                  <i class="fas fa-camera-retro"></i>
-                  <hr>
-                  <h4>Exemplo</h4>
-                  <a href="#" class="btn btn-default button-margin-bot">Go to Type</a>
-                </div>
+            <div class="row padding-ver-2 animated fadeIn">
+              <div class="col-md-2 col-md-offset-2">
+
+            <div class="panel panel-inverse" data-sortable-id="ui-widget-5" data-init="true">
+              <div class="panel-heading ui-sortable-handle">
+                <h4 class="panel-title"><span class="label label-success m-r-10 pull-left">NEW</span> Nome</h4>
               </div>
-              <div class="col-md-2 col-xs-6">
-                <div class="boxes">
-                  <i class="fas fa-camera-retro"></i>
-                  <hr>
-                  <h4>Exemplo</h4>
-                  <a href="#" class="btn btn-default button-margin-bot">Go to Type</a>
-                </div>
+              <div class="panel-body">
+                <i class="ra ra-crossed-swords ra-5x"></i>
               </div>
-              <div class="col-md-2 col-xs-6">
-                <div class="boxes">
-                  <i class="fas fa-camera-retro"></i>
-                  <hr>
-                  <h4>Exemplo</h4>
-                  <a href="#" class="btn btn-default button-margin-bot">Go to Type</a>
-                </div>
-              </div>
-              <div class="col-md-2 col-xs-6">
-                <div class="boxes">
-                  <i class="fas fa-camera-retro"></i>
-                  <hr>
-                  <h4>Exemplo</h4>
-                  <a href="#" class="btn btn-default button-margin-bot">Go to Type</a>
-                </div>
+              <div class="hljs-wrapper">
+                <pre>
+                  <code class="html hljs xml">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                  <br>
+                  <button class="btn btn-info">Click</button>
+                  </code>
+                </pre>
               </div>
             </div>
-
-            <div class="row padding-bot-2 animated slideInRight">
-              <div class="col-md-2 col-md-offset-2 col-xs-6">
-                <div class="boxes">
-                  <i class="fas fa-camera-retro"></i>
-                  <hr>
-                  <h4>Exemplo</h4>
-                  <a href="#" class="btn btn-default button-margin-bot">Go to Type</a>
-                </div>
-              </div>
-              <div class="col-md-2 col-xs-6">
-                <div class="boxes">
-                  <i class="fas fa-camera-retro"></i>
-                  <hr>
-                  <h4>Exemplo</h4>
-                  <a href="#" class="btn btn-default button-margin-bot">Go to Type</a>
-                </div>
-              </div>
-              <div class="col-md-2 col-xs-6">
-                <div class="boxes">
-                  <i class="fas fa-camera-retro"></i>
-                  <hr>
-                  <h4>Exemplo</h4>
-                  <a href="#" class="btn btn-default button-margin-bot">Go to Type</a>
-                </div>
-              </div>
-              <div class="col-md-2 col-xs-6">
-                <a href="#">
-                <div class="boxes">
-                  <i class="fas fa-camera-retro"></i>
-                  <hr>
-                  <h4>Exemplo</h4>
-                  <a href="#" class="btn btn-default button-margin-bot">Go to Type</a>
-                </div>
-                </a>
-              </div>
             </div>
+              
+            </div>
+
 
             <h2 class="title padding-ver-0-5 animated zoomIn">Play in the test area now!</h2>
 
@@ -150,4 +100,5 @@
                   <div class="title"><a class="btn btn-default" href="#">Browser</a></div>
                 </div>
             </div>
+          </div>
 @endsection

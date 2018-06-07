@@ -15,13 +15,13 @@
 
     @include('partials._sidebar')
 
-    <div class="container content-padding">
+{{--     <div class="container-fluid content-padding"> --}}
 
 
     @yield('content')
 
 
-    </div>
+    {{-- </div> --}}
 
     @include('partials._footer')
 

@@ -41,6 +41,10 @@ a:link,a:visited,a:hover,a:active{
 	padding-top: 1em;
 	padding-bottom:1em;
 }
+.padding-ver-1-5{
+	padding-top: 1.5em;
+	padding-bottom:1.5em;
+}
 .padding-ver-0-5{
 	padding-top: 0.5em;
 	padding-bottom:0.5em;
@@ -204,4 +208,31 @@ a:link,a:visited,a:hover,a:active{
 .input-group .form-control:last-child{
 	border-bottom-right-radius: 4px !important;
 	border-top-right-radius: 4px !important;
+}
+.parallax{
+
+    /* Set a specific height */
+    height: 700px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax div{
+	padding: 50px;
+	background-color: rgba(255,255,255,0.95);
+	border-radius: 50px;
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.lead{
+	text-align: center;
+}
+pre{
+	margin-bottom: 0px;
 }
