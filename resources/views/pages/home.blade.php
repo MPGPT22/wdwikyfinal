@@ -212,23 +212,25 @@
               <div class="item parallax" style="background-image: url({{asset('img/sample.png')}});height: 40vh;">
               </div>
             </div>
-            <div class="centered-parallax-content">
-            <h2 class="title">Try out the Testing Area</h2>
-            <br>
-            @guest
-              <div class="btn-group btn100">
-                <a class="btn btn-primary btn33 btn-colormode"><i class="fab fa-windows"></i> Windows</a>
-                <a class="btn btn-info btn34 btn-colormode"><i class="fab fa-apple"></i> Mac</a>
-                <a class="btn btn-lime btn33 btn-colormode"><i class="fab fa-android"></i> Android</a>
+            <div class="container-fluid centered-parallax-content-no-bg alignThisCenter">
+              <div class="padding-top-5vh">
+                <h2>Try out the Testing Area</h2>
+                <br>
+                @guest
+                  <div class="btn-group download-group">
+                    <a class="btn btn-primary btn33 btn-colormode"><i class="fab fa-windows"></i> Windows</a>
+                    <a class="btn btn-info btn34 btn-colormode"><i class="fab fa-apple"></i> Mac</a>
+                    <a class="btn btn-lime btn33 btn-colormode"><i class="fab fa-android"></i> Android</a>
+                  </div>
+                @else
+                  <div class="btn-group download-group">
+                    <a class="btn btn-primary btn25 btn-colormode"><i class="fab fa-windows"></i> Windows</a>
+                    <a class="btn btn-info btn25 btn-colormode"><i class="fab fa-apple"></i> Mac</a>
+                    <a class="btn btn-lime btn25 btn-colormode"><i class="fab fa-android"></i> Android</a>
+                    <a class="btn btn-danger btn25 btn-colormode"><i class="fab fa-chrome"></i> Browser</a>
+                  </div>
+                @endguest
               </div>
-            @else
-              <div class="btn-group btn100">
-                <a class="btn btn-primary btn25 btn-colormode"><i class="fab fa-windows"></i> Windows</a>
-                <a class="btn btn-info btn25 btn-colormode"><i class="fab fa-apple"></i> Mac</a>
-                <a class="btn btn-lime btn25 btn-colormode"><i class="fab fa-android"></i> Android</a>
-                <a class="btn btn-danger btn25 btn-colormode"><i class="fab fa-chrome"></i> Browser</a>
-              </div>
-            @endguest
 
             </div>
 

@@ -1,5 +1,7 @@
 @extends('Admin')
 
+@section('title', '- Backoffice')
+
 @section('stylesheet')
 
   <link rel="stylesheet" href="{{asset('plugins/nvd3/nvd3.min.css')}}">

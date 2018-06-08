@@ -17,7 +17,7 @@ class CharController extends Controller
         //
     }
 
-    public function indexAdmin()
+    public function indexPublic()
     {
         //
     }
@@ -29,7 +29,7 @@ class CharController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.chars.create');
     }
 
     /**
@@ -53,6 +53,11 @@ class CharController extends Controller
     {
         //
     }
+    public function showPublic($id)
+    {
+        //
+    }
+
 
     /**
      * Show the form for editing the specified resource.

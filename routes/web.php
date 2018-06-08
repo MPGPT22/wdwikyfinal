@@ -18,13 +18,15 @@ Auth::routes();
 Route::get('/', 'PagesController@getIndex')->name('homepage');
 Route::get('/about','PagesController@getAbout')->name('about');
 Route::get('/contact', 'PagesController@getContact')->name('contact');
+Route::get('/characters', 'CharController@indexPublic')->name('characters.public');
+Route::get('/characters/{character}', 'CharController@showPublic')->name('characters.show.public');
 
-Route::get('/skills', 'PagesController@getSkills')->name('skills');
 
 
 
 Route::prefix('admin')->group(function(){
 
 Route::get('/', 'AdminController@index')->name('admin.dashboard');
+Route::resource('characters', 'CharController')->middleware('admin');
 
 });

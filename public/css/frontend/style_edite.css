@@ -49,6 +49,9 @@ a:link,a:visited,a:hover,a:active{
 	padding-top: 0.5em;
 	padding-bottom:0.5em;
 }
+.padding-top-5vh{
+	padding-top: 5vh;
+}
 
 .boxes{
 	box-shadow:0em 0em 0em grey;
@@ -116,6 +119,9 @@ a:link,a:visited,a:hover,a:active{
 .substitute {
     display: none;
 }
+.download-group{
+	width: 100%;
+}
 }
 @media (min-width:768px){
   .begone{
@@ -126,6 +132,9 @@ a:link,a:visited,a:hover,a:active{
     animation: slideInLeft .2s;
     -webkit-animation: slideInLeft .2s;
   }
+  .download-group{
+	width: 25%;
+}
 }
 .smallerHeader{
   width: auto !important;
@@ -231,6 +240,16 @@ a:link,a:visited,a:hover,a:active{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.centered-parallax-content-no-bg{
+	padding: 50px;
+	background-color: rgba(255,255,255,0.65);
+	height: 100%;
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .lead{
 	text-align: center;
@@ -263,3 +282,4 @@ pre{
 .btn{
 	border-radius: 0.5rem;
 }
+
