@@ -15,7 +15,7 @@
 
 @section('content')
 
-            <div class="row padding-ver-2">
+            {{-- <div class="row padding-ver-2">
                 <div class="col-md-12">
                     <h1>Contact Us</h1>
                     <hr>
@@ -36,5 +36,5 @@
                         <input type="submit" value="Send Message" class="btn btn-success">
                     </form>
                 </div>
-            </div>
+            </div> --}}
 @endsection
