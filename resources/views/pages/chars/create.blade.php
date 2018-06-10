@@ -24,39 +24,30 @@
                   <div id="wizard">
                     <!-- begin wizard-step -->
                     <ul>
-                      <li class="col-md-3 col-sm-4 col-6">
+                      <li class="col-md-4 col-sm-4 col-6">
                         <a href="#step-1">
-                          <span class="number">1</span> 
+                          <span class="number">1</span>
                           <span class="info text-ellipsis">
                             Basic Information
                             <small class="text-ellipsis">Type, Name, Class, Element</small>
                           </span>
                         </a>
                       </li>
-                      <li class="col-md-3 col-sm-4 col-6">
+                      <li class="col-md-4 col-sm-4 col-6">
                         <a href="#step-2">
-                          <span class="number">2</span> 
+                          <span class="number">2</span>
                           <span class="info text-ellipsis">
                             Chracter Description
-                            <small class="text-ellipsis">Describe the Character in any way, chape or form</small>
+                            <small class="text-ellipsis">Describe the Character in any way, shape or form</small>
                           </span>
                         </a>
                       </li>
-                      <li class="col-md-3 col-sm-4 col-6">
+                      <li class="col-md-4 col-sm-4 col-6">
                         <a href="#step-3">
                           <span class="number">3</span>
                           <span class="info text-ellipsis">
                             Login Account
                             <small class="text-ellipsis">Enter your username and password</small>
-                          </span>
-                        </a>
-                      </li>
-                      <li class="col-md-3 col-sm-4 col-6">
-                        <a href="#step-4">
-                          <span class="number">4</span> 
-                          <span class="info text-ellipsis">
-                            Completed
-                            <small class="text-ellipsis">Complete Registration</small>
                           </span>
                         </a>
                       </li>
@@ -72,7 +63,7 @@
                           <div class="row">
                             <!-- begin col-8 -->
                             <div class="col-md-8 offset-md-2">
-                              <legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">Personal info about yourself</legend>
+                              <legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">Basic Information</legend>
                               <!-- begin form-group -->
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">First Name <span class="text-danger">*</span></label>

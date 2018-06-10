@@ -27,6 +27,6 @@ Route::get('/characters/{character}', 'CharController@showPublic')->name('charac
 Route::prefix('admin')->group(function(){
 
 Route::get('/', 'AdminController@index')->name('admin.dashboard');
-Route::resource('characters', 'CharController')->middleware('admin');
+Route::resource('characters', 'CharController');
 
 });

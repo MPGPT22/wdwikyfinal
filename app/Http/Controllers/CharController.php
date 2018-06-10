@@ -12,6 +12,11 @@ class CharController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+       $this->middleware('creator', ['except' => ['index','indexPublic','show','showPublic']]);
+       $this->middleware('admin', ['except' => ['indexPublic','showPublic']]);
+    }
     public function index()
     {
         //

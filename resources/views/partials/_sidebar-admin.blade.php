@@ -5,7 +5,7 @@
 			<li class="nav-header">Navigation</li>
 
       @if (Auth::user()->adminRole == "GameMaster")
-      
+
       <li >
         <a href="javascript:;">
           <i class="ra ra-player "></i>
@@ -164,7 +164,7 @@
           </li>
         </ul>
       </li>
-        
+
       @elseif (Auth::user()->adminRole == "Creator")
 
       <li class="has-sub ">
@@ -175,7 +175,7 @@
         </a>
         <ul class="sub-menu">
           <li class=" ">
-            <a href="#">Create</a>
+            <a href="{{ route('characters.create') }}">Create</a>
 
           </li>
           <li class=" ">
@@ -379,7 +379,7 @@
 
       @endif
 
-      
+
 
 								<!-- begin sidebar minify button -->
 			<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
