@@ -94,15 +94,15 @@
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">Evolving Class <span class="text-danger">&nbsp;</span></label>
                                 <div class="col-md-6">
-                                  <input name="evolClass" id="evolClass" type="checkbox" data-render="switchery" data-theme="default" onclick="checkEvolv" style="display: none;">
+                                    <input type="checkbox" data-render="switchery" data-theme="default" style="display: none;">
                                 </div>
                               </div>
                               <!-- end form-group -->
                               <!-- begin form-group -->
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">Class <span class="text-danger">*</span></label>
-                                <div class="col-md-6" >
-                                  <select name="type" id="this" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" style="display: none" required>
+                                <div class="col-md-6 input-group" >
+                                  <select name="class" id="this" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
                                     <option value="">Chose the Class of the Character</option>
                                     <option value="Main">Main</option>
                                     <option value="Secundary">Secundary</option>
@@ -111,6 +111,9 @@
                                     <option value="Boss">Boss</option>
                                     <option value="Secret">Secret</option>
                                   </select>
+                                  <span class="input-group-btn">
+                                    <button class="btn btn-default force-border" type="button">Go!</button>
+                                  </span>
                                 </div>
                               </div>
                               <!-- end form-group -->
@@ -241,16 +244,27 @@
     });
   </script>
   <script>
-    
-  function checkEvolv() {
-    if ($('#evolClass').attr('checked');){
-        if ($('#evolClass').attr('checked');){
-          
-        }
-    } else {
-       add.style.display = "none";
-    }
-}
+    $(window).on('load', function() {
+     $('span'+ ".switchery").attr('onClick', 'Plus()');
+     $('select' + '#this').append('<option class="added" value="Secret">Secret1</option><option class="added" value="Secret">Secret2</option><option class="added" value="Secret">Secret3</option><option class="added" value="Secret">Secret4</option>');
+    });
+    function Plus() {
+      if ($('span'+ ".switchery").css('border-color') !=  'rgb(0, 172, 172)') {
+        $('.added').remove();
+        $('.')
+      }else{
+        $('select' + '#this').append('<option class="added" value="Secret">Secret1</option><option class="added" value="Secret">Secret2</option><option class="added" value="Secret">Secret3</option><option class="added" value="Secret">Secret4</option>');
+      }
 
+    function Class1(){
+
+    }
+    function Class2(){
+
+    }
+    function Class3(){
+
+    }
+    }
   </script>
 @endsection

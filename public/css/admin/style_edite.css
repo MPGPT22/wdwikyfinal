@@ -14,3 +14,13 @@
     float: right !important;
   }
 }
+.no-margin{
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+.force-border{
+  border-color: #ccc !important;
+}
+.this{
+  color:red;
+}
