@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{{asset('plugins/bootstrap-calendar/css/bootstrap_calendar.css')}}">
   <link rel="stylesheet" href="{{asset('plugins/gritter/css/jquery.gritter.css')}}">
 
+  <link rel="stylesheet" type="text/css" href="{{asset('plugins/powerange/powerange.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('plugins/parsleyjs/src/parsley.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('plugins/smartwizard/dist/css/smart_wizard.css')}}">
 
@@ -20,6 +21,7 @@
         <div class="col-md-12">
           <h4 class="panel-title">Creating New Character</h4>
                 {!! Form::open(['route' => 'characters.store', 'name' => 'form-wizard', 'class'=>'form-control-with-bg']) !!}
+                {!! Form::token() !!}
                   <!-- begin wizard -->
                   <div id="wizard">
                     <!-- begin wizard-step -->
@@ -46,8 +48,7 @@
                         <a href="#step-3">
                           <span class="number">3</span>
                           <span class="info text-ellipsis">
-                            Login Account
-                            <small class="text-ellipsis">Enter your username and password</small>
+                            Finish
                           </span>
                         </a>
                       </li>
@@ -66,49 +67,50 @@
                               <legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">Basic Information</legend>
                               <!-- begin form-group -->
                               <div class="form-group row m-b-10">
-                                <label class="col-md-3 col-form-label text-md-right">First Name <span class="text-danger">*</span></label>
+                                <label class="col-md-3 col-form-label text-md-right">Character Type <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
-                                  <input type="text" name="firstname" placeholder="John" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
+                                  <select name="type" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
+                                    <option value="">Chose the type of Character to Create</option>
+                                    <option value="Main">Main</option>
+                                    <option value="Secundary">Secundary</option>
+                                    <option value="Extra">Extra</option>
+                                    <option value="Enemy">Enemy</option>
+                                    <option value="Boss">Boss</option>
+                                    <option value="Secret">Secret</option>
+                                  </select>
+                                 
                                 </div>
                               </div>
                               <!-- end form-group -->
                               <!-- begin form-group -->
                               <div class="form-group row m-b-10">
-                                <label class="col-md-3 col-form-label text-md-right">Last Name <span class="text-danger">*</span></label>
+                                <label class="col-md-3 col-form-label text-md-right">Name <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
-                                  <input type="text" name="lastname" placeholder="Smith" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
+                                  <input type="text" name="name" placeholder="Jeff - Lord Of Chaos" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
                                 </div>
                               </div>
                               <!-- end form-group -->
                               <!-- begin form-group -->
                               <div class="form-group row m-b-10">
-                                <label class="col-md-3 col-form-label text-md-right">Date of Birth <span class="text-danger">&nbsp;</span></label>
+                                <label class="col-md-3 col-form-label text-md-right">Evolving Class <span class="text-danger">&nbsp;</span></label>
                                 <div class="col-md-6">
-                                  <div class="row row-space-6">
-                                    <div class="col-4">
-                                      <select class="form-control" name="year">
-                                        <option>-- Year --</option>
-                                      </select>
-                                    </div>
-                                    <div class="col-4">
-                                      <select class="form-control" name="month">
-                                        <option>-- Month --</option>
-                                      </select>
-                                    </div>
-                                    <div class="col-4">
-                                      <select class="form-control" name="day">
-                                        <option>-- Day --</option>
-                                      </select>
-                                    </div>
-                                  </div>
+                                  <input name="evolClass" id="evolClass" type="checkbox" data-render="switchery" data-theme="default" onclick="checkEvolv" style="display: none;">
                                 </div>
                               </div>
                               <!-- end form-group -->
                               <!-- begin form-group -->
                               <div class="form-group row m-b-10">
-                                <label class="col-md-3 col-form-label text-md-right">IC No <span class="text-danger">*</span></label>
-                                <div class="col-md-6">
-                                  <input type="text" name="ic" placeholder="" class="form-control" data-parsley-group="step-1" data-parsley-required="true" />
+                                <label class="col-md-3 col-form-label text-md-right">Class <span class="text-danger">*</span></label>
+                                <div class="col-md-6" >
+                                  <select name="type" id="this" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" style="display: none" required>
+                                    <option value="">Chose the Class of the Character</option>
+                                    <option value="Main">Main</option>
+                                    <option value="Secundary">Secundary</option>
+                                    <option value="Extra">Extra</option>
+                                    <option value="Enemy">Enemy</option>
+                                    <option value="Boss">Boss</option>
+                                    <option value="Secret">Secret</option>
+                                  </select>
                                 </div>
                               </div>
                               <!-- end form-group -->
@@ -222,6 +224,14 @@
 @endsection
 
 @section('scripts')
+  <script src="{{asset('plugins/switchery/switchery.min.js')}}"></script>
+  <script src="{{asset('plugins/powerange/powerange.min.js')}}"></script>
+  <script src="{{asset('js/admin/demo/form-slider-switcher.demo.js')}}"></script>
+  <script>
+    $(document).ready(function() {
+      FormSliderSwitcher.init();
+    });
+  </script>
   <script src="{{asset('plugins/parsleyjs/dist/parsley.js')}}"></script>
   <script src="{{asset('plugins/smartwizard/dist/js/jquery.smartWizard.js')}}"></script>
   <script src="{{asset('js/admin/demo/form-wizards-validation.demo.js')}}"></script>
@@ -229,5 +239,18 @@
     $(document).ready(function() {
       FormWizardValidation.init();
     });
+  </script>
+  <script>
+    
+  function checkEvolv() {
+    if ($('#evolClass').attr('checked');){
+        if ($('#evolClass').attr('checked');){
+          
+        }
+    } else {
+       add.style.display = "none";
+    }
+}
+
   </script>
 @endsection
