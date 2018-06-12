@@ -24,3 +24,27 @@
 .this{
   color:red;
 }
+.disabled{
+  cursor: default !important;
+}
+.btngroup-100{
+  width: 100%;
+}
+.btn75{
+  width: 75%;
+}
+.btn25{
+  width: 25%;
+}
+.btn-50{
+  width: 50%;
+}
+.btn100{
+  width: 100%;
+}
+.btn33{
+  width: 33%;
+}
+.btn34{
+  width: 34%;
+}

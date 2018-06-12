@@ -19,7 +19,9 @@
       </form>
     </li>
     <li>
-      <button id="showSideBar" class="btn navbar-btn substitute noBackground"><i class="fas fa-globe"></i></button>
+      <button id="showSideBar" class="btn navbar-btn substitute noBackground">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
     </li>
     @guest
 
@@ -98,7 +100,12 @@
     @else
       <li class="dropdown navbar-user">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <span class="d-md-inline">{{Auth::user()->name}} | {{Auth::user()->adminRole}}</span> <b class="caret"></b>
+          @if (Auth::user()->isAdmin == 0)
+            <span class="d-md-inline">{{Auth::user()->name}}</span> <b class="caret"></b>
+          @else
+            <span class="d-md-inline">{{Auth::user()->name}} | {{Auth::user()->adminRole}}</span> <b class="caret"></b>
+          @endif
+          
         </a>
         <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(4px, 50px, 0px); top: 0px; left: 0px; will-change: transform;">
           <a href="{{ route('logout') }}"

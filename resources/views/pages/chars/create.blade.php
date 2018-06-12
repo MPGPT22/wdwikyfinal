@@ -49,7 +49,9 @@
                           <span class="number">3</span>
                           <span class="info text-ellipsis">
                             Finish
+                            <small class="text-ellipsis">Creation Finish</small>
                           </span>
+
                         </a>
                       </li>
                     </ul>
@@ -102,7 +104,7 @@
                               <div id="first_class" class="form-group row m-b-10">
                                 <label id="first_class_label" class="col-md-3 col-form-label text-md-right">Class <span class="text-danger">*</span></label>
                                 <div id="classForm" class="col-md-5" >
-                                  <select name="class" id="this" class="form-control" required>
+                                  <select name="class" id="this" data-parsley-group="step-1" data-parsley-required="true" class="form-control" required>
                                     <option id="changable" value="">Choose the Class of the Character</option>
                                     <option value="Knight">Knight</option>
                                     <option value="Fighter">Fighter</option>
@@ -147,20 +149,13 @@
                           <div class="row">
                             <!-- begin col-8 -->
                             <div class="col-md-8 md-offset-2">
-                              <legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">You contact info, so that we can easily reach you</legend>
+                              <legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">Describe the Character.<br><small><b>His/Her aspect, his/her story, his/her power !</b></small></legend>
                               <!-- begin form-group -->
                               <div class="form-group row m-b-10">
-                                <label class="col-md-3 col-form-label text-md-right">Phone Number <span class="text-danger">*</span></label>
+                                <label class="col-md-3 col-form-label text-md-right">Description</label>
                                 <div class="col-md-6">
-                                  <input type="number" name="phone" placeholder="123-456-7890" data-parsley-group="step-2" data-parsley-required="true" data-parsley-type="number" class="form-control" />
-                                </div>
-                              </div>
-                              <!-- end form-group -->
-                              <!-- begin form-group -->
-                              <div class="form-group row m-b-10">
-                                <label class="col-md-3 col-form-label text-md-right">Email Address <span class="text-danger">*</span></label>
-                                <div class="col-md-6">
-                                  <input type="email" name="email" placeholder="someone@example.com" class="form-control" data-parsley-group="step-2" data-parsley-required="true" data-parsley-type="email" />
+                                  <textarea name="desc_1" data-parsley-group="step-2" class="form-control" />Description...
+                                  </textarea>
                                 </div>
                               </div>
                               <!-- end form-group -->
@@ -180,30 +175,17 @@
                           <div class="row">
                             <!-- begin col-8 -->
                             <div class="col-md-8 offset-md-2">
-                              <legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">Select your login username and password</legend>
+                              
                               <!-- begin form-group -->
-                              <div class="form-group row m-b-10">
-                                <label class="col-md-3 col-form-label text-md-right">Username <span class="text-danger">*</span></label>
-                                <div class="col-md-6">
-                                  <input type="text" name="username" placeholder="johnsmithy" class="form-control" data-parsley-group="step-3" data-parsley-required="true" data-parsley-type="alphanum" />
-                                </div>
-                              </div>
-                              <!-- end form-group -->
-                              <!-- begin form-group -->
-                              <div class="form-group row m-b-10">
-                                <label class="col-md-3 col-form-label text-md-right">Pasword <span class="text-danger">*</span></label>
-                                <div class="col-md-6">
-                                  <input type="password" name="password" placeholder="Your password" class="form-control" data-parsley-group="step-3" data-parsley-required="true" />
-                                </div>
-                              </div>
-                              <!-- end form-group -->
-                              <!-- begin form-group -->
-                              <div class="form-group row m-b-10">
-                                <label class="col-md-3 col-form-label text-md-right">Confirm Pasword <span class="text-danger">*</span></label>
-                                <div class="col-md-6">
-                                  <input type="password" name="password2" placeholder="Confirmed password" class="form-control" data-parsley-group="step-3" data-parsley-required="true" />
-                                </div>
-                              </div>
+                              <div class="col-md-12 m-b-10 btn-group">
+                                <button type="submit" name="Create" class="btn btn-primary btn-50">
+                                    Finish & Create Another
+                                </button>
+                                <button type="submit" name="List" class="btn btn-info btn-50">
+                                    Finish & Go to List
+                                </button>
+ 
+                            </div>
                               <!-- end form-group -->
                             </div>
                             <!-- end col-8 -->
@@ -213,15 +195,6 @@
                         <!-- end fieldset -->
                       </div>
                       <!-- end step-3 -->
-                      <!-- begin step-4 -->
-                      <div id="step-4">
-                        <div class="jumbotron m-b-0 text-center">
-                          <h2 class="text-inverse">Register Successfully</h2>
-                          <p class="m-b-30 f-s-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat commodo porttitor. <br />Vivamus eleifend, arcu in tincidunt semper, lorem odio molestie lacus, sed malesuada est lacus ac ligula. Aliquam bibendum felis id purus ullamcorper, quis luctus leo sollicitudin. </p>
-                          <p><a href="#" class="btn btn-primary btn-lg">Proceed to User Profile</a></p>
-                        </div>
-                      </div>
-                      <!-- end step-4 -->
                     </div>
                     <!-- end wizard-content -->
                   </div>
@@ -251,72 +224,10 @@
   <script>
     var id;
     $id = 2;
-    $(document).ready(function(){
-    //$("span.help-block").hide();
-    $("#btnvalidar").click(function(){
-        if (validar()==false){
-            alert("Campos nÃ£o validados");
-        }else{
-            alert("Validados OK");
-        }
-    });
-  });
-    function validar_c1(){
-    
-        /*
-        Valida Campo 1
-        */
-        var val1;
-        var val2;
-        var val3;
-        var val4;
-
-        if ($('span'+ ".switchery").css('border-color') !=  'rgb(0, 172, 172)') {
-          $val1 = document.getElementById("this").value;
-          if (val1 == null){
-        $("#msgCampo1").remove();
-        $("#campo1").parent().parent().attr("class","form-group has-error has-feedback");
-        $("#campo1").parent().children("span").text("Deve inserir carateres").show();
-        $("#campo1").parent().append("<span id='msgCampo1' class='glyphicon glyphicon-remove form-control-feedback'></span>");
-        return false;
-        }else{
-            $("#msgCampo1").remove();
-            $("#campo1").parent().parent().attr("class","form-group has-success has-feedback");
-            $("#campo1").parent().children("span").text("").hide();
-            $("#campo1").parent().append("<span id='msgCampo1' class='glyphicon glyphicon-ok form-control-feedback'></span>");
-        return true;
-        }
-        }else{
-          $val1 = document.getElementById("this").value;
-        }
-
-        //if (isNaN(valor)) se Ã© nÃºmero
-        if (val1 == null || val1.length == 0 || /^\s+$/.test(val1)){
-            $("#msgCampo1").remove();
-            $("#campo1").parent().parent().attr("class","form-group has-error has-feedback");
-            $("#campo1").parent().children("span").text("Deve inserir carateres").show();
-            $("#campo1").parent().append("<span id='msgCampo1' class='glyphicon glyphicon-remove form-control-feedback'></span>");
-            return false;
-        }else{
-            $("#msgCampo1").remove();
-            $("#campo1").parent().parent().attr("class","form-group has-success has-feedback");
-            $("#campo1").parent().children("span").text("").hide();
-            $("#campo1").parent().append("<span id='msgCampo1' class='glyphicon glyphicon-ok form-control-feedback'></span>");
-        return true;
-        }
-    }
-    function validar(){
-      if (validar_c1() && validar_c2() && validar_c3()) {
-        return true;  
-      }else{
-        return false;
-      }
-    }
     $(window).on('load', function() {
      $('span'+ ".switchery").attr('onClick', 'Plus()');
      $('select' + '#this').append('<option class="added" value="Thunder Knight">Thunder Knight</option><option class="added" value="Flare Fighter">Flare Fighter</option><option class="added" value="Water Mage">Water Mage</option><option class="added" value="Wind Hunter">Wind Hunter</option><option class="added" value="Earth Sentinel">Earth Sentinel</option><option class="added" value="Shadow Reaper">Shadow Reaper</option><option class="added" value="Ligtning Duelist">Ligtning Duelist</option><option class="added" value="Dragoon">Dragoon</option><option class="added" value="Aqueous healer">Aqueous healer</option><option class="added" value="Cyclone Snyper">Cyclone Snyper</option><option class="added" value="Quake Bruiser">Quake Bruiser</option><option class="added" value="Dark Knight">Dark Knight</option><option class="added" value="Astrapomancer">Astrapomancer</option><option class="added" value="Geomancer">Geomancer</option><option class="added" value="Hydromancer">Hydromancer</option><option class="added" value="Aeromancer">Aeromancer</option><option class="added" value="Geomancer">Geomancer</option><option class="added" value="Demon Lord">Demon Lord</option>');
     });
-
     function Plus() {
       if ($('span'+ ".switchery").css('border-color') !=  'rgb(0, 172, 172)') {
         $('.added').remove();
@@ -344,19 +255,19 @@
     function adDclass1(){
       
       if ($id == 2) {
-        $('div'+'#first_class').after('<div id="second_class" class="form-group row m-b-10"><label class="col-md-3 col-form-label text-md-right">Second Class <span class="text-danger">*</span></label><div class="col-md-5 input-group" ><select name="class_2" class="form-control" required><option value="">Choose the Second Class of the Character</option><option class="added" value="Thunder Knight">Thunder Knight</option><option class="added" value="Flare Fighter">Flare Fighter</option><option class="added" value="Water Mage">Water Mage</option><option class="added" value="Wind Hunter">Wind Hunter</option><option class="added" value="Earth Sentinel">Earth Sentinel</option><option class="added" value="Shadow Reaper">Shadow Reaper</option></select><span class="input-group-btn"><button class="btn btn-default force-border"  type="button" onclick="adDclass2Minus()">X</button><button id="classFormAdd2" class="btn btn-default force-border"  type="button" onclick="adDclass1()">+</button></span></div></div>');
+        $('div'+'#first_class').after('<div id="second_class" class="form-group row m-b-10"><label class="col-md-3 col-form-label text-md-right">Second Class <span class="text-danger">*</span></label><div class="col-md-5 input-group" ><select data-parsley-group="step-1" data-parsley-required="true" name="class_2" class="form-control" required><option value="">Choose the Second Class of the Character</option><option class="added" value="Thunder Knight">Thunder Knight</option><option class="added" value="Flare Fighter">Flare Fighter</option><option class="added" value="Water Mage">Water Mage</option><option class="added" value="Wind Hunter">Wind Hunter</option><option class="added" value="Earth Sentinel">Earth Sentinel</option><option class="added" value="Shadow Reaper">Shadow Reaper</option></select><span class="input-group-btn"><button class="btn btn-default force-border"  type="button" onclick="adDclass2Minus()">X</button><button id="classFormAdd2" class="btn btn-default force-border"  type="button" onclick="adDclass1()">+</button></span></div></div>');
       $('span#classFormAdd > button').attr('onClick', '');
-      $('span#classFormAdd > button').attr('disabled', 'true');
+      $('span#classFormAdd > button').addClass('disabled');
       $id = $id + 1;
       }else if($id == 3){
-        $('div'+'#second_class').after('<div id="third_class" class="form-group row m-b-10"><label class="col-md-3 col-form-label text-md-right">Third Class <span class="text-danger">*</span></label><div class="col-md-5 input-group" ><select name="class_3" class="form-control" required><option value="">Choose the Third Class of the Character</option><option class="added" value="Ligtning Duelist">Ligtning Duelist</option><option class="added" value="Dragoon">Dragoon</option><option class="added" value="Aqueous healer">Aqueous healer</option><option class="added" value="Cyclone Snyper">Cyclone Snyper</option><option class="added" value="Quake Bruiser">Quake Bruiser</option><option class="added" value="Dark Knight">Dark Knight</option></select><span class="input-group-btn"><button class="btn btn-default force-border"  type="button" onclick="adDclass2Minus()">X</button><button id="classFormAdd3" class="btn btn-default force-border"  type="button" onclick="adDclass1()">+</button></span></div></div>');
+        $('div'+'#second_class').after('<div id="third_class" class="form-group row m-b-10"><label class="col-md-3 col-form-label text-md-right">Third Class <span class="text-danger">*</span></label><div class="col-md-5 input-group" ><select data-parsley-group="step-1" data-parsley-required="true" name="class_3" class="form-control" required><option value="">Choose the Third Class of the Character</option><option class="added" value="Ligtning Duelist">Ligtning Duelist</option><option class="added" value="Dragoon">Dragoon</option><option class="added" value="Aqueous healer">Aqueous healer</option><option class="added" value="Cyclone Snyper">Cyclone Snyper</option><option class="added" value="Quake Bruiser">Quake Bruiser</option><option class="added" value="Dark Knight">Dark Knight</option></select><span class="input-group-btn"><button class="btn btn-default force-border"  type="button" onclick="adDclass2Minus()">X</button><button id="classFormAdd3" class="btn btn-default force-border"  type="button" onclick="adDclass1()">+</button></span></div></div>');
       $('button#classFormAdd2').attr('onClick', '');
-      $('button#classFormAdd2').attr('disabled', 'true');
+      $('button#classFormAdd2').addClass('disabled');
       $id = $id + 1;
       }else if($id == 4){
-        $('div'+'#third_class').after('<div id="fourth_class" class="form-group row m-b-10"><label class="col-md-3 col-form-label text-md-right">Fourth Class <span class="text-danger">*</span></label><div class="col-md-5 input-group" ><select name="class_4" class="form-control" required><option value="">Choose the Fourth Class of the Character</option><option class="added" value="Astrapomancer">Astrapomancer</option><option class="added" value="Geomancer">Geomancer</option><option class="added" value="Hydromancer">Hydromancer</option><option class="added" value="Aeromancer">Aeromancer</option><option class="added" value="Geomancer">Geomancer</option><option class="added" value="Demon Lord">Demon Lord</option></select><span  class="input-group-btn"><button class="btn btn-default force-border"  type="button" onclick="adDclass2Minus()">X</button></span></div></div>');
+        $('div'+'#third_class').after('<div id="fourth_class" class="form-group row m-b-10"><label class="col-md-3 col-form-label text-md-right">Fourth Class <span class="text-danger">*</span></label><div class="col-md-5 input-group" ><select data-parsley-group="step-1" data-parsley-required="true" name="class_4" class="form-control" required><option value="">Choose the Fourth Class of the Character</option><option class="added" value="Astrapomancer">Astrapomancer</option><option class="added" value="Geomancer">Geomancer</option><option class="added" value="Hydromancer">Hydromancer</option><option class="added" value="Aeromancer">Aeromancer</option><option class="added" value="Geomancer">Geomancer</option><option class="added" value="Demon Lord">Demon Lord</option></select><span  class="input-group-btn"><button class="btn btn-default force-border"  type="button" onclick="adDclass2Minus()">X</button></span></div></div>');
       $('button#classFormAdd3').attr('onClick', '');
-      $('button#classFormAdd3').attr('disabled', 'true');
+      $('button#classFormAdd3').addClass('disabled');
       $id = $id + 1;
       }else{
 
@@ -366,17 +277,17 @@
       if ($id === 3) {
       $('div'+ '#second_class').remove();
       $('span#classFormAdd > button').attr('onClick', 'adDclass1()');
-      $('span#classFormAdd > button').removeAttr('disabled');
+      $('span#classFormAdd > button').removeClass('disabled');
       $id = $id - 1;
       }else if($id === 4){
       $('div'+ '#third_class').remove();
       $('button#classFormAdd2').attr('onClick', 'adDclass1()');
-      $('button#classFormAdd2').removeAttr('disabled');
+      $('button#classFormAdd2').removeClass('disabled');
       $id = $id - 1;
       }else if($id === 5){
       $('div'+ '#fourth_class').remove();
       $('button#classFormAdd3').attr('onClick', 'adDclass1()');
-      $('button#classFormAdd3').removeAttr('disabled');
+      $('button#classFormAdd3').removeClass('disabled');
       $id = $id - 1;
       }
     }
