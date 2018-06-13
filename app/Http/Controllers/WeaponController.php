@@ -12,7 +12,16 @@ class WeaponController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+       $this->middleware('creator', ['except' => ['index','indexPublic','show','showPublic']]);
+       $this->middleware('admin', ['except' => ['indexPublic','showPublic']]);
+    }
     public function index()
+    {
+        //
+    }
+    public function indexPublic()
     {
         //
     }
@@ -24,7 +33,7 @@ class WeaponController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.weapons.create');
     }
 
     /**
@@ -45,6 +54,10 @@ class WeaponController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    {
+        //
+    }
+    public function showPublic($id)
     {
         //
     }

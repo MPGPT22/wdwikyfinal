@@ -17,7 +17,7 @@ class CreateStatesTable extends Migration
             $table->increments('id');
             $table->boolean('public')->default(false);
             $table->string('name');
-            $table->string('imgIconUrl');
+            $table->string('imgIconUrl')->default('/img/states/samble.png');
             $table->text('descriptionInicial')->nullable();
             $table->text('descriptionSecond')->nullable();
             $table->timestamps();

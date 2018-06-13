@@ -322,6 +322,7 @@ class ComposerStaticInit3783f7dd413e5f6b6fbd594d3069db33
     );
 
     public static $classMap = array (
+        'App\\CharClasse' => __DIR__ . '/../..' . '/app/CharClasse.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Element' => __DIR__ . '/../..' . '/app/Element.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -341,6 +342,8 @@ class ComposerStaticInit3783f7dd413e5f6b6fbd594d3069db33
         'App\\Http\\Controllers\\StateController' => __DIR__ . '/../..' . '/app/Http/Controllers/StateController.php',
         'App\\Http\\Controllers\\WeaponController' => __DIR__ . '/../..' . '/app/Http/Controllers/WeaponController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\AdminComment' => __DIR__ . '/../..' . '/app/Http/Middleware/AdminComment.php',
+        'App\\Http\\Middleware\\AdminCreator' => __DIR__ . '/../..' . '/app/Http/Middleware/AdminCreator.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\IsAdmin' => __DIR__ . '/../..' . '/app/Http/Middleware/IsAdmin.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',

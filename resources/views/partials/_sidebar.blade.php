@@ -4,38 +4,11 @@
 		<ul class="nav">
 			<li class="nav-header">Navigation</li>
 
-						<li class="has-sub ">
+						<li class="">
 							<a href="javascript:;">
-								<b class="caret"></b>
 								<i class="ra ra-double-team"></i>
 								<span>Characters</span>
 							</a>
-							<ul class="sub-menu">
-								<li class=" ">
-									<a href="#">Main</a>
-
-								</li>
-								<li class=" ">
-									<a href="#">Secundary</a>
-
-								</li>
-								<li class=" ">
-									<a href="#">Extra</a>
-
-								</li>
-								<li class=" ">
-									<a href="#">Enemies</a>
-
-								</li>
-								<li class=" ">
-									<a href="#">Bosses</a>
-
-								</li>
-								<li class=" ">
-									<a href="#">Secret</a>
-
-								</li>
-							</ul>
 						</li>
 						<li class="">
 							<a href="javascript:;">
@@ -59,6 +32,12 @@
 							<a href="javascript:;">
 								<i class="ra  ra-frostfire "></i>
 								<span>Spells</span>
+							</a>
+						</li>
+						<li class="">
+							<a href="javascript:;">
+								<i class="ra ra-level-three-advanced"></i>
+								<span>States</span>
 							</a>
 						</li>
 						<li class="">

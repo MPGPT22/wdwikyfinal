@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\CharClasse' => $baseDir . '/app/CharClasse.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Element' => $baseDir . '/app/Element.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -25,6 +26,8 @@ return array(
     'App\\Http\\Controllers\\StateController' => $baseDir . '/app/Http/Controllers/StateController.php',
     'App\\Http\\Controllers\\WeaponController' => $baseDir . '/app/Http/Controllers/WeaponController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
+    'App\\Http\\Middleware\\AdminComment' => $baseDir . '/app/Http/Middleware/AdminComment.php',
+    'App\\Http\\Middleware\\AdminCreator' => $baseDir . '/app/Http/Middleware/AdminCreator.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
     'App\\Http\\Middleware\\IsAdmin' => $baseDir . '/app/Http/Middleware/IsAdmin.php',
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',

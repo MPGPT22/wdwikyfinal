@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class SpellController extends Controller
+class CharClassController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,7 +33,7 @@ class SpellController extends Controller
      */
     public function create()
     {
-        return view('pages.spells.create');
+        return view('pages.classes.create');
     }
 
     /**

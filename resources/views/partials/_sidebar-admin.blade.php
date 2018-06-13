@@ -37,24 +37,7 @@
         </a>
         <ul class="sub-menu">
           <li class=" ">
-            <a href="#">Create</a>
-
-          </li>
-          <li class=" ">
-            <a href="#">List</a>
-
-          </li>
-        </ul>
-      </li>
-      <li class="has-sub">
-        <a href="javascript:;">
-          <b class="caret"></b>
-          <i class="ra ra-fire-symbol"></i>
-          <span>Elements</span>
-        </a>
-        <ul class="sub-menu">
-          <li class=" ">
-            <a href="#">Create</a>
+            <a href="{{ route('classes.create') }}">Create</a>
 
           </li>
           <li class=" ">
@@ -71,7 +54,7 @@
         </a>
         <ul class="sub-menu">
           <li class=" ">
-            <a href="#">Create</a>
+            <a href="{{ route('skills.create') }}">Create</a>
 
           </li>
           <li class=" ">
@@ -88,7 +71,24 @@
         </a>
         <ul class="sub-menu">
           <li class=" ">
-            <a href="#">Create</a>
+            <a href="{{ route('spells.create') }}">Create</a>
+
+          </li>
+          <li class=" ">
+            <a href="#">List</a>
+
+          </li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="ra ra-level-three-advanced"></i>
+          <span>States</span>
+        </a>
+        <ul class="sub-menu">
+          <li class=" ">
+            <a href="{{ route('states.create') }}">Create</a>
 
           </li>
           <li class=" ">
@@ -105,7 +105,7 @@
         </a>
         <ul class="sub-menu">
           <li class=" ">
-            <a href="#">Create</a>
+            <a href="{{ route('weapons.create') }}">Create</a>
 
           </li>
           <li class=" ">
@@ -122,7 +122,7 @@
         </a>
         <ul class="sub-menu">
           <li class=" ">
-            <a href="#">Create</a>
+            <a href="{{ route('armors.create') }}">Create</a>
 
           </li>
           <li class=" ">
@@ -139,7 +139,7 @@
         </a>
         <ul class="sub-menu">
           <li class=" ">
-            <a href="#">Create</a>
+            <a href="{{ route('items.create') }}">Create</a>
 
           </li>
           <li class=" ">

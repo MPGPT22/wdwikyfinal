@@ -17,8 +17,8 @@ class CreateSpellsTable extends Migration
             $table->increments('id');
             $table->boolean('public')->default(false);
             $table->string('name');
-            $table->string('imgBigUrl');
-            $table->string('imgIconUrl');
+            $table->string('imgBigUrl')->default('/img/spells/samble.png');
+            $table->string('imgIconUrl')->default('/img/spells/samble.png');
             $table->text('descriptionInicial')->nullable();
             $table->text('descriptionSecond')->nullable();
             $table->timestamps();

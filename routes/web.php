@@ -28,5 +28,12 @@ Route::prefix('admin')->group(function(){
 
 Route::get('/', 'AdminController@index')->name('admin.dashboard');
 Route::resource('characters', 'CharController');
+Route::resource('classes', 'CharClassController');
+Route::resource('armors', 'ArmorController');
+Route::resource('items', 'ItemController');
+Route::resource('skills', 'SkillController');
+Route::resource('spells', 'SpellController');
+Route::resource('states', 'StateController');
+Route::resource('weapons', 'WeaponController');
 
 });
