@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCharsTable extends Migration
+class CreateCharactersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCharsTable extends Migration
      */
     public function up()
     {
-        Schema::create('chars', function (Blueprint $table) {
+        Schema::create('characters', function (Blueprint $table) {
             $table->increments('id');
             $table->boolean('public')->default(false);
             $table->string('type');
@@ -43,6 +43,6 @@ class CreateCharsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chars');
+        Schema::dropIfExists('characters');
     }
 }

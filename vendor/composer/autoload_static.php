@@ -322,7 +322,9 @@ class ComposerStaticInit3783f7dd413e5f6b6fbd594d3069db33
     );
 
     public static $classMap = array (
+        'App\\Char' => __DIR__ . '/../..' . '/app/char.php',
         'App\\CharClasse' => __DIR__ . '/../..' . '/app/CharClasse.php',
+        'App\\Characters' => __DIR__ . '/../..' . '/app/Characters.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Element' => __DIR__ . '/../..' . '/app/Element.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -359,7 +361,6 @@ class ComposerStaticInit3783f7dd413e5f6b6fbd594d3069db33
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\armor' => __DIR__ . '/../..' . '/app/armor.php',
         'App\\armorType' => __DIR__ . '/../..' . '/app/armorType.php',
-        'App\\char' => __DIR__ . '/../..' . '/app/char.php',
         'App\\item' => __DIR__ . '/../..' . '/app/item.php',
         'App\\itemType' => __DIR__ . '/../..' . '/app/itemType.php',
         'App\\skill' => __DIR__ . '/../..' . '/app/skill.php',

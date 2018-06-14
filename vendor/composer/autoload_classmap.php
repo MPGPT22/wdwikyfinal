@@ -6,7 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Char' => $baseDir . '/app/char.php',
     'App\\CharClasse' => $baseDir . '/app/CharClasse.php',
+    'App\\Characters' => $baseDir . '/app/Characters.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Element' => $baseDir . '/app/Element.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -43,7 +45,6 @@ return array(
     'App\\User' => $baseDir . '/app/User.php',
     'App\\armor' => $baseDir . '/app/armor.php',
     'App\\armorType' => $baseDir . '/app/armorType.php',
-    'App\\char' => $baseDir . '/app/char.php',
     'App\\item' => $baseDir . '/app/item.php',
     'App\\itemType' => $baseDir . '/app/itemType.php',
     'App\\skill' => $baseDir . '/app/skill.php',

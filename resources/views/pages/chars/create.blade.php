@@ -129,8 +129,8 @@
                               <div id="check2atleast" class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">Element <span class="text-danger">*</span></label>
                                 <div class="col-md-4">
-                                  <select name="class" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
-                                    <option value="">Choose the Class of the Character</option>
+                                  <select name="element" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
+                                    <option value="">Choose the Element of the Character</option>
                                     <option value="Fire">Fire</option>
                                     <option value="Water">Water</option>
                                     <option value="Air">Air</option>
