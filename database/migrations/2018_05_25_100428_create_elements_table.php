@@ -17,7 +17,6 @@ class CreateElementsTable extends Migration
             $table->increments('id');
             $table->boolean('public')->default(false);
             $table->string('name');
-            $table->string('imgIconUrl')->default('/img/elements/samble.png');
             $table->timestamps();
         });
     }

@@ -148,22 +148,6 @@
           </li>
         </ul>
       </li>
-      <li class="has-sub">
-        <a href="#">
-          <b class="caret"></b>
-          <i class="ra ra-scroll-unfurled "></i>
-          <span>History / Maps</span>
-        </a>
-        <ul class="sub-menu">
-          <li class=" ">
-            <a href="#">Create</a>
-
-          </li>
-          <li class=" ">
-            <a href="#">List</a>
-          </li>
-        </ul>
-      </li>
 
       @elseif (Auth::user()->adminRole == "Creator")
 
@@ -303,22 +287,6 @@
           </li>
         </ul>
       </li>
-      <li class="has-sub">
-        <a href="#">
-          <b class="caret"></b>
-          <i class="ra ra-scroll-unfurled "></i>
-          <span>History / Maps</span>
-        </a>
-        <ul class="sub-menu">
-          <li class=" ">
-            <a href="#">Create</a>
-
-          </li>
-          <li class=" ">
-            <a href="#">List</a>
-          </li>
-        </ul>
-      </li>
 
       @elseif (Auth::user()->adminRole == "Comment Checker")
 
@@ -368,12 +336,6 @@
         <a href="javascript:;">
           <i class="ra ra-heart-bottle "></i>
           <span>Items</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="ra ra-scroll-unfurled "></i>
-          <span>History / Maps</span>
         </a>
       </li>
 

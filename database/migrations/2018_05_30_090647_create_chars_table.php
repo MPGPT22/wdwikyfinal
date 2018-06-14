@@ -29,9 +29,9 @@ class CreateCharsTable extends Migration
             $table->text('descriptionThird')->nullable();
             $table->text('descriptionForth')->nullable();
             $table->boolean('multyForm')->default(false);
-            $table->string('imgFormUrlFirst')->default('/img/chars/samble.png');
-            $table->string('imgFormUrlSecund')->default('/img/chars/samble.png');
-            $table->string('imgFormUrlThird')->default('/img/chars/samble.png');
+            $table->string('imgFormUrlFirst')->default('/img/chars/sample.png');
+            $table->string('imgFormUrlSecund')->default('/img/chars/sample.png');
+            $table->string('imgFormUrlThird')->default('/img/chars/sample.png');
             $table->timestamps();
         });
     }

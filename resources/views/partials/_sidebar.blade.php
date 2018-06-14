@@ -70,12 +70,6 @@
 								<span>About</span>
 							</a>
 						</li>
-            <li class="">
-							<a href="{{route('contact')}}">
-								<i class="fas fa-mobile-alt"></i>
-								<span>Contacts</span>
-							</a>
-						</li>
 
 
 

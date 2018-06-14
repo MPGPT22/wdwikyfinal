@@ -17,9 +17,10 @@ class CreateArmorsTable extends Migration
             $table->increments('id');
             $table->boolean('public')->default(false);
             $table->string('type');
+            $table->string('equipmentType');
             $table->string('name');
-            $table->string('imgBigUrl')->default('/img/armors/samble.png');
-            $table->string('imgIconUrl')->default('/img/armors/samble.png');
+            $table->string('imgBigUrl')->default('/img/armors/sample.png');
+            $table->string('imgIconUrl')->default('/img/armors/sample.png');
             $table->text('descriptionInicial')->nullable();
             $table->text('descriptionSecond')->nullable();
             $table->timestamps();

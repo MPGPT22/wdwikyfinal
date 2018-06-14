@@ -19,39 +19,29 @@
 
 @section('content')
         <div class="col-md-12">
-          <h4 class="panel-title">Creating New Character</h4>
-                {!! Form::open(['route' => 'characters.store', 'name' => 'form-wizard', 'class'=>'form-control-with-bg']) !!}
+          <h4 class="panel-title">Creating New Skill</h4>
+                {!! Form::open(['route' => 'skills.store', 'name' => 'form-wizard', 'class'=>'form-control-with-bg']) !!}
                 {!! Form::token() !!}
                   <!-- begin wizard -->
                   <div id="wizard">
                     <!-- begin wizard-step -->
                     <ul>
-                      <li class="col-md-4 col-sm-4 col-6">
+                      <li class="col-md-6 col-sm-6 col-6">
                         <a href="#step-1">
                           <span class="number">1</span>
                           <span class="info text-ellipsis">
                             Basic Information
-                            <small class="text-ellipsis">Type, Name, Class, Element</small>
+                            <small class="text-ellipsis">Name, Icon, Scope, Element and Description</small>
                           </span>
                         </a>
                       </li>
-                      <li class="col-md-4 col-sm-4 col-6">
+                      <li class="col-md-6 col-sm-6 col-6">
                         <a href="#step-2">
                           <span class="number">2</span>
-                          <span class="info text-ellipsis">
-                            Chracter Description
-                            <small class="text-ellipsis">Describe the Character in any way, shape or form</small>
-                          </span>
-                        </a>
-                      </li>
-                      <li class="col-md-4 col-sm-4 col-6">
-                        <a href="#step-3">
-                          <span class="number">3</span>
                           <span class="info text-ellipsis">
                             Finish
                             <small class="text-ellipsis">Creation Finish</small>
                           </span>
-
                         </a>
                       </li>
                     </ul>
@@ -69,92 +59,54 @@
                               <legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">Basic Information</legend>
                               <!-- begin form-group -->
                               <div class="form-group row m-b-10">
-                                <label class="col-md-3 col-form-label text-md-right">Character Type <span class="text-danger">*</span></label>
+                                <label class="col-md-3 col-form-label text-md-right">Name <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
-                                  <select name="type" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
-                                    <option value="">Choose the type of Character to Create</option>
-                                    <option value="Main">Main</option>
-                                    <option value="Secundary">Secundary</option>
-                                    <option value="Extra">Extra</option>
-                                    <option value="Enemy">Enemy</option>
-                                    <option value="Boss">Boss</option>
-                                    <option value="Secret">Secret</option>
-                                  </select>
+                                  <input type="text" name="name" placeholder="Dual Slash" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
+                                </div>
+                              </div>
+                              <!-- end form-group -->
+                              <!-- begin form-group -->
+                              <div class="form-group row m-b-10">
+                                <label class="col-md-3 col-form-label text-md-right">Icon </label>
+                                <div class="col-md-6">
 
                                 </div>
                               </div>
                               <!-- end form-group -->
                               <!-- begin form-group -->
                               <div class="form-group row m-b-10">
-                                <label class="col-md-3 col-form-label text-md-right">Name <span class="text-danger">*</span></label>
+                                <label class="col-md-3 col-form-label text-md-right">Scope <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
-                                  <input type="text" name="name" placeholder="Jeff - Lord Of Chaos" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
-                                </div>
-                              </div>
-                              <!-- end form-group -->
-                              <!-- begin form-group -->
-                              <div class="form-group row m-b-10">
-                                <label class="col-md-3 col-form-label text-md-right">Evolving Class <span class="text-danger">&nbsp;</span></label>
-                                <div class="col-md-6">
-                                    <input type="checkbox" data-render="switchery" data-theme="default" style="display: none;">
-                                </div>
-                              </div>
-                              <!-- end form-group -->
-                              <!-- begin form-group -->
-                              <div id="first_class" class="form-group row m-b-10">
-                                <label id="first_class_label" class="col-md-3 col-form-label text-md-right">Class <span class="text-danger">*</span></label>
-                                <div id="classForm" class="col-md-5" >
-                                  <select name="class" id="this" data-parsley-group="step-1" data-parsley-required="true" class="form-control" required>
-                                    <option id="changable" value="">Choose the Class of the Character</option>
-                                    <option value="Knight">Knight</option>
-                                    <option value="Fighter">Fighter</option>
-                                    <option value="Mage">Mage</option>
-                                    <option value="Ranger">Ranger</option>
-                                    <option value="Sentinel">Sentinel</option>
-                                    <option value="Reaper">Reaper</option>
+                                  <select name="type" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
+                                    <option value="">Choose the Skill Scope</option>
                                   </select>
                                 </div>
                               </div>
                               <!-- end form-group -->
                               <!-- begin form-group -->
-                              <div id="check2atleast" class="form-group row m-b-10">
+                              <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">Element <span class="text-danger">*</span></label>
-                                <div class="col-md-4">
-                                  <select name="class" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
-                                    <option value="">Choose the Class of the Character</option>
-                                    <option value="Fire">Fire</option>
-                                    <option value="Water">Water</option>
-                                    <option value="Air">Air</option>
-                                    <option value="Earth">Earth</option>
-                                    <option value="Thunder">Thunder</option>
-                                    <option value="Light">Light</option>
-                                    <option value="Darkness">Darkness</option>
+                                <div class="col-md-6">
+                                  <select name="type" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
+                                    <option value="">Choose the Skill Element</option>
                                   </select>
                                 </div>
                               </div>
                               <!-- end form-group -->
-                            </div>
-                            <!-- end col-8 -->
-                          </div>
-                          <!-- end row -->
-                        </fieldset>
-                        <!-- end fieldset -->
-                      </div>
-                      <!-- end step-1 -->
-                      <!-- begin step-2 -->
-                      <div id="step-2">
-                        <!-- begin fieldset -->
-                        <fieldset>
-                          <!-- begin row -->
-                          <div class="row">
-                            <!-- begin col-8 -->
-                            <div class="col-md-8 md-offset-2">
-                              <legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">Describe the Character.<br><small><b>His/Her aspect, his/her story, his/her power !</b></small></legend>
                               <!-- begin form-group -->
                               <div class="form-group row m-b-10">
-                                <label class="col-md-3 col-form-label text-md-right">Description</label>
+                                <label class="col-md-3 col-form-label text-md-right">First Description  <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
-                                  <textarea name="desc_1" data-parsley-group="step-2" class="form-control" />Description...
+                                  <textarea name="desc_1" data-parsley-group="step-1" data-parsley-required="true" class="form-control" required />
+                                  </textarea>
+                                </div>
+                              </div>
+                              <!-- end form-group -->
+                              <!-- begin form-group -->
+                              <div class="form-group row m-b-10">
+                                <label class="col-md-3 col-form-label text-md-right">Second Discription </label>
+                                <div class="col-md-6">
+                                  <textarea name="desc_2" placeholder="" data-parsley-group="step-1" class="form-control" />
                                   </textarea>
                                 </div>
                               </div>
@@ -166,16 +118,16 @@
                         </fieldset>
                         <!-- end fieldset -->
                       </div>
-                      <!-- end step-2 -->
+                      <!-- end step-1 -->
                       <!-- begin step-3 -->
-                      <div id="step-3">
+                      <div id="step-2">
                         <!-- begin fieldset -->
                         <fieldset>
                           <!-- begin row -->
                           <div class="row">
                             <!-- begin col-8 -->
                             <div class="col-md-8 offset-md-2">
-                              
+
                               <!-- begin form-group -->
                               <div class="col-md-12 m-b-10 btn-group">
                                 <button type="submit" name="Create" class="btn btn-primary btn-50">
@@ -184,7 +136,7 @@
                                 <button type="submit" name="List" class="btn btn-info btn-50">
                                     Finish & Go to List
                                 </button>
- 
+
                             </div>
                               <!-- end form-group -->
                             </div>
@@ -253,7 +205,7 @@
     }
 
     function adDclass1(){
-      
+
       if ($id == 2) {
         $('div'+'#first_class').after('<div id="second_class" class="form-group row m-b-10"><label class="col-md-3 col-form-label text-md-right">Second Class <span class="text-danger">*</span></label><div class="col-md-5 input-group" ><select data-parsley-group="step-1" data-parsley-required="true" name="class_2" class="form-control" required><option value="">Choose the Second Class of the Character</option><option class="added" value="Thunder Knight">Thunder Knight</option><option class="added" value="Flare Fighter">Flare Fighter</option><option class="added" value="Water Mage">Water Mage</option><option class="added" value="Wind Hunter">Wind Hunter</option><option class="added" value="Earth Sentinel">Earth Sentinel</option><option class="added" value="Shadow Reaper">Shadow Reaper</option></select><span class="input-group-btn"><button class="btn btn-default force-border"  type="button" onclick="adDclass2Minus()">X</button><button id="classFormAdd2" class="btn btn-default force-border"  type="button" onclick="adDclass1()">+</button></span></div></div>');
       $('span#classFormAdd > button').attr('onClick', '');

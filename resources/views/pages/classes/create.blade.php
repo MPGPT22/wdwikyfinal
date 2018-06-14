@@ -57,7 +57,7 @@
                           <div class="row">
                             <!-- begin col-8 -->
                             <div class="col-md-8 offset-md-2">
-                              <legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">Basic</legend>
+                              <legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">Information</legend>
                               <!-- begin form-group -->
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">Name <span class="text-danger">*</span></label>
@@ -71,7 +71,7 @@
                                 <label class="col-md-3 col-form-label text-md-right">Class <span class="text-danger">*</span></label>
                                 <div id="classForm" class="col-md-4" >
                                   <select name="class" data-parsley-group="step-1" data-parsley-required="true" class="form-control" required>
-                                    <option id="changable" value="">Choose the Class level</option>
+                                    <option value="">Choose the Class level</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -152,7 +152,7 @@
                           <div class="row">
                             <!-- begin col-8 -->
                             <div class="col-md-8 offset-md-2">
-                              
+
                               <!-- begin form-group -->
                               <div class="col-md-12 m-b-10 btn-group">
                                 <button type="submit" name="Create" class="btn btn-primary btn-50">
@@ -161,7 +161,7 @@
                                 <button type="submit" name="List" class="btn btn-info btn-50">
                                     Finish & Go to List
                                 </button>
- 
+
                             </div>
                               <!-- end form-group -->
                             </div>
@@ -230,7 +230,7 @@
     }
 
     function adDclass1(){
-      
+
       if ($id == 2) {
         $('div'+'#first_class').after('<div id="second_class" class="form-group row m-b-10"><label class="col-md-3 col-form-label text-md-right">Second Class <span class="text-danger">*</span></label><div class="col-md-5 input-group" ><select data-parsley-group="step-1" data-parsley-required="true" name="class_2" class="form-control" required><option value="">Choose the Second Class of the Character</option><option class="added" value="Thunder Knight">Thunder Knight</option><option class="added" value="Flare Fighter">Flare Fighter</option><option class="added" value="Water Mage">Water Mage</option><option class="added" value="Wind Hunter">Wind Hunter</option><option class="added" value="Earth Sentinel">Earth Sentinel</option><option class="added" value="Shadow Reaper">Shadow Reaper</option></select><span class="input-group-btn"><button class="btn btn-default force-border"  type="button" onclick="adDclass2Minus()">X</button><button id="classFormAdd2" class="btn btn-default force-border"  type="button" onclick="adDclass1()">+</button></span></div></div>');
       $('span#classFormAdd > button').attr('onClick', '');

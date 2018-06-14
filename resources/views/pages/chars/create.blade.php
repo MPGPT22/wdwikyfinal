@@ -26,7 +26,7 @@
                   <div id="wizard">
                     <!-- begin wizard-step -->
                     <ul>
-                      <li class="col-md-4 col-sm-4 col-6">
+                      <li class="col-md-3 col-sm-4 col-6">
                         <a href="#step-1">
                           <span class="number">1</span>
                           <span class="info text-ellipsis">
@@ -35,7 +35,7 @@
                           </span>
                         </a>
                       </li>
-                      <li class="col-md-4 col-sm-4 col-6">
+                      <li class="col-md-3 col-sm-4 col-6">
                         <a href="#step-2">
                           <span class="number">2</span>
                           <span class="info text-ellipsis">
@@ -44,8 +44,17 @@
                           </span>
                         </a>
                       </li>
-                      <li class="col-md-4 col-sm-4 col-6">
+                      <li class="col-md-3 col-sm-4 col-6">
                         <a href="#step-3">
+                          <span class="number">2</span>
+                          <span class="info text-ellipsis">
+                            Character Images
+                            <small class="text-ellipsis">Images that display the Character in the Game</small>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="col-md-3 col-sm-4 col-6">
+                        <a href="#step-4">
                           <span class="number">3</span>
                           <span class="info text-ellipsis">
                             Finish
@@ -148,13 +157,13 @@
                           <!-- begin row -->
                           <div class="row">
                             <!-- begin col-8 -->
-                            <div class="col-md-8 md-offset-2">
+                            <div class="col-md-8 col-md-offset-2">
                               <legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">Describe the Character.<br><small><b>His/Her aspect, his/her story, his/her power !</b></small></legend>
                               <!-- begin form-group -->
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">Description</label>
                                 <div class="col-md-6">
-                                  <textarea name="desc_1" data-parsley-group="step-2" class="form-control" />Description...
+                                  <textarea name="desc_1" data-parsley-group="step-2" class="form-control" />
                                   </textarea>
                                 </div>
                               </div>
@@ -175,7 +184,29 @@
                           <div class="row">
                             <!-- begin col-8 -->
                             <div class="col-md-8 offset-md-2">
-                              
+
+                              <!-- begin form-group -->
+                              <div class="col-md-12 m-b-10 btn-group">
+
+                            </div>
+                              <!-- end form-group -->
+                            </div>
+                            <!-- end col-8 -->
+                          </div>
+                          <!-- end row -->
+                        </fieldset>
+                        <!-- end fieldset -->
+                      </div>
+                      <!-- end step-3 -->
+                      <!-- begin step-3 -->
+                      <div id="step-4">
+                        <!-- begin fieldset -->
+                        <fieldset>
+                          <!-- begin row -->
+                          <div class="row">
+                            <!-- begin col-8 -->
+                            <div class="col-md-8 offset-md-2">
+
                               <!-- begin form-group -->
                               <div class="col-md-12 m-b-10 btn-group">
                                 <button type="submit" name="Create" class="btn btn-primary btn-50">
@@ -184,7 +215,7 @@
                                 <button type="submit" name="List" class="btn btn-info btn-50">
                                     Finish & Go to List
                                 </button>
- 
+
                             </div>
                               <!-- end form-group -->
                             </div>
@@ -253,7 +284,7 @@
     }
 
     function adDclass1(){
-      
+
       if ($id == 2) {
         $('div'+'#first_class').after('<div id="second_class" class="form-group row m-b-10"><label class="col-md-3 col-form-label text-md-right">Second Class <span class="text-danger">*</span></label><div class="col-md-5 input-group" ><select data-parsley-group="step-1" data-parsley-required="true" name="class_2" class="form-control" required><option value="">Choose the Second Class of the Character</option><option class="added" value="Thunder Knight">Thunder Knight</option><option class="added" value="Flare Fighter">Flare Fighter</option><option class="added" value="Water Mage">Water Mage</option><option class="added" value="Wind Hunter">Wind Hunter</option><option class="added" value="Earth Sentinel">Earth Sentinel</option><option class="added" value="Shadow Reaper">Shadow Reaper</option></select><span class="input-group-btn"><button class="btn btn-default force-border"  type="button" onclick="adDclass2Minus()">X</button><button id="classFormAdd2" class="btn btn-default force-border"  type="button" onclick="adDclass1()">+</button></span></div></div>');
       $('span#classFormAdd > button').attr('onClick', '');

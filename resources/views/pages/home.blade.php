@@ -14,7 +14,7 @@
 @section('content')
 
 
-<div class="parallax" style="background-image: url({{asset('img/sample.png')}});height: 95vh;">
+<div class="parallax" style="background-image: url({{asset('img/upper_paralax.png')}});height: 95vh;">
   <div class="centered-parallax-content">
   <h2 class="title">Welcome to</h2>
   <h1 class="title">World Dawn Wiki</h1>
