@@ -21,6 +21,13 @@ class DatabaseSeeder extends Seeder
       'adminRole' => 'GameMaster',
         ]
     );
+    DB::table('users')->insert([
+      'name' => "Omega",
+      'email' => 'xyz@xyz.com',
+      'password' => bcrypt('password'),
+      'isAdmin' => false,
+        ]
+    );
     DB::table('armor_types')->insert([
           'public' => true,
           'name' => "General Armor",

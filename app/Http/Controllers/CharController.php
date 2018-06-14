@@ -45,7 +45,43 @@ class CharController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (!$request->evol_class) {
+            
+            $this->validade($request, array(
+            'type' => ['required',Rule::in(['Main', 'Secundary','Extra','Enemy','Boss','Secret',]),],
+            'name' => 'required|Alpha|max:40|min:20',
+            'class' => ['required',Rule::in(['Main', 'Secundary','Extra','Enemy','Boss','Secret',]),],
+
+            ));
+
+
+
+
+
+
+        }else{
+            
+
+
+
+
+
+
+
+        }
+
+        
+
+        switch ($request->submitbutton) {
+
+            case 'another':
+                return "another";
+                break;
+            
+            case 'list':
+                return "list";
+                break;
+        }
     }
 
     /**

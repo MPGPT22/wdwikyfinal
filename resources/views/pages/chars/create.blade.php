@@ -105,7 +105,7 @@
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">Evolving Class <span class="text-danger">&nbsp;</span></label>
                                 <div class="col-md-6">
-                                    <input type="checkbox" data-render="switchery" data-theme="default" style="display: none;">
+                                    <input name="evol_class" type="checkbox" data-render="switchery" data-theme="default" style="display: none;">
                                 </div>
                               </div>
                               <!-- end form-group -->
@@ -209,10 +209,10 @@
 
                               <!-- begin form-group -->
                               <div class="col-md-12 m-b-10 btn-group">
-                                <button type="submit" name="Create" class="btn btn-primary btn-50">
+                                <button type="submit" value="another" name="submitbutton" class="btn btn-primary btn-50">
                                     Finish & Create Another
                                 </button>
-                                <button type="submit" name="List" class="btn btn-info btn-50">
+                                <button type="submit" value="list" name="submitbutton" class="btn btn-info btn-50">
                                     Finish & Go to List
                                 </button>
 
