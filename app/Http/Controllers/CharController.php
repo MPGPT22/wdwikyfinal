@@ -53,27 +53,33 @@ class CharController extends Controller
     {
         $evolClass = [];
         if (!$request->evol_class) {
-            
+
             $this->validate($request, array(
             'type' => ['required',Rule::in(['Main', 'Secundary','Extra','Enemy','Boss','Secret',]),],
             'name' => 'required|Alpha|max:40|min:2',
-            'class' => ['required',Rule::in(['Knight', 'Thunder Knight','Ligtning Duelist','Astrapomancer','Fighter','Flare Fighter','Dragoon','Pyromancer','Mage','Water Mage','Aqueous healer','Hydromancer','Ranger','Wind Hunter','Cyclone Snyper','Aeromancer','Sentinel','Earth Sentinel','Quake Bruiser ','Geomancer','Reaper','Shadow Reaper','Dark Knight','Demon Lord',]),],
+            'class' => ['required',Rule::in(['Knight', 'Thunder Knight','Ligtning Duelist','Astrapomancer','Fighter','Flare Fighter','Dragoon','Pyromancer','Mage','Water Mage','Aqueous healer','Hydromancer','Ranger','Wind Hunter','Cyclone Snyper','Aeromancer','Sentinel','Earth Sentinel','Quake Bruiser','Geomancer','Reaper','Shadow Reaper','Dark Knight','Demon Lord',]),],
             'element' => ['required',Rule::in(['Physical','Fire','Thunder','Water','Earth','Wind','Light','Darkness',]),],
-            'desc_1' => 'required|min:20',
+            'desc_1' => 'required|min:5',
 
             ));
 
             $evolClass = 0;
 
-
         }else{
-            
 
+          $this->validate($request, array(
+          'type' => ['required',Rule::in(['Main', 'Secundary','Extra','Enemy','Boss','Secret',]),],
+          'name' => 'required|Alpha|max:40|min:2',
+          'class' => ['required',Rule::in(['Knight','Fighter','Mage','Ranger','Sentinel','Reaper',]),],
+          'class_2' => ['required_if:evol_class,on',Rule::in(['Thunder Knight','Flare Fighter','Water Mage','Wind Hunter','Earth Sentinel','Shadow Reaper',]),],
+          'class_3' => Rule::in([null,'Ligtning Duelist','Dragoon','Aqueous healer','Cyclone Snyper','Quake Bruiser','Dark Knight',]),
+          'class_4' => Rule::in([null,'Astrapomancer','Pyromancer','Hydromancer','Aeromancer','Geomancer','Demon Lord',]),
+          'element' => ['required',Rule::in(['Physical','Fire','Thunder','Water','Earth','Wind','Light','Darkness',]),],
+          'desc_1' => 'required|min:5',
 
+          ));
 
-
-
-
+          $evolClass = 1;
 
         }
 
@@ -87,17 +93,34 @@ class CharController extends Controller
             $character->name = $request->name;
             $character->evolClass = $evolClass;
             $character->classStart = $request->class;
+            $character->classSecund = $request->class_2;
+            $character->classThird = $request->class_3;
+            $character->classForth = $request->class_4;
             $character->element = $request->element;
             $character->descriptionInicial = $request->desc_1;
 
             $character->save();
 
             return redirect()->route('characters.create');
-                
+
                 break;
-            
+
             case 'list':
-                
+
+            $character->type = $request->type;
+            $character->name = $request->name;
+            $character->evolClass = $evolClass;
+            $character->classStart = $request->class;
+            $character->classSecund = $request->class_2;
+            $character->classThird = $request->class_3;
+            $character->classForth = $request->class_4;
+            $character->element = $request->element;
+            $character->descriptionInicial = $request->desc_1;
+
+            $character->save();
+
+            return redirect()->route('characters.index');
+
                 break;
         }
     }

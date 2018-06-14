@@ -31,7 +31,7 @@
                           <span class="number">1</span>
                           <span class="info text-ellipsis">
                             Basic Information
-                            <small class="text-ellipsis">Name, Icon, Scope, Element and Description</small>
+                            <small class="text-ellipsis">Name, Scope, Element and Description</small>
                           </span>
                         </a>
                       </li>
@@ -67,14 +67,6 @@
                               <!-- end form-group -->
                               <!-- begin form-group -->
                               <div class="form-group row m-b-10">
-                                <label class="col-md-3 col-form-label text-md-right">Icon </label>
-                                <div class="col-md-6">
-
-                                </div>
-                              </div>
-                              <!-- end form-group -->
-                              <!-- begin form-group -->
-                              <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">Scope <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
                                   <select name="type" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
@@ -95,19 +87,9 @@
                               <!-- end form-group -->
                               <!-- begin form-group -->
                               <div class="form-group row m-b-10">
-                                <label class="col-md-3 col-form-label text-md-right">First Description  <span class="text-danger">*</span></label>
+                                <label class="col-md-3 col-form-label text-md-right">Description  <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
-                                  <textarea name="desc_1" data-parsley-group="step-1" data-parsley-required="true" class="form-control" required />
-                                  </textarea>
-                                </div>
-                              </div>
-                              <!-- end form-group -->
-                              <!-- begin form-group -->
-                              <div class="form-group row m-b-10">
-                                <label class="col-md-3 col-form-label text-md-right">Second Discription </label>
-                                <div class="col-md-6">
-                                  <textarea name="desc_2" placeholder="" data-parsley-group="step-1" class="form-control" />
-                                  </textarea>
+                                  <textarea name="desc_1" data-parsley-group="step-1" data-parsley-required="true" class="form-control" required ></textarea>
                                 </div>
                               </div>
                               <!-- end form-group -->

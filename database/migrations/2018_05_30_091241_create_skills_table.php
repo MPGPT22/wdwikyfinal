@@ -17,9 +17,7 @@ class CreateSkillsTable extends Migration
             $table->increments('id');
             $table->boolean('public')->default(false);
             $table->string('name');
-            $table->string('imgIconUrl')->default('/img/skills/sample.png');
             $table->text('descriptionInicial')->nullable();
-            $table->text('descriptionSecond')->nullable();
             $table->timestamps();
         });
     }

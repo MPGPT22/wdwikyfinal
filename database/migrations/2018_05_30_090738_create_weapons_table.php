@@ -18,10 +18,7 @@ class CreateWeaponsTable extends Migration
             $table->boolean('public')->default(false);
             $table->string('type');
             $table->string('name');
-            $table->string('imgBigUrl')->default('/img/weapons/sample.png');
-            $table->string('imgIconUrl')->default('/img/weapons/sample.png');
             $table->text('descriptionInicial')->nullable();
-            $table->text('descriptionSecond')->nullable();
             $table->timestamps();
         });
     }

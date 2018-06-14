@@ -26,7 +26,7 @@
                   <div id="wizard">
                     <!-- begin wizard-step -->
                     <ul>
-                      <li class="col-md-3 col-sm-4 col-6">
+                      <li class="col-md-4 col-sm-4 col-6">
                         <a href="#step-1">
                           <span class="number">1</span>
                           <span class="info text-ellipsis">
@@ -35,7 +35,7 @@
                           </span>
                         </a>
                       </li>
-                      <li class="col-md-3 col-sm-4 col-6">
+                      <li class="col-md-4 col-sm-4 col-6">
                         <a href="#step-2">
                           <span class="number">2</span>
                           <span class="info text-ellipsis">
@@ -44,17 +44,8 @@
                           </span>
                         </a>
                       </li>
-                      <li class="col-md-3 col-sm-4 col-6">
+                      <li class="col-md-4 col-sm-4 col-6">
                         <a href="#step-3">
-                          <span class="number">2</span>
-                          <span class="info text-ellipsis">
-                            Character Images
-                            <small class="text-ellipsis">Images that display the Character in the Game</small>
-                          </span>
-                        </a>
-                      </li>
-                      <li class="col-md-3 col-sm-4 col-6">
-                        <a href="#step-4">
                           <span class="number">3</span>
                           <span class="info text-ellipsis">
                             Finish
@@ -163,8 +154,7 @@
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">Description</label>
                                 <div class="col-md-6">
-                                  <textarea name="desc_1" data-parsley-group="step-2" class="form-control" />
-                                  </textarea>
+                                  <textarea name="desc_1" data-parsley-group="step-2" class="form-control" /></textarea>
                                 </div>
                               </div>
                               <!-- end form-group -->
@@ -178,28 +168,6 @@
                       <!-- end step-2 -->
                       <!-- begin step-3 -->
                       <div id="step-3">
-                        <!-- begin fieldset -->
-                        <fieldset>
-                          <!-- begin row -->
-                          <div class="row">
-                            <!-- begin col-8 -->
-                            <div class="col-md-8 offset-md-2">
-
-                              <!-- begin form-group -->
-                              <div class="col-md-12 m-b-10 btn-group">
-
-                            </div>
-                              <!-- end form-group -->
-                            </div>
-                            <!-- end col-8 -->
-                          </div>
-                          <!-- end row -->
-                        </fieldset>
-                        <!-- end fieldset -->
-                      </div>
-                      <!-- end step-3 -->
-                      <!-- begin step-3 -->
-                      <div id="step-4">
                         <!-- begin fieldset -->
                         <fieldset>
                           <!-- begin row -->

@@ -18,10 +18,7 @@ class CreateItemsTable extends Migration
             $table->boolean('public')->default(false);
             $table->string('type');
             $table->string('name');
-            $table->string('imgBigUrl')->default('/img/items/sample.png');
-            $table->string('imgIconUrl')->default('/img/items/sample.png');
             $table->text('descriptionInicial')->nullable();
-            $table->text('descriptionSecond')->nullable();
             $table->timestamps();
         });
     }
