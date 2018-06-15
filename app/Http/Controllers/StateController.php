@@ -48,7 +48,38 @@ class StateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, array(
+            'name' => 'required|max:40|min:2',
+            'desc_1' => 'required|min:5',
+
+            ));
+
+        $state = new state;
+
+        switch ($request->submitbutton) {
+
+            case 'another':
+
+            $state->name = $request->name;
+            $state->descriptionInicial = $request->desc_1;
+
+            $state->save();
+
+            return redirect()->route('states.create');
+
+                break;
+
+            case 'list':
+
+            $state->name = $request->name;
+            $state->descriptionInicial = $request->desc_1;
+
+            $state->save();
+
+            return redirect()->route('states.index');
+
+                break;
+        }
     }
 
     /**

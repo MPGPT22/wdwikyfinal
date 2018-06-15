@@ -48,7 +48,73 @@ class CharClassController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, array(
+            'name' => 'required|max:40|min:2',
+            'level' => ['required',Rule::in(['1','2','3','4',]),],
+            'HP' => 'required',
+            'MP' => 'required',
+            'ATK' => 'required',
+            'DEF' => 'required',
+            'MAT' => 'required',
+            'MDEF' => 'required',
+            'AGI' => 'required',
+
+            ));
+      
+
+        $HP = preg_replace("/([A-Za-z])+/", 'i' , $request->HP);
+        $MP = preg_replace("/([A-Za-z])+/", 'i' , $request->MP);
+        $ATK = preg_replace("/([A-Za-z])+/", 'i' , $request->ATK);
+        $DEF = preg_replace("/([A-Za-z])+/", 'i' , $request->DEF);
+        $MAT = preg_replace("/([A-Za-z])+/", 'i' , $request->MAT);
+        $MDEF = preg_replace("/([A-Za-z])+/", 'i' , $request->MDEF);
+        $AGI = preg_replace("/([A-Za-z])+/", 'i' , $request->AGI);
+
+        
+        $class = new CharClasse;
+
+
+
+        switch ($request->submitbutton) {
+
+            case 'another':
+
+            $class->name = $request->name;
+            $class->evo_lvl = $request->level;
+            $class->HP = $HP;
+            $class->MP = $MP;
+            $class->ATK = $ATK;
+            $class->DEF = $DEF;
+            $class->MAT = $MAT;
+            $class->MDEF = $MDEF;
+            $class->AGI = $AGI;
+
+
+            $class->save();
+
+            return redirect()->route('classes.create');
+
+                break;
+
+            case 'list':
+
+            $class->name = $request->name;
+            $class->evo_lvl = $request->level;
+            $class->HP = $HP;
+            $class->MP = $MP;
+            $class->ATK = $ATK;
+            $class->DEF = $DEF;
+            $class->MAT = $MAT;
+            $class->MDEF = $MDEF;
+            $class->AGI = $AGI;
+
+            $class->save();
+
+            return redirect()->route('classes.index');
+
+                break;
+        }
+
     }
 
     /**

@@ -69,7 +69,7 @@ class CharController extends Controller
 
           $this->validate($request, array(
           'type' => ['required',Rule::in(['Main', 'Secundary','Extra','Enemy','Boss','Secret',]),],
-          'name' => 'required|Alpha|max:40|min:2',
+          'name' => 'required|max:40|min:2',
           'class' => ['required',Rule::in(['Knight','Fighter','Mage','Ranger','Sentinel','Reaper',]),],
           'class_2' => ['required_if:evol_class,on',Rule::in(['Thunder Knight','Flare Fighter','Water Mage','Wind Hunter','Earth Sentinel','Shadow Reaper',]),],
           'class_3' => Rule::in([null,'Ligtning Duelist','Dragoon','Aqueous healer','Cyclone Snyper','Quake Bruiser','Dark Knight',]),

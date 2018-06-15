@@ -69,8 +69,11 @@
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">Scope <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
-                                  <select name="type" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
+                                  <select name="scope" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
                                     <option value="">Choose the Skill Scope</option>
+                                    @foreach ($scope as $targets)
+                                      <option value="{{$targets->name}}">{{$targets->name}}</option>
+                                    @endforeach
                                   </select>
                                 </div>
                               </div>
@@ -79,8 +82,11 @@
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">Element <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
-                                  <select name="type" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
+                                  <select name="element" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
                                     <option value="">Choose the Skill Element</option>
+                                    @foreach ($elements as $element)
+                                      <option value="{{$element->name}}">{{$element->name}}</option>
+                                    @endforeach
                                   </select>
                                 </div>
                               </div>
@@ -112,10 +118,10 @@
 
                               <!-- begin form-group -->
                               <div class="col-md-12 m-b-10 btn-group">
-                                <button type="submit" name="Create" class="btn btn-primary btn-50">
+                                <button type="submit" value="another" name="submitbutton" class="btn btn-primary btn-50">
                                     Finish & Create Another
                                 </button>
-                                <button type="submit" name="List" class="btn btn-info btn-50">
+                                <button type="submit" value="list" name="submitbutton" class="btn btn-info btn-50">
                                     Finish & Go to List
                                 </button>
 

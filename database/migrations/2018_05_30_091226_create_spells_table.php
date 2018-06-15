@@ -17,6 +17,8 @@ class CreateSpellsTable extends Migration
             $table->increments('id');
             $table->boolean('public')->default(false);
             $table->string('name');
+            $table->string('scope');
+            $table->string('element');
             $table->text('descriptionInicial')->nullable();
             $table->timestamps();
         });
