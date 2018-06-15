@@ -71,6 +71,9 @@
                           <div class="col-md-6">
                             <select name="type" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
                               <option value="">Choose the Weapon Type</option>
+                              @foreach ($types as $type)
+                                <option value="{{$type->name}}">{{$type->name}}</option>
+                              @endforeach
                             </select>
                           </div>
                         </div>

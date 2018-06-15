@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -37,7 +38,8 @@ class WeaponController extends Controller
      */
     public function create()
     {
-        return view('pages.weapons.create');
+        $types = DB::table('weapon_types')->get();
+        return view('pages.weapons.create')->with(array('types'=>$types));
     }
 
     /**
@@ -48,7 +50,47 @@ class WeaponController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $types = DB::table('weapon_types')->get();
+        $types_name = [];
+        foreach ($types as $type) {
+            array_push($types_name, $type->name);
+        }
+        
+        $this->validate($request, array(
+            'name' => 'required|max:40|min:2',
+            'type' => ['required',Rule::in($types_name)],
+            'desc_1' => 'required|min:5',
+
+            ));
+
+        $weapon = new weapon;
+
+        switch ($request->submitbutton) {
+
+            case 'another':
+
+            $weapon->name = $request->name;
+            $weapon->type = $request->type;
+            $weapon->descriptionInicial = $request->desc_1;
+
+            $weapon->save();
+
+            return redirect()->route('weapons.create');
+
+                break;
+
+            case 'list':
+
+            $weapon->name = $request->name;
+            $weapon->type = $request->type;
+            $weapon->descriptionInicial = $request->desc_1;
+
+            $weapon->save();
+
+            return redirect()->route('weapons.index');
+
+                break;
+        }
     }
 
     /**

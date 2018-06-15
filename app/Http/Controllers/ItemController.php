@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -37,7 +38,8 @@ class ItemController extends Controller
      */
     public function create()
     {
-        return view('pages.items.create');
+        $types = DB::table('item_types')->get();
+        return view('pages.items.create')->with(array('types'=>$types));
     }
 
     /**
@@ -48,7 +50,47 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $types = DB::table('item_types')->get();;
+        $types_name = [];
+        foreach ($types as $type) {
+            array_push($types_name, $type->name);
+        }
+        
+        $this->validate($request, array(
+            'name' => 'required|max:40|min:2',
+            'type' => ['required',Rule::in($types_name)],
+            'desc_1' => 'required|min:5',
+
+            ));
+
+        $item = new item;
+
+        switch ($request->submitbutton) {
+
+            case 'another':
+
+            $item->name = $request->name;
+            $item->type = $request->type;
+            $item->descriptionInicial = $request->desc_1;
+
+            $item->save();
+
+            return redirect()->route('items.create');
+
+                break;
+
+            case 'list':
+
+            $item->name = $request->name;
+            $item->type = $request->type;
+            $item->descriptionInicial = $request->desc_1;
+
+            $item->save();
+
+            return redirect()->route('items.index');
+
+                break;
+        }
     }
 
     /**

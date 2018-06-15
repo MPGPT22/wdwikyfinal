@@ -71,6 +71,9 @@
                           <div class="col-md-6">
                             <select name="type" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
                               <option value="">Choose the Item Type</option>
+                              @foreach ($types as $type)
+                                <option value="{{$type->name}}">{{$type->name}}</option>
+                              @endforeach
                             </select>
                           </div>
                         </div>
@@ -79,8 +82,7 @@
                         <div class="form-group row m-b-10">
                           <label class="col-md-3 col-form-label text-md-right">Description  <span class="text-danger">*</span></label>
                           <div class="col-md-6">
-                            <textarea name="desc_1" data-parsley-group="step-1" data-parsley-required="true" class="form-control" required />
-                            </textarea>
+                            <textarea name="desc_1" data-parsley-group="step-1" data-parsley-required="true" class="form-control" required /></textarea>
                           </div>
                         </div>
                         <!-- end form-group -->
@@ -103,10 +105,10 @@
 
                         <!-- begin form-group -->
                         <div class="col-md-12 m-b-10 btn-group">
-                          <button type="submit" name="Create" class="btn btn-primary btn-50">
+                          <button type="submit" value="another" name="submitbutton" class="btn btn-primary btn-50">
                               Finish & Create Another
                           </button>
-                          <button type="submit" name="List" class="btn btn-info btn-50">
+                          <button type="submit" value="list" name="submitbutton" class="btn btn-info btn-50">
                               Finish & Go to List
                           </button>
 

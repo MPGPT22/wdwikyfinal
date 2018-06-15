@@ -71,6 +71,9 @@
                           <div class="col-md-6">
                             <select name="type" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
                               <option value="">Choose the Armor Type</option>
+                              @foreach ($type as $types)
+                                <option value="{{$types->name}}">{{$types->name}}</option>
+                              @endforeach
                             </select>
                           </div>
                         </div>
@@ -81,6 +84,9 @@
                           <div class="col-md-6">
                             <select name="equipment_type" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
                               <option value="">Choose the Equipment Type</option>
+                              @foreach ($equipment as $equipments)
+                                <option value="{{$equipments->name}}">{{$equipments->name}}</option>
+                              @endforeach
                             </select>
                           </div>
                         </div>
