@@ -26,6 +26,23 @@ class SpellController extends Controller
     {
         //
     }
+    public function set_public($id)
+    {
+        $spell = spell::find($id);
+        $spell->public = 1;
+        $spell->save();
+
+
+        return redirect()->route('spells.index');
+    }
+    public function set_not_public($id)
+    {
+        $spell = spell::find($id);
+        $spell->public = 0;
+        $spell->save();
+
+        return redirect()->route('spells.index');
+    }
     public function indexPublic()
     {
         //

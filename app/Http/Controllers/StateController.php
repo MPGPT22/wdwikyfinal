@@ -25,6 +25,23 @@ class StateController extends Controller
     {
         //
     }
+    public function set_public($id)
+    {
+        $state = state::find($id);
+        $state->public = 1;
+        $state->save();
+
+
+        return redirect()->route('states.index');
+    }
+    public function set_not_public($id)
+    {
+        $state = state::find($id);
+        $state->public = 0;
+        $state->save();
+
+        return redirect()->route('states.index');
+    }
     public function indexPublic()
     {
         //

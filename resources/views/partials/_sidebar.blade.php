@@ -12,18 +12,6 @@
 						</li>
 						<li class="">
 							<a href="javascript:;">
-								<i class="ra ra-aura "></i>
-								<span>Classes</span>
-							</a>
-						</li>
-						<li class="">
-							<a href="javascript:;">
-								<i class="ra ra-fire-symbol"></i>
-								<span>Elements</span>
-							</a>
-						</li>
-						<li class="">
-							<a href="javascript:;">
 								<i class="ra ra-spinning-sword"></i>
 								<span>Skills</span>
 							</a>

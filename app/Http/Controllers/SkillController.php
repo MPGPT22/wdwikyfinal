@@ -26,6 +26,23 @@ class SkillController extends Controller
     {
         //
     }
+    public function set_public($id)
+    {
+        $skill = skill::find($id);
+        $skill->public = 1;
+        $skill->save();
+
+
+        return redirect()->route('skills.index');
+    }
+    public function set_not_public($id)
+    {
+        $skill = skill::find($id);
+        $skill->public = 0;
+        $skill->save();
+
+        return redirect()->route('skills.index');
+    }
     public function indexPublic()
     {
         //

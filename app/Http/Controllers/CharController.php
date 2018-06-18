@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -20,12 +21,31 @@ class CharController extends Controller
      */
     public function __construct()
     {
-       $this->middleware('creator', ['except' => ['index','indexPublic','show','showPublic']]);
+       $this->middleware('creator', ['except' => ['index','indexPublic','show','showPublic',]]);
        $this->middleware('admin', ['except' => ['indexPublic','showPublic']]);
     }
     public function index()
     {
-        //
+        $chars = DB::table('characters')->get();
+
+        return view('pages.chars.list')->withList($chars);
+    }
+    public function set_public($id)
+    {
+        $char = Characters::find($id);
+        $char->public = 1;
+        $char->save();
+
+
+        return redirect()->route('characters.index');
+    }
+    public function set_not_public($id)
+    {
+        $char = Characters::find($id);
+        $char->public = 0;
+        $char->save();
+
+        return redirect()->route('characters.index');
     }
 
     public function indexPublic()
@@ -172,6 +192,9 @@ class CharController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $char = Characters::find($id);
+        $char->delete();
+
+        return redirect()->route('characters.index');
     }
 }

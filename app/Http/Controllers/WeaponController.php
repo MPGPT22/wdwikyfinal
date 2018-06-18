@@ -26,6 +26,23 @@ class WeaponController extends Controller
     {
         //
     }
+    public function set_public($id)
+    {
+        $weapon = weapon::find($id);
+        $weapon->public = 1;
+        $weapon->save();
+
+
+        return redirect()->route('weapons.index');
+    }
+    public function set_not_public($id)
+    {
+        $weapon = weapon::find($id);
+        $weapon->public = 0;
+        $weapon->save();
+
+        return redirect()->route('weapons.index');
+    }
     public function indexPublic()
     {
         //

@@ -48,3 +48,42 @@
 .btn34{
   width: 34%;
 }
+.title{
+  text-align: center;
+}
+
+.divide-rows{
+  margin-bottom: 20px;
+}
+
+.row-left{
+  background: #ededed;
+  border: 1px solid #b5b5b5;
+  padding: 15px !important;
+  border-radius: 10px 0 0 10px;
+  width: 13%;
+  display: inline-flex;
+}
+.row-left a{
+  margin-right: auto;
+  margin-left: auto;
+}
+.row-center{
+  background: #ededed;
+  border: 1px solid #b5b5b5;
+  padding: 15px !important;
+  width: 50%;
+  display: inline-flex;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.row-right{
+  background: #ededed;
+  border: 1px solid #b5b5b5;
+  padding: 7px 10px 6px 10px !important;
+
+  border-radius: 0 10px 10px 0;
+
+  width: 37%;
+  display: inline-flex;
+}

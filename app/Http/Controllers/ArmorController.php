@@ -26,6 +26,23 @@ class ArmorController extends Controller
     {
         //
     }
+    public function set_public($id)
+    {
+        $armor = armor::find($id);
+        $armor->public = 1;
+        $armor->save();
+
+
+        return redirect()->route('armors.index');
+    }
+    public function set_not_public($id)
+    {
+        $armor = armor::find($id);
+        $armor->public = 0;
+        $armor->save();
+
+        return redirect()->route('armors.index');
+    }
     public function indexPublic()
     {
         //

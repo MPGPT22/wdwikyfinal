@@ -26,6 +26,23 @@ class ItemController extends Controller
     {
         //
     }
+    public function set_public($id)
+    {
+        $item = item::find($id);
+        $item->public = 1;
+        $item->save();
+
+
+        return redirect()->route('items.index');
+    }
+    public function set_not_public($id)
+    {
+        $item = item::find($id);
+        $item->public = 0;
+        $item->save();
+
+        return redirect()->route('items.index');
+    }
     public function indexPublic()
     {
         //

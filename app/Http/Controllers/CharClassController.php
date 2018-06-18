@@ -25,6 +25,23 @@ class CharClassController extends Controller
     {
         //
     }
+    public function set_public($id)
+    {
+        $class = CharClasse::find($id);
+        $class->public = 1;
+        $class->save();
+
+
+        return redirect()->route('classes.index');
+    }
+    public function set_not_public($id)
+    {
+        $class = CharClasse::find($id);
+        $class->public = 0;
+        $class->save();
+
+        return redirect()->route('classes.index');
+    }
     public function indexPublic()
     {
         //
