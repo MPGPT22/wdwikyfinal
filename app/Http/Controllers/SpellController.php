@@ -24,7 +24,9 @@ class SpellController extends Controller
     }
     public function index()
     {
-        //
+        $spells = DB::table('spells')->orderBy('created_at', 'desc')->get();
+
+        return view('pages.spells.list')->withList($spells);
     }
     public function set_public($id)
     {
@@ -45,7 +47,9 @@ class SpellController extends Controller
     }
     public function indexPublic()
     {
-        //
+        $spells = DB::table('spells')->orderBy('created_at', 'desc')->get();
+
+        return view('pages.spells.listPublic')->withList($spells);
     }
 
     /**
@@ -166,6 +170,9 @@ class SpellController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = spell::find($id);
+        $item->delete();
+
+        return redirect()->route('spells.index');
     }
 }

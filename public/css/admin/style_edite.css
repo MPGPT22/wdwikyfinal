@@ -62,6 +62,7 @@
   padding: 15px !important;
   border-radius: 10px 0 0 10px;
   width: 13%;
+  min-width: 50px;
   display: inline-flex;
 }
 .row-left a{
@@ -77,6 +78,11 @@
   margin-left: -5px;
   margin-right: -5px;
 }
+.a_no_style{
+  color: #707478 !important; 
+  text-decoration: none !important;
+}
+
 .row-right{
   background: #ededed;
   border: 1px solid #b5b5b5;

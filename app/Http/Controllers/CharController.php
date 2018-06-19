@@ -26,7 +26,7 @@ class CharController extends Controller
     }
     public function index()
     {
-        $chars = DB::table('characters')->get();
+        $chars = DB::table('characters')->orderBy('created_at', 'desc')->get();
 
         return view('pages.chars.list')->withList($chars);
     }
@@ -50,7 +50,9 @@ class CharController extends Controller
 
     public function indexPublic()
     {
-        //
+        $chars = DB::table('characters')->orderBy('created_at', 'desc')->get();
+
+        return view('pages.chars.listPublic')->withList($chars);
     }
 
     /**
@@ -192,8 +194,9 @@ class CharController extends Controller
      */
     public function destroy($id)
     {
-        $char = Characters::find($id);
-        $char->delete();
+
+        $item = Characters::find($id);
+        $item->delete();
 
         return redirect()->route('characters.index');
     }

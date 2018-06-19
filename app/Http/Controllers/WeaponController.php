@@ -24,7 +24,9 @@ class WeaponController extends Controller
     }
     public function index()
     {
-        //
+        $weapons = DB::table('weapons')->orderBy('created_at', 'desc')->get();
+
+        return view('pages.weapons.list')->withList($weapons);
     }
     public function set_public($id)
     {
@@ -45,7 +47,9 @@ class WeaponController extends Controller
     }
     public function indexPublic()
     {
-        //
+        $weapons = DB::table('weapons')->orderBy('created_at', 'desc')->get();
+
+        return view('pages.weapons.listPublic')->withList($weapons);
     }
 
     /**
@@ -156,6 +160,9 @@ class WeaponController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = weapon::find($id);
+        $item->delete();
+
+        return redirect()->route('weapons.index');
     }
 }

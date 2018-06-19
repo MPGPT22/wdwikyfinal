@@ -258,6 +258,122 @@ class DatabaseSeeder extends Seeder
           'name' => "Belt",
       ]
     );
+    DB::table('characters')->insert([
+    [
+      'public' => true,
+      'type' => 'Main',
+      'name' => 'John',
+      'evolClass' => true,
+      'classStart' => 'Knight',
+      'classSecund' => 'Thunder Knight',
+      'classThird' => 'Lightning Duelist',
+      'classForth' => 'Astrapomancer',
+      'element' => 'Thunder',
+      'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    ],
+    [
+      'public' => true,
+      'type' => 'Boss',
+      'name' => 'Shadow',
+      'evolClass' => true,
+      'classStart' => 'Reaper',
+      'classSecund' => 'Shadow Reaper',
+      'classThird' => 'Dark Knight',
+      'classForth' => 'Demon Lord',
+      'element' => 'Darkenss',
+      'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    ],
+    [
+      'public' => true,
+      'type' => 'Extra',
+      'name' => 'Jeff',
+      'evolClass' => false,
+      'classStart' => 'Ranger',
+      'classSecund' => null,
+      'classThird' => null,
+      'classForth' => null,
+      'element' => 'Physical',
+      'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    ],
+    ]);
+
+
+    DB::table('skills')->insert([
+    [
+      'public' => true,
+      'name' => 'Slash',
+      'scope' => '1 Enemy',
+      'element' => 'Physical',
+      'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    ],
+    [
+      'public' => true,
+      'name' => 'Pain Nullifier',
+      'scope' => 'User',
+      'element' => 'Thunder',
+      'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    ],
+    [
+      'public' => true,
+      'name' => 'Tail Swing',
+      'scope' => 'all Enemies',
+      'element' => 'Fire',
+      'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    ],
+    ]);
+    DB::table('spells')->insert([
+    [
+      'public' => true,
+      'name' => 'Bubbles',
+      'scope' => '2 Random Enemies',
+      'element' => 'Water',
+      'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    ],
+    ]);
+    DB::table('weapons')->insert([
+    [
+      'public' => true,
+      'type' => 'Sword',
+      'name' => 'Dull Sword',
+      'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    ],
+    [
+      'public' => true,
+      'type' => 'Axe',
+      'name' => 'Doom Axe',
+      'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    ],
+    ]);
+    DB::table('armors')->insert([
+    [
+      'public' => true,
+      'type' => 'General Armor',
+      'equipmentType' => 'Head',
+      'name' => 'Bronze Helmet',
+      'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    ],
+    [
+      'public' => true,
+      'type' => 'Small Shield',
+      'equipmentType' => 'Shield',
+      'name' => 'Iron Buckler',
+      'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    ],
+    ]);
+    DB::table('items')->insert([
+    [
+      'public' => true,
+      'name' => 'Key',
+      'type' => 'Key Item',
+      'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    ],
+    [
+      'public' => true,
+      'name' => 'bucket',
+      'type' => 'General Item',
+      'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+    ],
+    ]);
 
 
     }

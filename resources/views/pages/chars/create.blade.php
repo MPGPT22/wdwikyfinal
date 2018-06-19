@@ -122,6 +122,7 @@
                                 <div class="col-md-4">
                                   <select name="element" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
                                     <option value="">Choose the Element of the Character</option>
+                                    <option value="Physical">Physical</option>
                                     <option value="Fire">Fire</option>
                                     <option value="Water">Water</option>
                                     <option value="Air">Air</option>

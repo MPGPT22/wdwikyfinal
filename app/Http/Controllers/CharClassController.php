@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
+use Illuminate\Support\Facades\DB;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\CharClasse;
@@ -23,7 +25,9 @@ class CharClassController extends Controller
     }
     public function index()
     {
-        //
+        $classes = DB::table('char_classes')->orderBy('created_at', 'desc')->get();
+
+        return view('pages.classes.list')->withList($classes);
     }
     public function set_public($id)
     {
@@ -44,7 +48,9 @@ class CharClassController extends Controller
     }
     public function indexPublic()
     {
-        //
+        $classes = DB::table('char_classes')->orderBy('created_at', 'desc')->get();
+
+        return view('pages.classes.listPublic')->withList($classes);
     }
 
     /**
@@ -180,6 +186,9 @@ class CharClassController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = CharClasse::find($id);
+        $item->delete();
+
+        return redirect()->route('classes.index');
     }
 }

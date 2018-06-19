@@ -26,6 +26,10 @@ class PagesController extends Controller{
 		return view('pages.about');
 	}
 
+	public function getMap(){
+		return view('pages.map');
+	}
+
 	public function getSkills() {
 		return view('pages.skills');
 	}

@@ -24,7 +24,9 @@ class ItemController extends Controller
     }
     public function index()
     {
-        //
+        $item = DB::table('items')->orderBy('created_at', 'desc')->get();
+
+        return view('pages.items.list')->withList($item);
     }
     public function set_public($id)
     {
@@ -45,7 +47,9 @@ class ItemController extends Controller
     }
     public function indexPublic()
     {
-        //
+        $item = DB::table('items')->orderBy('created_at', 'desc')->get();
+
+        return view('pages.items.listPublic')->withList($item);
     }
 
     /**
@@ -156,6 +160,9 @@ class ItemController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = item::find($id);
+        $item->delete();
+
+        return redirect()->route('items.index');
     }
 }

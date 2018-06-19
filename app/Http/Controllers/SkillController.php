@@ -24,7 +24,9 @@ class SkillController extends Controller
     }
     public function index()
     {
-        //
+        $skills = DB::table('skills')->orderBy('created_at', 'desc')->get();
+
+        return view('pages.skills.list')->withList($skills);
     }
     public function set_public($id)
     {
@@ -45,7 +47,9 @@ class SkillController extends Controller
     }
     public function indexPublic()
     {
-        //
+        $skills = DB::table('skills')->orderBy('created_at', 'desc')->get();
+
+        return view('pages.skills.listPublic')->withList($skills);
     }
 
     /**
@@ -166,6 +170,9 @@ class SkillController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = skill::find($id);
+        $item->delete();
+
+        return redirect()->route('skills.index');
     }
 }

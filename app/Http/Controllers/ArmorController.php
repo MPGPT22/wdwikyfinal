@@ -24,7 +24,9 @@ class ArmorController extends Controller
     }
     public function index()
     {
-        //
+        $armors = DB::table('armors')->orderBy('created_at', 'desc')->get();
+
+        return view('pages.armors.list')->withList($armors);
     }
     public function set_public($id)
     {
@@ -45,7 +47,9 @@ class ArmorController extends Controller
     }
     public function indexPublic()
     {
-        //
+        $armors = DB::table('armors')->orderBy('created_at', 'desc')->get();
+
+        return view('pages.armors.listPublic')->withList($armors);
     }
 
     /**
@@ -165,6 +169,9 @@ class ArmorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = armor::find($id);
+        $item->delete();
+
+        return redirect()->route('armors.index');
     }
 }

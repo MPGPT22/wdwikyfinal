@@ -22,20 +22,20 @@
               <div class="col-lg-6 col-md-12 divide-rows">
                   <div class="row-left">
                     @if ($item->public == 1)
-                      <a href="{{ route('char.set.not.public', $item->id) }}" class="title"><i class="far fa-eye fa-lg"></i></a>
+                      <a href="{{ route('skills.set.not.public', $item->id) }}" class="title"><i class="far fa-eye fa-lg"></i></a>
                     @else
-                      <a href="{{ route('char.set.public', $item->id) }}" class="title"><i class="far fa-eye fa-lg" style="color:#bbb"></i></a>
+                      <a href="{{ route('skills.set.public', $item->id) }}" class="title"><i class="far fa-eye fa-lg" style="color:#bbb"></i></a>
                     @endif
                   </div>
-                  <a class="a_no_style" href="{{route('characters.show', $item->id)}}">
+                  <a class="a_no_style" href="{{route('skills.show', $item->id)}}">
                   <div class="row-center">
-                    {{$item->type}} -- {{$item->name}}
+                    {{$item->element}} -- {{$item->name}}
                   </div>
                   </a>
                   <div class=" row-right">
-                    {!! Form::open(['route'=>['characters.destroy', $item->id], 'method' => 'DELETE', 'class' => 'btn100']) !!}
+                    {!! Form::open(['route'=>['skills.destroy', $item->id], 'method' => 'DELETE', 'class' => 'btn100']) !!}
                     <div class="btn-group btn100">
-                      <a href="{{route('characters.edit', $item->id)}}" class="btn btn-primary btn-colormode btn-50">
+                      <a href="{{route('skills.edit', $item->id)}}" class="btn btn-primary btn-colormode btn-50">
                             <i class="fas fa-cog"></i>
                         </a>
                         
@@ -50,14 +50,14 @@
           @else
             @if (Auth::user()->adminRole == "Creator" or Auth::user()->adminRole == "GameMaster")
             <div class="col-md-12 title">
-              <h3>We don't have any characters created.</h3>
+              <h3>We don't have any skills created.</h3>
               <br>
-              <a class="btn btn-primary" href="{{ route('characters.create') }}">Go To Create</a>
+              <a class="btn btn-primary" href="{{ route('skills.create') }}">Go To Create</a>
             </div>
               
             @else
             <div class="col-md-12 title">
-              <h3>We don't have any characters created. Wait until someone creates one.</h3>
+              <h3>We don't have any skills created. Wait until someone creates one.</h3>
 
             </div>
             @endif

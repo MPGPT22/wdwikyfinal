@@ -19,6 +19,19 @@ Route::get('/', 'PagesController@getIndex')->name('homepage');
 Route::get('/about','PagesController@getAbout')->name('about');
 Route::get('/characters', 'CharController@indexPublic')->name('characters.public');
 Route::get('/characters/{character}', 'CharController@showPublic')->name('characters.show.public');
+Route::get('/skills', 'SkillController@indexPublic')->name('skills.public');
+Route::get('/skills/{skill}', 'SkillController@showPublic')->name('skills.show.public');
+Route::get('/spells', 'SpellController@indexPublic')->name('spells.public');
+Route::get('/spells/{spell}', 'SpellController@showPublic')->name('spells.show.public');
+Route::get('/states', 'StateController@indexPublic')->name('states.public');
+Route::get('/states/{state}', 'StateController@showPublic')->name('states.show.public');
+Route::get('/weapons', 'WeaponController@indexPublic')->name('weapons.public');
+Route::get('/weapons/{weapon}', 'WeaponController@showPublic')->name('weapons.show.public');
+Route::get('/armors', 'ArmorController@indexPublic')->name('armors.public');
+Route::get('/armors/{armor}', 'ArmorController@showPublic')->name('armors.show.public');
+Route::get('/items', 'ItemController@indexPublic')->name('items.public');
+Route::get('/items/{item}', 'ItemController@showPublic')->name('items.show.public');
+Route::get('/map','PagesController@getMap')->name('map');
 
 
 
@@ -33,8 +46,8 @@ Route::resource('classes', 'CharClassController');
 Route::get('/classes/set_public/{id}', 'CharClassController@set_public')->name('charclass.set.public');
 Route::get('/classes/set_not_public/{id}', 'CharClassController@set_not_public')->name('charclass.set.not.public');
 Route::resource('armors', 'ArmorController');
-Route::get('/armors/set_public/{id}', 'ArmorController@set_public')->name('armor.set.public');
-Route::get('/armors/set_not_public/{id}', 'ArmorController@set_not_public')->name('armor.set.not.public');
+Route::get('/armors/set_public/{id}', 'ArmorController@set_public')->name('armors.set.public');
+Route::get('/armors/set_not_public/{id}', 'ArmorController@set_not_public')->name('armors.set.not.public');
 Route::resource('items', 'ItemController');
 Route::get('/items/set_public/{id}', 'ItemController@set_public')->name('items.set.public');
 Route::get('/items/set_not_public/{id}', 'ItemController@set_not_public')->name('items.set.not.public');

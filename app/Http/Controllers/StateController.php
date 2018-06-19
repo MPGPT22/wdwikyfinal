@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -23,7 +24,9 @@ class StateController extends Controller
     }
     public function index()
     {
-        //
+        $states = DB::table('states')->orderBy('created_at', 'desc')->get();
+
+        return view('pages.states.list')->withList($states);
     }
     public function set_public($id)
     {
@@ -44,7 +47,9 @@ class StateController extends Controller
     }
     public function indexPublic()
     {
-        //
+        $states = DB::table('states')->orderBy('created_at', 'desc')->get();
+
+        return view('pages.states.listPublic')->withList($states);
     }
 
     /**
@@ -145,6 +150,9 @@ class StateController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = state::find($id);
+        $item->delete();
+
+        return redirect()->route('states.index');
     }
 }

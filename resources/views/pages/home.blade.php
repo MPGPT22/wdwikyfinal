@@ -49,6 +49,8 @@
                          @if ($character->type == 'Secret')
                            <i class="fas fa-question fa-3x"></i>
 
+                         @elseif($character->type == 'Extra')
+                           <i class="ra ra-player ra-5x" style="color:#bbb"></i>
                          @else
                            <i class="ra ra-player ra-5x"></i>
                          @endif

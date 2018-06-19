@@ -24,7 +24,7 @@
 
           </li>
           <li class=" ">
-            <a href="#">List</a>
+            <a href="{{ route('characters.index') }}">List</a>
 
           </li>
         </ul>
@@ -41,7 +41,7 @@
 
           </li>
           <li class=" ">
-            <a href="#">List</a>
+            <a href="{{ route('classes.index') }}">List</a>
 
           </li>
         </ul>
@@ -58,7 +58,7 @@
 
           </li>
           <li class=" ">
-            <a href="#">List</a>
+            <a href="{{ route('skills.index') }}">List</a>
 
           </li>
         </ul>
@@ -75,7 +75,7 @@
 
           </li>
           <li class=" ">
-            <a href="#">List</a>
+            <a href="{{ route('spells.index') }}">List</a>
 
           </li>
         </ul>
@@ -92,7 +92,7 @@
 
           </li>
           <li class=" ">
-            <a href="#">List</a>
+            <a href="{{ route('states.index') }}">List</a>
 
           </li>
         </ul>
@@ -109,7 +109,7 @@
 
           </li>
           <li class=" ">
-            <a href="#">List</a>
+            <a href="{{ route('weapons.index') }}">List</a>
 
           </li>
         </ul>
@@ -126,7 +126,7 @@
 
           </li>
           <li class=" ">
-            <a href="#">List</a>
+            <a href="{{ route('armors.index') }}">List</a>
 
           </li>
         </ul>
@@ -143,7 +143,7 @@
 
           </li>
           <li class=" ">
-            <a href="#">List</a>
+            <a href="{{ route('items.index') }}">List</a>
 
           </li>
         </ul>
@@ -163,7 +163,7 @@
 
           </li>
           <li class=" ">
-            <a href="#">List</a>
+            <a href="{{ route('characters.index') }}">List</a>
 
           </li>
         </ul>
@@ -176,28 +176,11 @@
         </a>
         <ul class="sub-menu">
           <li class=" ">
-            <a href="#">Create</a>
+            <a href="{{ route('classes.create') }}">Create</a>
 
           </li>
           <li class=" ">
-            <a href="#">List</a>
-
-          </li>
-        </ul>
-      </li>
-      <li class="has-sub">
-        <a href="javascript:;">
-          <b class="caret"></b>
-          <i class="ra ra-fire-symbol"></i>
-          <span>Elements</span>
-        </a>
-        <ul class="sub-menu">
-          <li class=" ">
-            <a href="#">Create</a>
-
-          </li>
-          <li class=" ">
-            <a href="#">List</a>
+            <a href="{{ route('classes.index') }}">List</a>
 
           </li>
         </ul>
@@ -210,11 +193,11 @@
         </a>
         <ul class="sub-menu">
           <li class=" ">
-            <a href="#">Create</a>
+            <a href="{{ route('skills.create') }}">Create</a>
 
           </li>
           <li class=" ">
-            <a href="#">List</a>
+            <a href="{{ route('skills.index') }}">List</a>
 
           </li>
         </ul>
@@ -227,11 +210,28 @@
         </a>
         <ul class="sub-menu">
           <li class=" ">
-            <a href="#">Create</a>
+            <a href="{{ route('spells.create') }}">Create</a>
 
           </li>
           <li class=" ">
-            <a href="#">List</a>
+            <a href="{{ route('spells.index') }}">List</a>
+
+          </li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="ra ra-level-three-advanced"></i>
+          <span>States</span>
+        </a>
+        <ul class="sub-menu">
+          <li class=" ">
+            <a href="{{ route('states.create') }}">Create</a>
+
+          </li>
+          <li class=" ">
+            <a href="{{ route('states.index') }}">List</a>
 
           </li>
         </ul>
@@ -244,11 +244,11 @@
         </a>
         <ul class="sub-menu">
           <li class=" ">
-            <a href="#">Create</a>
+            <a href="{{ route('weapons.create') }}">Create</a>
 
           </li>
           <li class=" ">
-            <a href="#">List</a>
+            <a href="{{ route('weapons.index') }}">List</a>
 
           </li>
         </ul>
@@ -261,11 +261,11 @@
         </a>
         <ul class="sub-menu">
           <li class=" ">
-            <a href="#">Create</a>
+            <a href="{{ route('armors.create') }}">Create</a>
 
           </li>
           <li class=" ">
-            <a href="#">List</a>
+            <a href="{{ route('armors.index') }}">List</a>
 
           </li>
         </ul>
@@ -278,11 +278,11 @@
         </a>
         <ul class="sub-menu">
           <li class=" ">
-            <a href="#">Create</a>
+            <a href="{{ route('items.create') }}">Create</a>
 
           </li>
           <li class=" ">
-            <a href="#">List</a>
+            <a href="{{ route('items.index') }}">List</a>
 
           </li>
         </ul>
@@ -291,49 +291,43 @@
       @elseif (Auth::user()->adminRole == "Comment Checker")
 
       <li>
-        <a href="javascript:;">
+        <a href="{{ route('characters.index') }}">
           <i class="ra ra-double-team"></i>
           <span>Characters</span>
         </a>
       </li>
       <li>
-        <a href="javascript:;">
+        <a href="{{ route('classes.index') }}">
           <i class="ra ra-aura "></i>
           <span>Classes</span>
         </a>
       </li>
       <li>
-        <a href="javascript:;">
-          <i class="ra ra-fire-symbol"></i>
-          <span>Elements</span>
-        </a>
-      </li>
-      <li class="has-sub">
-        <a href="javascript:;">
+        <a href="{{ route('skills.index') }}">
           <i class="ra ra-spinning-sword"></i>
           <span>Skills</span>
         </a>
       </li>
-      <li class="has-sub">
-        <a href="javascript:;">
+      <li>
+        <a href="{{ route('spells.index') }}">
           <i class="ra  ra-frostfire "></i>
           <span>Spells</span>
         </a>
       </li>
-      <li class="has-sub">
-        <a href="javascript:;">
+      <li>
+        <a href="{{ route('weapons.index') }}">
           <i class="ra ra-crossed-swords"></i>
           <span>Weapons</span>
         </a>
       </li>
-      <li class="has-sub">
-        <a href="javascript:;">
+      <li>
+        <a href="{{ route('armors.index') }}">
           <i class="ra ra-vest "></i>
           <span>Armors</span>
         </a>
       </li>
       <li >
-        <a href="javascript:;">
+        <a href="{{ route('items.index') }}">
           <i class="ra ra-heart-bottle "></i>
           <span>Items</span>
         </a>

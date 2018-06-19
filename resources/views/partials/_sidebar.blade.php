@@ -5,49 +5,49 @@
 			<li class="nav-header">Navigation</li>
 
 						<li class="">
-							<a href="javascript:;">
+							<a href="{{route('characters.public')}}">
 								<i class="ra ra-double-team"></i>
 								<span>Characters</span>
 							</a>
 						</li>
 						<li class="">
-							<a href="javascript:;">
+							<a href="{{route('skills.public')}}">
 								<i class="ra ra-spinning-sword"></i>
 								<span>Skills</span>
 							</a>
 						</li>
 						<li class="">
-							<a href="javascript:;">
+							<a href="{{route('spells.public')}}">
 								<i class="ra  ra-frostfire "></i>
 								<span>Spells</span>
 							</a>
 						</li>
 						<li class="">
-							<a href="javascript:;">
+							<a href="{{route('states.public')}}">
 								<i class="ra ra-level-three-advanced"></i>
 								<span>States</span>
 							</a>
 						</li>
 						<li class="">
-							<a href="javascript:;">
+							<a href="{{route('weapons.public')}}">
 								<i class="ra ra-crossed-swords"></i>
 								<span>Weapons</span>
 							</a>
 						</li>
 						<li class="">
-							<a href="javascript:;">
+							<a href="{{route('armors.public')}}">
 								<i class="ra ra-vest "></i>
 								<span>Armors</span>
 							</a>
 						</li>
 						<li class="">
-							<a href="javascript:;">
+							<a href="{{route('items.public')}}">
 								<i class="ra ra-heart-bottle "></i>
 								<span>Items</span>
 							</a>
 						</li>
             <li class="">
-							<a href="#">
+							<a href="{{route('map')}}">
 								<i class="ra ra-scroll-unfurled "></i>
 								<span>History / Maps</span>
 							</a>
