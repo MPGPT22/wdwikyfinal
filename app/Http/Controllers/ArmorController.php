@@ -47,7 +47,7 @@ class ArmorController extends Controller
     }
     public function indexPublic()
     {
-        $armors = DB::table('armors')->orderBy('created_at', 'desc')->get();
+        $armors = DB::table('armors')->orderBy('id', 'desc')->get();
 
         return view('pages.armors.listPublic')->withList($armors);
     }
@@ -82,7 +82,7 @@ class ArmorController extends Controller
         foreach ($equipments as $equipment) {
             array_push($equipment_name, $equipment->name);
         }
-        
+
         $this->validate($request, array(
             'name' => 'required|max:40|min:2',
             'type' => ['required',Rule::in($types_name)],

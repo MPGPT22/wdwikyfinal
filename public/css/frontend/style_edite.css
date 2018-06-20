@@ -85,6 +85,9 @@ a:link,a:visited,a:hover,a:active{
 .btn25{
 	width: 25%;
 }
+.btn20{
+	width: 20%;
+}
 .btn-50{
 	width: 50%;
 }
@@ -200,13 +203,16 @@ a:link,a:visited,a:hover,a:active{
 .input-group-addon .fa{
 	line-height: normal !important;
 }
-.btn-colormode {
+.btn-colormode:link {
 	color:white !important;
 }
 .btn-colormode:visited {
 	color:white !important;
 }
 .btn-colormode:hover {
+	color:white !important;
+}
+.btn-colormode:active {
 	color:white !important;
 }
 .page-sidebar-minified .sidebar .nav li.has-sub > .sub-menu{

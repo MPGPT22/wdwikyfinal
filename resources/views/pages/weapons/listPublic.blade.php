@@ -18,7 +18,7 @@
           <div class="container">
             <div class="row padding-ver-2">
                 <div class="col-md-12">
-                    <h1 class="title">Characters</h1>
+                    <h1 class="title">Weapons</h1>
                 </div>
                 <div class="col-md-12">
                 <div class="row">
@@ -35,51 +35,62 @@
 
             </div>
             @php
-              $newer_id = count($list) - 2;
+              $newer_id = count($list) - 1;
             @endphp
+
             <div class="row">
+
                 @if (count($list) > 0 )
                 @foreach ($list as $item)
                   @if ($item->public == 1)
-
                     <div class="col-md-3">
-                      <a style="color:#707478 !important;" href="{{ route('characters.show.public', $item->id) }}">
+                      <a style="color:#707478 !important;" href="{{ route('weapons.show.public', $item->id) }}">
                       <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                         <div class="panel-heading ui-sortable-handle">
-                          <h4 class="panel-title">
-                            @if ($item->id > $newer_id)
-                            <span class="label label-success m-r-10 pull-left">NEW</span>
+                          <h4 class="panel-title">@if ($item->id > $newer_id)
+<span class="label label-success m-r-10 pull-left">NEW</span>
                           @endif
-                          {{$item->type}} - {{$item->name}}</h4>
+                          {{$item->name}}</h4>
                         </div>
                         <div class="panel-body alignThisCenter">
-                          @if ($item->type == 'Main' or $item->type == 'Secundary' or $item->type == 'Extra' or $item->type == 'Secret')
-                           @if ($item->type == 'Secret')
-                             <i class="fas fa-question fa-3x"></i>
-
-                           @elseif($item->type == 'Extra')
-                             <i class="ra ra-player ra-5x" style="color:#bbb"></i>
-                           @else
-                             <i class="ra ra-player ra-5x"></i>
-                           @endif
-
-                          @else
-                          <i class="ra ra-monster-skull ra-5x"></i>
+                          @if ($item->type == 'Dagger')
+                            <i class="ra ra-plain-dagger"></i>
+                          @elseif ($item->type == 'Sword')
+                            <i class="ra ra-sword"></i>
+                          @elseif ($item->type == 'Flail')
+                            <i class="ra ra-spiked-mace"></i>
+                          @elseif ($item->type == 'Axe')
+                            <i class="ra ra-axe"></i>
+                          @elseif ($item->type == 'Whip')
+                            <i class="ra ra-vine-whip"></i>
+                          @elseif ($item->type == 'Cane')
+                            <i class="ra ra-crystal-wand"></i>
+                          @elseif ($item->type == 'Bow')
+                            <i class="ra ra-archer"></i>
+                          @elseif ($item->type == 'Crossbow')
+                            <i class="ra ra-crossbow"></i>
+                          @elseif ($item->type == 'Gun')
+                            <i class="ra ra-musket"></i>
+                          @elseif ($item->type == 'Claw')
+                            <i class="ra ra-flaming-claw"></i>
+                          @elseif ($item->type == 'Glove')
+                            <i class="ra ra-ra-diving-dagger"></i>
+                          @elseif ($item->type == 'Spear')
+                            <i class="ra ra-spear-head"></i>
                           @endif
 
                         </div>
                         <div class="hljs-wrapper">
                           <div class="hljs">
-                            <p>{{str_limit($item->descriptionInicial, 50) }}</p>
+                            <p>{{str_limit($item->descriptionInicial, 50)}}</p>
                           </div>
                         </div>
                       </div>
-                      </a>
+                    </a>
                     </div>
 
                   @endif
                 @endforeach
-
               @else
                 <div class="col-md-12">
                   <h4 class="lead">Unfortunatly we haven't added any content, please come back later.</h4>

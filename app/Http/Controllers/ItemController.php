@@ -47,7 +47,7 @@ class ItemController extends Controller
     }
     public function indexPublic()
     {
-        $item = DB::table('items')->orderBy('created_at', 'desc')->get();
+        $item = DB::table('items')->orderBy('id', 'desc')->get();
 
         return view('pages.items.listPublic')->withList($item);
     }
@@ -76,7 +76,7 @@ class ItemController extends Controller
         foreach ($types as $type) {
             array_push($types_name, $type->name);
         }
-        
+
         $this->validate($request, array(
             'name' => 'required|max:40|min:2',
             'type' => ['required',Rule::in($types_name)],

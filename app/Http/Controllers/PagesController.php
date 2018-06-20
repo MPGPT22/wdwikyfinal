@@ -9,13 +9,13 @@ class PagesController extends Controller{
 
 	public function getIndex(){
 
-		$character = DB::table('characters')->orderBy('updated_at', 'desc')->where('public', 1)->take(2)->get();
-		$skill = DB::table('skills')->orderBy('updated_at', 'desc')->where('public', 1)->first();
-		$spell = DB::table('spells')->orderBy('updated_at', 'desc')->where('public', 1)->first();
-		$state = DB::table('states')->orderBy('updated_at', 'desc')->where('public', 1)->first();
-		$armor = DB::table('armors')->orderBy('updated_at', 'desc')->where('public', 1)->first();
-		$item = DB::table('items')->orderBy('updated_at', 'desc')->where('public', 1)->first();
-		$weapon = DB::table('weapons')->orderBy('updated_at', 'desc')->where('public', 1)->first();
+		$character = DB::table('characters')->orderBy('id', 'desc')->where('public', 1)->take(2)->get();
+		$skill = DB::table('skills')->orderBy('id', 'desc')->where('public', 1)->first();
+		$spell = DB::table('spells')->orderBy('id', 'desc')->where('public', 1)->first();
+		$state = DB::table('states')->orderBy('id', 'desc')->where('public', 1)->first();
+		$armor = DB::table('armors')->orderBy('id', 'desc')->where('public', 1)->first();
+		$item = DB::table('items')->orderBy('id', 'desc')->where('public', 1)->first();
+		$weapon = DB::table('weapons')->orderBy('id', 'desc')->where('public', 1)->first();
 
 
 

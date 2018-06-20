@@ -18,16 +18,15 @@
           <div class="container">
             <div class="row padding-ver-2">
                 <div class="col-md-12">
-                    <h1 class="title">Characters</h1>
+                    <h1 class="title">States</h1>
                 </div>
                 <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3" style="padding-top: 25px;padding-bottom: 25px;">
                         <div class="btn-group btngroup-100">
-                              <button type="button" class="btn btn-default btn25">Data</button>
-                              <button type="button" class="btn btn-default btn25">Type</button>
-                              <button type="button" class="btn btn-default btn25">Name</button>
-                              <button type="button" class="btn btn-default btn25">Show All</button>
+                              <button type="button" class="btn btn-default btn33">Data</button>
+                              <button type="button" class="btn btn-default btn34">Name</button>
+                              <button type="button" class="btn btn-default btn33">Show All</button>
                         </div>
                     </div>
                 </div>
@@ -35,51 +34,39 @@
 
             </div>
             @php
-              $newer_id = count($list) - 2;
+              $newer_id = count($list) - 1;
             @endphp
+
             <div class="row">
+
                 @if (count($list) > 0 )
                 @foreach ($list as $item)
                   @if ($item->public == 1)
-
                     <div class="col-md-3">
-                      <a style="color:#707478 !important;" href="{{ route('characters.show.public', $item->id) }}">
+                      <a style="color:#707478 !important;" href="{{ route('states.show.public', $item->id) }}">
                       <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                         <div class="panel-heading ui-sortable-handle">
-                          <h4 class="panel-title">
-                            @if ($item->id > $newer_id)
-                            <span class="label label-success m-r-10 pull-left">NEW</span>
+                          <h4 class="panel-title">@if ($item->id > $newer_id)
+<span class="label label-success m-r-10 pull-left">NEW</span>
                           @endif
-                          {{$item->type}} - {{$item->name}}</h4>
+                          {{$item->name}}</h4>
                         </div>
                         <div class="panel-body alignThisCenter">
-                          @if ($item->type == 'Main' or $item->type == 'Secundary' or $item->type == 'Extra' or $item->type == 'Secret')
-                           @if ($item->type == 'Secret')
-                             <i class="fas fa-question fa-3x"></i>
-
-                           @elseif($item->type == 'Extra')
-                             <i class="ra ra-player ra-5x" style="color:#bbb"></i>
-                           @else
-                             <i class="ra ra-player ra-5x"></i>
-                           @endif
-
-                          @else
-                          <i class="ra ra-monster-skull ra-5x"></i>
-                          @endif
-
+                          <i class="ra ra-level-three-advanced ra-5x"></i>
                         </div>
                         <div class="hljs-wrapper">
                           <div class="hljs">
-                            <p>{{str_limit($item->descriptionInicial, 50) }}</p>
+                            <p>{{str_limit($item->descriptionInicial, 50)}}</p>
+
                           </div>
                         </div>
+
                       </div>
-                      </a>
+                    </a>
                     </div>
 
                   @endif
                 @endforeach
-
               @else
                 <div class="col-md-12">
                   <h4 class="lead">Unfortunatly we haven't added any content, please come back later.</h4>

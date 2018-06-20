@@ -47,7 +47,7 @@ class SpellController extends Controller
     }
     public function indexPublic()
     {
-        $spells = DB::table('spells')->orderBy('created_at', 'desc')->get();
+        $spells = DB::table('spells')->orderBy('id', 'desc')->get();
 
         return view('pages.spells.listPublic')->withList($spells);
     }
@@ -83,7 +83,7 @@ class SpellController extends Controller
         foreach ($element as $elements) {
             array_push($element_name, $elements->name);
         }
-        
+
         $this->validate($request, array(
             'name' => 'required|max:40|min:2',
             'scope' => ['required',Rule::in($scope_name)],

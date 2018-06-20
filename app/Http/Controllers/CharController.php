@@ -50,7 +50,7 @@ class CharController extends Controller
 
     public function indexPublic()
     {
-        $chars = DB::table('characters')->orderBy('created_at', 'desc')->get();
+        $chars = DB::table('characters')->orderBy('id', 'desc')->get();
 
         return view('pages.chars.listPublic')->withList($chars);
     }

@@ -370,7 +370,7 @@ class DatabaseSeeder extends Seeder
     [
       'public' => true,
       'name' => 'bucket',
-      'type' => 'General Item',
+      'type' => 'Regular Item',
       'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     ],
     ]);

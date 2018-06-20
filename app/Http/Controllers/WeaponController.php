@@ -47,7 +47,7 @@ class WeaponController extends Controller
     }
     public function indexPublic()
     {
-        $weapons = DB::table('weapons')->orderBy('created_at', 'desc')->get();
+        $weapons = DB::table('weapons')->orderBy('id', 'desc')->get();
 
         return view('pages.weapons.listPublic')->withList($weapons);
     }
@@ -76,7 +76,7 @@ class WeaponController extends Controller
         foreach ($types as $type) {
             array_push($types_name, $type->name);
         }
-        
+
         $this->validate($request, array(
             'name' => 'required|max:40|min:2',
             'type' => ['required',Rule::in($types_name)],

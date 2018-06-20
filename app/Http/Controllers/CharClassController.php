@@ -48,7 +48,7 @@ class CharClassController extends Controller
     }
     public function indexPublic()
     {
-        $classes = DB::table('char_classes')->orderBy('created_at', 'desc')->get();
+        $classes = DB::table('char_classes')->orderBy('id', 'desc')->get();
 
         return view('pages.classes.listPublic')->withList($classes);
     }
@@ -83,7 +83,7 @@ class CharClassController extends Controller
             'AGI' => 'required',
 
             ));
-      
+
 
         $HP = preg_replace("/([A-Za-z])+/", 'i' , $request->HP);
         $MP = preg_replace("/([A-Za-z])+/", 'i' , $request->MP);
@@ -93,7 +93,7 @@ class CharClassController extends Controller
         $MDEF = preg_replace("/([A-Za-z])+/", 'i' , $request->MDEF);
         $AGI = preg_replace("/([A-Za-z])+/", 'i' , $request->AGI);
 
-        
+
         $class = new CharClasse;
 
 

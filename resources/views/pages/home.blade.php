@@ -58,15 +58,15 @@
                         @else
                         <i class="ra ra-monster-skull ra-5x"></i>
                         @endif
-                        
+
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
                           <p>{{str_limit($character->descriptionInicial, 50) }}</p>
                           <br>
                           <div class="btn-group btn100">
-                            <a href="" class="btn btn-info btn-50 btn-colormode">Know More</a>
-                            <a href="" class="btn btn-primary btn-50 btn-colormode">Characters List</a>
+                            <a href="{{route('characters.show.public',$character->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
+                            <a href="{{route('characters.public')}}" class="btn btn-primary btn-50 btn-colormode">Characters List</a>
                           </div>
                         </div>
                       </div>
@@ -99,15 +99,15 @@
                         @elseif ($skills->element == 'Darkness')
                           <i class="ra ra-sunbeams ra-5x" style="color:#282828;"></i>
                         @endif
-                        
+
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
                           <p>{{str_limit($skills->descriptionInicial, 50)}}</p>
                           <br>
                           <div class="btn-group btn100">
-                            <a href="" class="btn btn-info btn-50 btn-colormode">Know More</a>
-                            <a href="" class="btn btn-primary btn-50 btn-colormode">Skill List</a>
+                            <a href="{{route('skills.show.public',$skills->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
+                            <a href="{{route('skills.public')}}" class="btn btn-primary btn-50 btn-colormode">Skill List</a>
                           </div>
                         </div>
                       </div>
@@ -139,15 +139,15 @@
                         @elseif ($spells->element == 'Darkness')
                           <i class="ra ra-sunbeams ra-5x" style="color:#282828;"></i>
                         @endif
-                        
+
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
                           <p>{{str_limit($spells->descriptionInicial, 50)}}</p>
                           <br>
                           <div class="btn-group btn100">
-                            <a href="" class="btn btn-info btn-50 btn-colormode">Know More</a>
-                            <a href="" class="btn btn-primary btn-50 btn-colormode">Spell List</a>
+                            <a href="{{route('spells.show.public',$spells->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
+                            <a href="{{route('spells.public')}}" class="btn btn-primary btn-50 btn-colormode">Spell List</a>
                           </div>
                         </div>
                       </div>
@@ -163,15 +163,15 @@
                       </div>
                       <div class="panel-body alignThisCenter">
                           <i class="ra ra-level-three-advanced ra-5x"></i>
-                        
+
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
                           <p>{{str_limit($states->descriptionInicial, 50)}}</p>
                           <br>
                           <div class="btn-group btn100">
-                            <a href="" class="btn btn-info btn-50 btn-colormode">Know More</a>
-                            <a href="" class="btn btn-primary btn-50 btn-colormode">States List</a>
+                            <a href="{{route('states.show.public')}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
+                            <a href="{{route('states.public')}}" class="btn btn-primary btn-50 btn-colormode">States List</a>
                           </div>
                         </div>
                       </div>
@@ -211,15 +211,15 @@
                         @elseif ($weapons->type == 'Spear')
                           <i class="ra ra-spear-head"></i>
                         @endif
-                        
+
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
                           <p>{{str_limit($weapons->descriptionInicial, 50)}}</p>
                           <br>
                           <div class="btn-group btn100">
-                            <a href="" class="btn btn-info btn-50 btn-colormode">Know More</a>
-                            <a href="" class="btn btn-primary btn-50 btn-colormode">Weapon List</a>
+                            <a href="{{route('weapons.show.public',$weapons->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
+                            <a href="{{route('weapons.public')}}" class="btn btn-primary btn-50 btn-colormode">Weapon List</a>
                           </div>
                         </div>
                       </div>
@@ -251,15 +251,15 @@
                           @endif
 
                         @endif
-                        
+
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
                           <p>{{str_limit($armors->descriptionInicial, 50)}}</p>
                           <br>
                           <div class="btn-group btn100">
-                            <a href="" class="btn btn-info btn-50 btn-colormode">Know More</a>
-                            <a href="" class="btn btn-primary btn-50 btn-colormode">Weapon List</a>
+                            <a href="{{route('armors.show.public',$armors->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
+                            <a href="{{route('armors.public')}}" class="btn btn-primary btn-50 btn-colormode">Weapon List</a>
                           </div>
                         </div>
                       </div>
@@ -279,15 +279,15 @@
                         @elseif ($items->type == 'Key Item')
                           <i class="ra ra-key"></i>
                         @endif
-                        
+
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
                           <p>{{str_limit($items->descriptionInicial, 50)}}</p>
                           <br>
                           <div class="btn-group btn100">
-                            <a href="" class="btn btn-info btn-50 btn-colormode">Know More</a>
-                            <a href="" class="btn btn-primary btn-50 btn-colormode">Item List</a>
+                            <a href="{{route('items.show.public',$items->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
+                            <a href="{{route('items.public')}}" class="btn btn-primary btn-50 btn-colormode">Item List</a>
                           </div>
                         </div>
                       </div>
@@ -295,7 +295,7 @@
                   </div>
               @endif
 
-              
+
 
               @endif
 

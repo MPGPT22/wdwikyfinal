@@ -52,12 +52,6 @@
 								<span>History / Maps</span>
 							</a>
 						</li>
-            <li class="">
-							<a href="{{route('about')}}">
-								<i class="far fa-list-alt"></i>
-								<span>About</span>
-							</a>
-						</li>
 
 
 								<!-- begin sidebar minify button -->

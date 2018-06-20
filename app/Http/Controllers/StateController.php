@@ -47,7 +47,7 @@ class StateController extends Controller
     }
     public function indexPublic()
     {
-        $states = DB::table('states')->orderBy('created_at', 'desc')->get();
+        $states = DB::table('states')->orderBy('id', 'desc')->get();
 
         return view('pages.states.listPublic')->withList($states);
     }
