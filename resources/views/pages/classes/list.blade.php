@@ -35,11 +35,8 @@
                   <div class=" row-right">
                     {!! Form::open(['route'=>['classes.destroy', $item->id], 'method' => 'DELETE', 'class' => 'btn100']) !!}
                     <div class="btn-group btn100">
-                      <a href="{{route('classes.edit', $item->id)}}" class="btn btn-primary btn-colormode btn-50">
-                            <i class="fas fa-cog"></i>
-                        </a>
-                        
-                        {!! Form::submit('X', ['class' => 'btn btn-danger btn-colormode btn-50']) !!}
+                      
+                      <button type="submit" style="margin-left: auto;margin-right: auto;" class='btn btn-danger btn-colormode btn-50'><i style="font-size: 20px;" class="fa fa-trash-alt"></i></button>
                         
                     </div>
                     {!! Form::close() !!}

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 
+use Carbon\Carbon;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\weapon;
@@ -47,9 +49,10 @@ class WeaponController extends Controller
     }
     public function indexPublic()
     {
-        $weapons = DB::table('weapons')->orderBy('id', 'desc')->get();
+        $now = Carbon::now();
+        $weapons = DB::table('weapons')->orderBy('created_at', 'desc')->get();
 
-        return view('pages.weapons.listPublic')->withList($weapons);
+        return view('pages.weapons.listPublic')->withList($weapons)->withNow($now);
     }
 
     /**
@@ -122,11 +125,15 @@ class WeaponController extends Controller
      */
     public function show($id)
     {
-        //
+        $weapon = weapon::find($id);
+
+        return view('pages.weapons.item')->withItem($weapon);
     }
     public function showPublic($id)
     {
-        //
+        $weapon = weapon::find($id);
+
+        return view('pages.weapons.itemPublic')->withItem($weapon);
     }
 
     /**

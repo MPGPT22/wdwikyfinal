@@ -1,7 +1,7 @@
 @extends('main')
 
 
-@section('title', '- Characters')
+@section('title', '- Items')
 
 @section('stylesheet')
 
@@ -20,7 +20,7 @@
                 <div class="col-md-12">
                     <h1 class="title">Items</h1>
                 </div>
-                <div class="col-md-12">
+                {{-- <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3" style="padding-top: 25px;padding-bottom: 25px;">
                         <div class="btn-group btngroup-100">
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-              </div>
+              </div> --}}
 
             </div>
             @php
@@ -48,9 +48,9 @@
                         <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                           <div class="panel-heading ui-sortable-handle">
                             <h4 class="panel-title">
-                              @if ($item->id > $newer_id)
-                                <span class="label label-success m-r-10 pull-left">NEW</span>
-                            @endif
+                              @if ($now->diffInDays($item->created_at, false) > -7 )
+                            <span class="label label-success m-r-10 pull-left">NEW</span>
+                          @endif
                             {{$item->name}}</h4>
                           </div>
                           <div class="panel-body alignThisCenter">

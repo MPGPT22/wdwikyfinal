@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 
+use Carbon\Carbon;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\spell;
@@ -47,9 +49,10 @@ class SpellController extends Controller
     }
     public function indexPublic()
     {
-        $spells = DB::table('spells')->orderBy('id', 'desc')->get();
+        $now = Carbon::now();
+        $spells = DB::table('spells')->orderBy('created_at', 'desc')->get();
 
-        return view('pages.spells.listPublic')->withList($spells);
+        return view('pages.spells.listPublic')->withList($spells)->withNow($now);
     }
 
     /**
@@ -132,11 +135,15 @@ class SpellController extends Controller
      */
     public function show($id)
     {
-        //
+        $spell = spell::find($id);
+
+        return view('pages.spells.item')->withItem($spell);
     }
     public function showPublic($id)
     {
-        //
+        $spell = spell::find($id);
+
+        return view('pages.spells.itemPublic')->withItem($spell);
     }
 
     /**

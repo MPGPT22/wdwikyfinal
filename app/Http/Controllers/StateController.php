@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 
+use Carbon\Carbon;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\state;
@@ -47,9 +49,10 @@ class StateController extends Controller
     }
     public function indexPublic()
     {
-        $states = DB::table('states')->orderBy('id', 'desc')->get();
+        $now = Carbon::now();
+        $states = DB::table('states')->orderBy('created_at', 'desc')->get();
 
-        return view('pages.states.listPublic')->withList($states);
+        return view('pages.states.listPublic')->withList($states)->withNow($now);
     }
 
     /**
@@ -112,11 +115,15 @@ class StateController extends Controller
      */
     public function show($id)
     {
-        //
+        $state = state::find($id);
+
+        return view('pages.states.item')->withItem($state);
     }
     public function showPublic($id)
     {
-        //
+        $state = state::find($id);
+
+        return view('pages.states.itemPublic')->withItem($state);
     }
 
     /**

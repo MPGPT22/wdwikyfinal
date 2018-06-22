@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 
+use Carbon\Carbon;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\armor;
@@ -47,9 +49,10 @@ class ArmorController extends Controller
     }
     public function indexPublic()
     {
-        $armors = DB::table('armors')->orderBy('id', 'desc')->get();
+        $now = Carbon::now();
+        $armors = DB::table('armors')->orderBy('created_at', 'desc')->get();
 
-        return view('pages.armors.listPublic')->withList($armors);
+        return view('pages.armors.listPublic')->withList($armors)->withNow($now);
     }
 
     /**
@@ -131,11 +134,15 @@ class ArmorController extends Controller
      */
     public function show($id)
     {
-        //
+        $armor = armor::find($id);
+
+        return view('pages.armors.item')->withItem($armor);
     }
     public function showPublic($id)
     {
-        //
+        $armor = armor::find($id);
+
+        return view('pages.armors.itemPublic')->withItem($armor);
     }
 
     /**

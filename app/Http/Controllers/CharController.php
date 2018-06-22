@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 
+use Carbon\Carbon;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Characters;
@@ -26,6 +28,7 @@ class CharController extends Controller
     }
     public function index()
     {
+        $now = Carbon::now();
         $chars = DB::table('characters')->orderBy('created_at', 'desc')->get();
 
         return view('pages.chars.list')->withList($chars);
@@ -50,9 +53,10 @@ class CharController extends Controller
 
     public function indexPublic()
     {
-        $chars = DB::table('characters')->orderBy('id', 'desc')->get();
+        $now = Carbon::now();
+        $chars = DB::table('characters')->orderBy('created_at', 'desc')->get();
 
-        return view('pages.chars.listPublic')->withList($chars);
+        return view('pages.chars.listPublic')->withList($chars)->withNow($now);
     }
 
     /**
@@ -155,11 +159,15 @@ class CharController extends Controller
      */
     public function show($id)
     {
-        //
+        $char = Characters::find($id);
+
+        return view('pages.chars.item')->withItem($char);
     }
     public function showPublic($id)
     {
-        //
+        $char = Characters::find($id);
+
+        return view('pages.chars.itemPublic')->withItem($char);
     }
 
 

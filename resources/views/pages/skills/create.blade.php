@@ -1,6 +1,6 @@
 @extends('Admin')
 
-@section('title', '- Characters | Create')
+@section('title', '- Skills | Create')
 
 @section('stylesheet')
 

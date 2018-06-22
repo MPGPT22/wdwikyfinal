@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 
+use Carbon\Carbon;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\item;
@@ -47,9 +49,10 @@ class ItemController extends Controller
     }
     public function indexPublic()
     {
-        $item = DB::table('items')->orderBy('id', 'desc')->get();
+        $now = Carbon::now();
+        $item = DB::table('items')->orderBy('created_at', 'desc')->get();
 
-        return view('pages.items.listPublic')->withList($item);
+        return view('pages.items.listPublic')->withList($item)->withNow($now);
     }
 
     /**
@@ -122,11 +125,15 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        //
+        $items = item::find($id);
+
+        return view('pages.items.item')->withItem($items);
     }
     public function showPublic($id)
     {
-        //
+        $items = item::find($id);
+
+        return view('pages.items.itemPublic')->withItem($items);
     }
 
     /**

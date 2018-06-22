@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 
+use Carbon\Carbon;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\skill;
@@ -47,9 +49,10 @@ class SkillController extends Controller
     }
     public function indexPublic()
     {
-        $skills = DB::table('skills')->orderBy('id', 'desc')->get();
+        $now = Carbon::now();
+        $skills = DB::table('skills')->orderBy('created_at', 'desc')->get();
 
-        return view('pages.skills.listPublic')->withList($skills);
+        return view('pages.skills.listPublic')->withList($skills)->withNow($now);
     }
 
     /**
@@ -132,11 +135,15 @@ class SkillController extends Controller
      */
     public function show($id)
     {
-        //
+        $skills = skill::find($id);
+
+        return view('pages.skills.item')->withItem($skill);
     }
     public function showPublic($id)
     {
-        //
+        $skills = skill::find($id);
+
+        return view('pages.skills.itemPublic')->withItem($skills);
     }
 
     /**

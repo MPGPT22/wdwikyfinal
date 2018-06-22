@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -270,6 +271,7 @@ class DatabaseSeeder extends Seeder
       'classForth' => 'Astrapomancer',
       'element' => 'Thunder',
       'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      'created_at' => Carbon::now()->subDays(1),
     ],
     [
       'public' => true,
@@ -282,6 +284,7 @@ class DatabaseSeeder extends Seeder
       'classForth' => 'Demon Lord',
       'element' => 'Darkenss',
       'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      'created_at' => Carbon::now()->subDays(4),
     ],
     [
       'public' => true,
@@ -294,6 +297,7 @@ class DatabaseSeeder extends Seeder
       'classForth' => null,
       'element' => 'Physical',
       'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      'created_at' => Carbon::now()->subDays(10),
     ],
     ]);
 
@@ -305,6 +309,7 @@ class DatabaseSeeder extends Seeder
       'scope' => '1 Enemy',
       'element' => 'Physical',
       'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      'created_at' => Carbon::now()->subDays(1),
     ],
     [
       'public' => true,
@@ -312,6 +317,7 @@ class DatabaseSeeder extends Seeder
       'scope' => 'User',
       'element' => 'Thunder',
       'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      'created_at' => Carbon::now()->subDays(5),
     ],
     [
       'public' => true,
@@ -319,6 +325,7 @@ class DatabaseSeeder extends Seeder
       'scope' => 'all Enemies',
       'element' => 'Fire',
       'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      'created_at' => Carbon::now()->subDays(10),
     ],
     ]);
     DB::table('spells')->insert([
@@ -328,6 +335,7 @@ class DatabaseSeeder extends Seeder
       'scope' => '2 Random Enemies',
       'element' => 'Water',
       'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      'created_at' => Carbon::now()->subDays(1),
     ],
     ]);
     DB::table('weapons')->insert([
@@ -336,12 +344,14 @@ class DatabaseSeeder extends Seeder
       'type' => 'Sword',
       'name' => 'Dull Sword',
       'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      'created_at' => Carbon::now()->subHours(1),
     ],
     [
       'public' => true,
       'type' => 'Axe',
       'name' => 'Doom Axe',
       'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      'created_at' => Carbon::now()->subDays(5),
     ],
     ]);
     DB::table('armors')->insert([
@@ -351,6 +361,7 @@ class DatabaseSeeder extends Seeder
       'equipmentType' => 'Head',
       'name' => 'Bronze Helmet',
       'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      'created_at' => Carbon::now()->subDays(1),
     ],
     [
       'public' => true,
@@ -358,6 +369,7 @@ class DatabaseSeeder extends Seeder
       'equipmentType' => 'Shield',
       'name' => 'Iron Buckler',
       'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      'created_at' => Carbon::now()->subDays(5),
     ],
     ]);
     DB::table('items')->insert([
@@ -366,12 +378,14 @@ class DatabaseSeeder extends Seeder
       'name' => 'Key',
       'type' => 'Key Item',
       'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      'created_at' => Carbon::now()->subHours(1),
     ],
     [
       'public' => true,
       'name' => 'bucket',
       'type' => 'Regular Item',
       'descriptionInicial' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      'created_at' => Carbon::now()->subDays(5),
     ],
     ]);
 

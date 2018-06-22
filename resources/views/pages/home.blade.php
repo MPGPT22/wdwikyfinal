@@ -42,7 +42,9 @@
                   <div class="col-md-3">
                     <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                       <div class="panel-heading ui-sortable-handle">
-                        <h4 class="panel-title"><span class="label label-success m-r-10 pull-left">NEW</span> {{$character->type}} - {{$character->name}}</h4>
+                        <h4 class="panel-title">@if ($now->diffInDays($character->created_at, false) > -7 )
+                            <span class="label label-success m-r-10 pull-left">NEW</span>
+                          @endif {{$character->type}} - {{$character->name}}</h4>
                       </div>
                       <div class="panel-body alignThisCenter">
                         @if ($character->type == 'Main' or $character->type == 'Secundary' or $character->type == 'Extra' or $character->type == 'Secret')
@@ -79,7 +81,9 @@
                   <div class="col-md-3">
                     <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                       <div class="panel-heading ui-sortable-handle">
-                        <h4 class="panel-title"><span class="label label-success m-r-10 pull-left">NEW</span> {{$skills->name}}</h4>
+                        <h4 class="panel-title">@if ($now->diffInDays($skills->created_at, false) > -7 )
+                            <span class="label label-success m-r-10 pull-left">NEW</span>
+                          @endif {{$skills->name}}</h4>
                       </div>
                       <div class="panel-body alignThisCenter">
                         @if ($skills->element == 'Physical')
@@ -119,7 +123,9 @@
                   <div class="col-md-3">
                     <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                       <div class="panel-heading ui-sortable-handle">
-                        <h4 class="panel-title"><span class="label label-success m-r-10 pull-left">NEW</span> {{$spells->name}}</h4>
+                        <h4 class="panel-title">@if ($now->diffInDays($spells->created_at, false) > -7 )
+                            <span class="label label-success m-r-10 pull-left">NEW</span>
+                          @endif {{$spells->name}}</h4>
                       </div>
                       <div class="panel-body alignThisCenter">
                         @if ($spells->element == 'Physical')
@@ -159,7 +165,9 @@
                   <div class="col-md-3">
                     <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                       <div class="panel-heading ui-sortable-handle">
-                        <h4 class="panel-title"><span class="label label-success m-r-10 pull-left">NEW</span> {{$states->name}}</h4>
+                        <h4 class="panel-title">@if ($now->diffInDays($states->created_at, false) > -7 )
+                            <span class="label label-success m-r-10 pull-left">NEW</span>
+                          @endif {{$states->name}}</h4>
                       </div>
                       <div class="panel-body alignThisCenter">
                           <i class="ra ra-level-three-advanced ra-5x"></i>
@@ -183,7 +191,9 @@
                   <div class="col-md-3">
                     <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                       <div class="panel-heading ui-sortable-handle">
-                        <h4 class="panel-title"><span class="label label-success m-r-10 pull-left">NEW</span> {{$weapons->name}}</h4>
+                        <h4 class="panel-title">@if ($now->diffInDays($weapons->created_at, false) > -7 )
+                            <span class="label label-success m-r-10 pull-left">NEW</span>
+                          @endif {{$weapons->name}}</h4>
                       </div>
                       <div class="panel-body alignThisCenter">
                         @if ($weapons->type == 'Dagger')
@@ -231,7 +241,9 @@
                   <div class="col-md-3">
                     <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                       <div class="panel-heading ui-sortable-handle">
-                        <h4 class="panel-title"><span class="label label-success m-r-10 pull-left">NEW</span> {{$armors->name}}</h4>
+                        <h4 class="panel-title">@if ($now->diffInDays($armors->created_at, false) > -7 )
+                            <span class="label label-success m-r-10 pull-left">NEW</span>
+                          @endif {{$armors->name}}</h4>
                       </div>
                       <div class="panel-body alignThisCenter">
                         @if ($armors->type == 'Small Shield' or $armors->type == 'Large Shield' or $armors->type == 'Accessory')
@@ -271,7 +283,9 @@
                   <div class="col-md-3">
                     <div class="panel panel-inverse boxes" data-sortable-id="ui-widget-5" data-init="true">
                       <div class="panel-heading ui-sortable-handle">
-                        <h4 class="panel-title"><span class="label label-success m-r-10 pull-left">NEW</span> {{$items->name}}</h4>
+                        <h4 class="panel-title">@if ($now->diffInDays($items->created_at, false) > -7 )
+                            <span class="label label-success m-r-10 pull-left">NEW</span>
+                          @endif {{$items->name}}</h4>
                       </div>
                       <div class="panel-body alignThisCenter">
                         @if ($items->type == 'Regular Item')
