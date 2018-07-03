@@ -11,14 +11,6 @@
   </div>
   <ul class="navbar-nav navbar-right float-right-now">
     <li>
-      <form class="navbar-form">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Enter keyword">
-          <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
-        </div>
-      </form>
-    </li>
-    <li>
       <button id="showSideBar" class="btn navbar-btn substitute noBackground">
         <i class="fas fa-bars fa-lg"></i>
       </button>

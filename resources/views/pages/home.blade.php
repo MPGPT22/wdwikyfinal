@@ -320,13 +320,13 @@
           <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Wrapper for slides -->
             <div class="carousel-inner ">
-              <div class="item parallax active" style="background-image: url({{asset('img/sample.png')}});height: 40vh;">
+              <div class="item parallax active" style="background-image: url({{asset('img/lower_paralax_1.png')}});height: 40vh;">
               </div>
 
-              <div class="item parallax" style="background-image: url({{asset('img/sample.png')}});height: 40vh;">
+              <div class="item parallax" style="background-image: url({{asset('img/lower_paralax_2.png')}});height: 40vh;">
               </div>
 
-              <div class="item parallax" style="background-image: url({{asset('img/sample.png')}});height: 40vh;">
+              <div class="item parallax" style="background-image: url({{asset('img/lower_paralax_3.png')}});height: 40vh;">
               </div>
             </div>
             <div class="container-fluid centered-parallax-content-no-bg alignThisCenter">
@@ -336,15 +336,15 @@
                 @guest
                   <div class="btn-group download-group">
                     <a class="btn btn-primary btn33 btn-colormode"><i class="fab fa-windows"></i> Windows</a>
-                    <a class="btn btn-info btn34 btn-colormode"><i class="fab fa-apple"></i> Mac</a>
-                    <a class="btn btn-lime btn33 btn-colormode"><i class="fab fa-android"></i> Android</a>
+                    <a class="btn btn-info btn34 btn-colormode" disabled><i class="fab fa-apple"></i> Mac</a>
+                    <a class="btn btn-lime btn33 btn-colormode" disabled><i class="fab fa-android"></i> Android</a>
                   </div>
                 @else
                   <div class="btn-group download-group">
                     <a class="btn btn-primary btn25 btn-colormode"><i class="fab fa-windows"></i> Windows</a>
-                    <a class="btn btn-info btn25 btn-colormode"><i class="fab fa-apple"></i> Mac</a>
-                    <a class="btn btn-lime btn25 btn-colormode"><i class="fab fa-android"></i> Android</a>
-                    <a class="btn btn-danger btn25 btn-colormode"><i class="fab fa-chrome"></i> Browser</a>
+                    <a class="btn btn-info btn25 btn-colormode" disabled><i class="fab fa-apple"></i> Mac</a>
+                    <a class="btn btn-lime btn25 btn-colormode" disabled><i class="fab fa-android"></i> Android</a>
+                    <a class="btn btn-danger btn25 btn-colormode" disabled><i class="fab fa-chrome"></i> Browser</a>
                   </div>
                 @endguest
               </div>
