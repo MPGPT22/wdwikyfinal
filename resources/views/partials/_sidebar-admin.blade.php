@@ -6,12 +6,6 @@
 
       @if (Auth::user()->adminRole == "GameMaster")
 
-      <li >
-        <a href="javascript:;">
-          <i class="ra ra-player "></i>
-          <span>Admins</span>
-        </a>
-      </li>
       <li class="has-sub ">
         <a href="javascript:;">
           <b class="caret"></b>

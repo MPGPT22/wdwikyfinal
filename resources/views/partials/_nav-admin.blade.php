@@ -7,7 +7,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/"><b>WDWiky</b> Backoffice</a>
+    <a class="navbar-brand" href="/"><b>WDWiky</b> Backend</a>
   </div>
   <ul class="navbar-nav navbar-right float-right-now">
     <li class="dropdown navbar-user">

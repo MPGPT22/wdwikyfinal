@@ -335,16 +335,16 @@
                 <br>
                 @guest
                   <div class="btn-group download-group">
-                    <a class="btn btn-primary btn33 btn-colormode"><i class="fab fa-windows"></i> Windows</a>
-                    <a class="btn btn-info btn34 btn-colormode" disabled><i class="fab fa-apple"></i> Mac</a>
-                    <a class="btn btn-lime btn33 btn-colormode" disabled><i class="fab fa-android"></i> Android</a>
+                    <a href="{{asset('WD_win.zip')}}" class="btn btn-primary btn33 btn-colormode" download><i class="fab fa-windows"></i> Windows</a>
+                    <button class="btn btn-info btn34 btn-colormode" disabled><i class="fab fa-apple"></i> Mac</button>
+                    <button class="btn btn-lime btn33 btn-colormode" disabled><i class="fab fa-android"></i> Android</button>
                   </div>
                 @else
                   <div class="btn-group download-group">
-                    <a class="btn btn-primary btn25 btn-colormode"><i class="fab fa-windows"></i> Windows</a>
-                    <a class="btn btn-info btn25 btn-colormode" disabled><i class="fab fa-apple"></i> Mac</a>
-                    <a class="btn btn-lime btn25 btn-colormode" disabled><i class="fab fa-android"></i> Android</a>
-                    <a class="btn btn-danger btn25 btn-colormode" disabled><i class="fab fa-chrome"></i> Browser</a>
+                    <a href="{{asset('WD_win.zip')}}" class="btn btn-primary btn33 btn-colormode" download><i class="fab fa-windows"></i> Windows</a>
+                    <button class="btn btn-info btn25 btn-colormode" disabled><i class="fab fa-apple"></i> Mac</button>
+                    <button class="btn btn-lime btn25 btn-colormode" disabled><i class="fab fa-android"></i> Android</button>
+                    <button class="btn btn-danger btn25 btn-colormode" disabled><i class="fab fa-chrome"></i> Browser</button>
                   </div>
                 @endguest
               </div>

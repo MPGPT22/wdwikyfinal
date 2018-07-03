@@ -68,6 +68,18 @@ class CharController extends Controller
     {
         return view('pages.chars.create');
     }
+    public function create_simple()
+    {
+        $element = DB::table('elements')->get();
+        $class = DB::table('char_classes')->orderBy('evo_lvl', 'asc')->get();
+        return view('pages.chars.create_simple')->withElements($element)->withClasses($class);
+    }
+    public function create_complex()
+    {
+        $element = DB::table('elements')->get();
+        $class = DB::table('char_classes')->orderBy('evo_lvl', 'asc')->get();
+        return view('pages.chars.create_complex')->withElements($element)->withClasses($class);
+    }
 
     /**
      * Store a newly created resource in storage.
