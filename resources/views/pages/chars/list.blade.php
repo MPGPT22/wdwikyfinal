@@ -35,9 +35,15 @@
                   <div class=" row-right">
                     {!! Form::open(['route'=>['characters.destroy', $item->id], 'method' => 'DELETE', 'class' => 'btn100']) !!}
                     <div class="btn-group btn100">
-                        
+                        @if ($item->evolClass == 0)
+                          <a href="{{route('char.edit.simple', $item->id)}}"  style="margin-left: auto;margin-right: auto;" class='btn btn-info btn-colormode btn-50'><i style="font-size: 20px;" class="fa fa-cog"></i></a>
+                        @else
+                          <a href="{{route('char.edit.complex', $item->id)}}"  style="margin-left: auto;margin-right: auto;" class='btn btn-info btn-colormode btn-50'><i style="font-size: 20px;" class="fa fa-cog"></i></a>
+                        @endif
+
+
                         <button type="submit" style="margin-left: auto;margin-right: auto;" class='btn btn-danger btn-colormode btn-50'><i style="font-size: 20px;" class="fa fa-trash-alt"></i></button>
-                        
+
                     </div>
                     {!! Form::close() !!}
                   </div>
@@ -51,7 +57,7 @@
               <br>
               <a class="btn btn-primary" href="{{ route('characters.create') }}">Go To Create</a>
             </div>
-              
+
             @else
             <div class="col-md-12 title">
               <h3>We don't have any characters created. Wait until someone creates one.</h3>
@@ -59,6 +65,6 @@
             </div>
             @endif
           @endif
-          
+
         </div>
 @endsection

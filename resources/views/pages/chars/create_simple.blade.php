@@ -22,10 +22,10 @@
 @section('content')
         <div class="col-md-12">
           <div class="row" style="margin-bottom: 10px;">
-            <div class="col-md-1">
+            <div class="col-lg-1 col-sm-12">
               <a href="{{ route('characters.create') }}" class="btn btn-warning btn-block">Go Back</a>
             </div>
-            <div class="col-md-2 col-md-offset-9">
+            <div class="col-lg-2 col-md-offset-9 col-sm-12">
               <a href="{{ route('char.create.complex') }}" class="btn btn-primary btn-block">Change to Complex</a>
             </div>
           </div>
@@ -152,7 +152,7 @@
                           <div class="row">
                             <!-- begin col-8 -->
                             <div class="col-md-8 col-md-offset-2">
-                              <legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">Describe the Character.<br><small><b>His/Her aspect, his/her story, his/her power !</b></small></legend>
+                              <legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">Describe the Character.<br><small><b>His/Her personality, his/her physical appearance, his/her story, his/her power !</b></small></legend>
                               <!-- begin form-group -->
                               <div class="form-group m-b-10">
                                 <label class="col-form-label text-md-right">Description</label>

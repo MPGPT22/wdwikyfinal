@@ -181,7 +181,7 @@ class CharController extends Controller
 
             $character->type = $request->type;
             $character->name = $request->name;
-            $character->evolClass = $evolClass;
+            $character->evolClass = $request->evol_class;
             $character->classStart = $request->class;
             $character->classSecund = $request->class_2;
             $character->classThird = $request->class_3;
@@ -225,10 +225,23 @@ class CharController extends Controller
      */
     public function edit($id)
     {
+
+    }
+
+    public function editSimple($id)
+    {
       $item = Characters::find($id);
       $element = DB::table('elements')->get();
       $class = DB::table('char_classes')->orderBy('evo_lvl', 'asc')->get();
-      return view('pages.chars.create_simple')->withItem($item)->withElements($element)->withClasses($class);
+      return view('pages.chars.edit_simple')->withItem($item)->withElements($element)->withClasses($class);
+    }
+
+    public function editComplex($id)
+    {
+      $item = Characters::find($id);
+      $element = DB::table('elements')->get();
+      $class = DB::table('char_classes')->orderBy('evo_lvl', 'asc')->get();
+      return view('pages.chars.edit_complex')->withItem($item)->withElements($element)->withClasses($class);
     }
 
     /**

@@ -42,6 +42,8 @@ Route::get('/', 'AdminController@index')->name('admin.dashboard');
 Route::resource('characters', 'CharController');
 Route::get('/characters/create/simple', 'CharController@create_simple')->name('char.create.simple');
 Route::get('/characters/create/complex', 'CharController@create_complex')->name('char.create.complex');
+Route::get('/characters/{id}/edit/simple', 'CharController@editSimple')->name('char.edit.simple');
+Route::get('/characters/{id}/edit/complex', 'CharController@editComplex')->name('char.edit.complex');
 Route::get('/characters/set_public/{id}', 'CharController@set_public')->name('char.set.public');
 Route::get('/characters/set_not_public/{id}', 'CharController@set_not_public')->name('char.set.not.public');
 Route::resource('classes', 'CharClassController');

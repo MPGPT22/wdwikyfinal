@@ -18,8 +18,8 @@
   <div class="centered-parallax-content">
   <h2 class="title">Welcome to</h2>
   <h1 class="title">World Dawn Wiki</h1>
-  <p class="lead">Here you can get any information about the developement of the game and get to know what was added/modified lately.</p>
-  <p class="lead">The GameMaster hopes that you like this little present.</p>
+  <p class="lead">Here you can get some information about the developement of the game and get to know what has been added/modified lately.</p>
+  <p class="lead">The GameMaster hopes that you like this little gift.</p>
   </div>
 </div>
 
@@ -341,10 +341,10 @@
                   </div>
                 @else
                   <div class="btn-group download-group">
-                    <a href="{{asset('WD_win.zip')}}" class="btn btn-primary btn33 btn-colormode" download><i class="fab fa-windows"></i> Windows</a>
-                    <button class="btn btn-info btn25 btn-colormode" disabled><i class="fab fa-apple"></i> Mac OS</button>
-                    <button class="btn btn-lime btn25 btn-colormode" disabled><i class="fab fa-android"></i> Android</button>
-                    <button class="btn btn-danger btn25 btn-colormode" disabled><i class="fab fa-chrome"></i> Browser</button>
+                    <a style="min-width: 113px;" href="{{asset('WD_win.zip')}}" class="btn btn-primary btn25 btn-colormode" download><i class="fab fa-windows"></i> Windows</a>
+                    <button style="min-width: 113px;" class="btn btn-info btn25 btn-colormode" disabled><i class="fab fa-apple"></i> Mac OS</button>
+                    <button style="min-width: 113px;" class="btn btn-lime btn25 btn-colormode" disabled><i class="fab fa-android"></i> Android</button>
+                    <button style="min-width: 113px;" class="btn btn-danger btn25  btn-colormode" disabled><i class="fab fa-chrome"></i> Browser</button>
                   </div>
                 @endguest
               </div>

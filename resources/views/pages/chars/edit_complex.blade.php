@@ -23,10 +23,10 @@
         <div class="col-md-12">
           <div class="row" style="margin-bottom: 10px;">
             <div class="col-lg-1 col-sm-12">
-              <a style="min-width:90px;" href="{{ route('characters.create') }}" class="btn btn-warning btn-block">Go Back</a>
+              <a style="min-width:90px;" href="{{ route('characters.index') }}" class="btn btn-warning btn-block">Go Back</a>
             </div>
             <div class="col-lg-2 col-md-offset-9 col-sm-12">
-              <a style="min-width:130px !important;" href="{{ route('char.create.simple') }}" class="btn btn-info btn-block">Change to Simple</a>
+              <a style="min-width:130px !important;" href="{{ route('char.edit.simple', $item->id) }}" class="btn btn-info btn-block">Change to Simple</a>
             </div>
           </div>
           <br>
@@ -84,12 +84,12 @@
                                 <div class="col-md-6">
                                   <select name="type" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
                                     <option value="">Choose the type of Character to Create</option>
-                                    <option value="Main">Main</option>
-                                    <option value="Secundary">Secundary</option>
-                                    <option value="Extra">Extra</option>
-                                    <option value="Enemy">Enemy</option>
-                                    <option value="Boss">Boss</option>
-                                    <option value="Secret">Secret</option>
+                                    <option value="Main" @if ($item->type == "Main") selected @endif>Main</option>
+                                    <option value="Secundary" @if ($item->type == "Secundary") selected @endif>Secundary</option>
+                                    <option value="Extra" @if ($item->type == "Extra") selected @endif>Extra</option>
+                                    <option value="Enemy" @if ($item->type == "Enemy") selected @endif>Enemy</option>
+                                    <option value="Boss" @if ($item->type == "Boss") selected @endif>Boss</option>
+                                    <option value="Secret" @if ($item->type == "Secret") selected @endif>Secret</option>
                                   </select>
 
                                 </div>
@@ -99,7 +99,7 @@
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">Name <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
-                                  <input type="text" name="name" placeholder="Jeff - Lord Of Chaos" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
+                                  <input type="text" name="name" placeholder="Jeff - Lord Of Chaos" data-parsley-group="step-1" data-parsley-required="true" class="form-control" value="{{$item->name}}" />
                                 </div>
                               </div>
                               <!-- end form-group -->
@@ -113,7 +113,7 @@
                                     <option id="changable" value="">Choose the First Class of the Character</option>
                                     @foreach ($classes as $class)
                                       @if ($class->evo_lvl == 1)
-                                        <option value="{{$class->name}}">{{$class->name}}</option>
+                                        <option value="{{$class->name}}" @if ($item->classStart == $class->name) selected @endif>{{$class->name}}</option>
                                       @endif
                                     @endforeach
                                   </select>
@@ -126,7 +126,7 @@
                                     <option id="changable" value="">Choose the Second Class of the Character</option>
                                     @foreach ($classes as $class)
                                       @if ($class->evo_lvl == 2)
-                                        <option value="{{$class->name}}">{{$class->name}}</option>
+                                        <option value="{{$class->name}}" @if ($item->classSecund == $class->name) selected @endif>{{$class->name}}</option>
                                       @endif
                                     @endforeach
                                   </select>
@@ -139,7 +139,7 @@
                                     <option id="changable" value="">Choose the Third Class of the Character</option>
                                     @foreach ($classes as $class)
                                       @if ($class->evo_lvl == 3)
-                                        <option value="{{$class->name}}">{{$class->name}}</option>
+                                        <option value="{{$class->name}}" @if ($item->classThird == $class->name) selected @endif>{{$class->name}}</option>
                                       @endif
                                     @endforeach
                                   </select>
@@ -152,7 +152,7 @@
                                     <option id="changable" value="">Choose the Forth Class of the Character</option>
                                     @foreach ($classes as $class)
                                       @if ($class->evo_lvl == 4)
-                                        <option value="{{$class->name}}">{{$class->name}}</option>
+                                        <option value="{{$class->name}}" @if ($item->classForth == $class->name) selected @endif>{{$class->name}}</option>
                                       @endif
                                     @endforeach
                                   </select>
@@ -166,7 +166,7 @@
                                   <select name="element" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
                                     <option value="">Choose the Element of the Character</option>
                                     @foreach ($elements as $element)
-                                      <option value="{{$element->name}}">{{$element->name}}</option>
+                                      <option value="{{$element->name}}" @if ($item->element == $element->name) selected @endif>{{$element->name}}</option>
                                     @endforeach
                                   </select>
                                 </div>
@@ -197,7 +197,7 @@
                               <!-- begin form-group -->
                               <div class="form-group m-b-10">
                                 <label class="col-form-label text-md-right">Description</label>
-                                <textarea name="desc_1" data-parsley-group="step-2" class="form-control" id="desc_1" rows="5"></textarea>
+                                <textarea name="desc_1" data-parsley-group="step-2" class="form-control" id="desc_1" rows="5">{{$item->descriptionInicial}}</textarea>
                               </div>
                               <!-- end form-group -->
                             </div>

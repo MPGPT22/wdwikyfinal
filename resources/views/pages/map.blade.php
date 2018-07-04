@@ -18,7 +18,7 @@
   <div class="row padding-ver-2">
 
     <div class="col-md-12">
-        <h4 class="title">We are still trying to teach a group of gremlins to create our story, we will inform you once we succeed.</h4>
+        <h4 class="title">We are still trying to teach a group of Gremlins to create our story, we will inform you once we succeed.</h4>
     </div>
 
   </div>
