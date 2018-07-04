@@ -35,12 +35,9 @@
                   <div class=" row-right">
                     {!! Form::open(['route'=>['weapons.destroy', $item->id], 'method' => 'DELETE', 'class' => 'btn100']) !!}
                     <div class="btn-group btn100">
-                      <a href="{{route('weapons.edit', $item->id)}}" class="btn btn-primary btn-colormode btn-50">
-                            <i class="fas fa-cog"></i>
-                        </a>
-                        
-                        {!! Form::submit('X', ['class' => 'btn btn-danger btn-colormode btn-50']) !!}
-                        
+                      
+                      <button type="submit" style="margin-left: auto;margin-right: auto;" class='btn btn-danger btn-colormode btn-50'><i style="font-size: 20px;" class="fa fa-trash-alt"></i></button>
+
                     </div>
                     {!! Form::close() !!}
                   </div>
@@ -54,7 +51,7 @@
               <br>
               <a class="btn btn-primary" href="{{ route('weapons.create') }}">Go To Create</a>
             </div>
-              
+
             @else
             <div class="col-md-12 title">
               <h3>We don't have any weapons created. Wait until someone creates one.</h3>
@@ -62,6 +59,6 @@
             </div>
             @endif
           @endif
-          
+
         </div>
 @endsection

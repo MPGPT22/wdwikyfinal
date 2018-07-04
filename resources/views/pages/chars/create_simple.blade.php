@@ -132,7 +132,7 @@
                               </div>
                               <div class="form-group row m-b-10">
                                 <div class="col-md-6">
-                                    <input name="evol_class" type="hidden">
+                                    <input name="evol_class" type="hidden" value="0">
                                 </div>
                               </div>
                               <!-- end form-group -->

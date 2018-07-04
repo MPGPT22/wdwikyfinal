@@ -89,35 +89,69 @@ class CharController extends Controller
      */
     public function store(Request $request)
     {
-        $evolClass = [];
-        if (!$request->evol_class) {
+
+        if ($request->evol_class == 0) {
+          $class = DB::table('char_classes')->get();
+          $element = DB::table('elements')->get();
+
+          $class_name = [];
+          $element_name = [];
+
+          foreach ($class as $classes) {
+            array_push($class_name, $classes->name);
+          }
+          foreach ($element as $elements) {
+            array_push($element_name, $elements->name);
+          }
 
             $this->validate($request, array(
             'type' => ['required',Rule::in(['Main', 'Secundary','Extra','Enemy','Boss','Secret',]),],
             'name' => 'required|Alpha|max:40|min:2',
-            'class' => ['required',Rule::in(['Knight', 'Thunder Knight','Ligtning Duelist','Astrapomancer','Fighter','Flare Fighter','Dragoon','Pyromancer','Mage','Water Mage','Aqueous healer','Hydromancer','Ranger','Wind Hunter','Cyclone Snyper','Aeromancer','Sentinel','Earth Sentinel','Quake Bruiser','Geomancer','Reaper','Shadow Reaper','Dark Knight','Demon Lord',]),],
-            'element' => ['required',Rule::in(['Physical','Fire','Thunder','Water','Earth','Wind','Light','Darkness',]),],
-            'desc_1' => 'required|min:5',
+            'class' => ['required',Rule::in($class_name),],
+            'element' => ['required',Rule::in($element_name),],
 
             ));
 
-            $evolClass = 0;
-
         }else{
+          $class_1 = DB::table('char_classes')->where('evo_lvl', '=', 1)->get();
+          $class_2 = DB::table('char_classes')->where('evo_lvl', '=', 2)->get();
+          $class_3 = DB::table('char_classes')->where('evo_lvl', '=', 3)->get();
+          $class_4 = DB::table('char_classes')->where('evo_lvl', '=', 4)->get();
+          $element = DB::table('elements')->get();
+
+
+          $class_name_1 = [];
+          $class_name_2 = [];
+          $class_name_3 = [null,];
+          $class_name_4 = [null,];
+          $element_name = [];
+
+          foreach ($class_1 as $classes_1) {
+            array_push($class_name_1, $classes_1->name);
+          }
+          foreach ($class_2 as $classes_2) {
+            array_push($class_name_2, $classes_2->name);
+          }
+          foreach ($class_3 as $classes_3) {
+            array_push($class_name_3, $classes_3->name);
+          }
+          foreach ($class_4 as $classes_4) {
+            array_push($class_name_4, $classes_4->name);
+          }
+          foreach ($element as $elements) {
+            array_push($element_name, $elements->name);
+          }
 
           $this->validate($request, array(
           'type' => ['required',Rule::in(['Main', 'Secundary','Extra','Enemy','Boss','Secret',]),],
           'name' => 'required|max:40|min:2',
-          'class' => ['required',Rule::in(['Knight','Fighter','Mage','Ranger','Sentinel','Reaper',]),],
-          'class_2' => ['required_if:evol_class,on',Rule::in(['Thunder Knight','Flare Fighter','Water Mage','Wind Hunter','Earth Sentinel','Shadow Reaper',]),],
-          'class_3' => Rule::in([null,'Ligtning Duelist','Dragoon','Aqueous healer','Cyclone Snyper','Quake Bruiser','Dark Knight',]),
-          'class_4' => Rule::in([null,'Astrapomancer','Pyromancer','Hydromancer','Aeromancer','Geomancer','Demon Lord',]),
-          'element' => ['required',Rule::in(['Physical','Fire','Thunder','Water','Earth','Wind','Light','Darkness',]),],
-          'desc_1' => 'required|min:5',
+          'class' => ['required',Rule::in($class_name_1),],
+          'class_2' => ['required',Rule::in($class_name_2),],
+          'class_3' => ['required_unless:class_4,null',Rule::in($class_name_3),],
+          'class_4' => Rule::in($class_name_4),
+          'element' => ['required',Rule::in($element_name),],
 
           ));
-
-          $evolClass = 1;
 
         }
 
@@ -129,7 +163,7 @@ class CharController extends Controller
 
             $character->type = $request->type;
             $character->name = $request->name;
-            $character->evolClass = $evolClass;
+            $character->evolClass = $request->evol_class;
             $character->classStart = $request->class;
             $character->classSecund = $request->class_2;
             $character->classThird = $request->class_3;
@@ -191,7 +225,10 @@ class CharController extends Controller
      */
     public function edit($id)
     {
-        //
+      $item = Characters::find($id);
+      $element = DB::table('elements')->get();
+      $class = DB::table('char_classes')->orderBy('evo_lvl', 'asc')->get();
+      return view('pages.chars.create_simple')->withItem($item)->withElements($element)->withClasses($class);
     }
 
     /**

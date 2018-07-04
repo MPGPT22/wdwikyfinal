@@ -13,6 +13,8 @@
   <link rel="stylesheet" type="text/css" href="{{asset('plugins/parsleyjs/src/parsley.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('plugins/smartwizard/dist/css/smart_wizard.css')}}">
 
+    <script src="https://cdn.ckeditor.com/ckeditor5/10.1.0/classic/ckeditor.js"></script>
+
   <link rel="stylesheet" type="text/css" href="{{asset('css/admin/style_edite.css')}}">
 
 @endsection
@@ -80,9 +82,9 @@
                         <!-- end form-group -->
                         <!-- begin form-group -->
                         <div class="form-group row m-b-10">
-                          <label class="col-md-3 col-form-label text-md-right">Description  <span class="text-danger">*</span></label>
+                          <label class="col-md-3 col-form-label text-md-right">Description</label>
                           <div class="col-md-6">
-                            <textarea name="desc_1" data-parsley-group="step-1" data-parsley-required="true" class="form-control" required ></textarea>
+                            <textarea name="desc_1" data-parsley-group="step-1" class="form-control" id="desc_1"></textarea>
                           </div>
                         </div>
                         <!-- end form-group -->
@@ -149,74 +151,12 @@
     });
   </script>
   <script>
-    var id;
-    $id = 2;
-    $(window).on('load', function() {
-     $('span'+ ".switchery").attr('onClick', 'Plus()');
-     $('select' + '#this').append('<option class="added" value="Thunder Knight">Thunder Knight</option><option class="added" value="Flare Fighter">Flare Fighter</option><option class="added" value="Water Mage">Water Mage</option><option class="added" value="Wind Hunter">Wind Hunter</option><option class="added" value="Earth Sentinel">Earth Sentinel</option><option class="added" value="Shadow Reaper">Shadow Reaper</option><option class="added" value="Ligtning Duelist">Ligtning Duelist</option><option class="added" value="Dragoon">Dragoon</option><option class="added" value="Aqueous healer">Aqueous healer</option><option class="added" value="Cyclone Snyper">Cyclone Snyper</option><option class="added" value="Quake Bruiser">Quake Bruiser</option><option class="added" value="Dark Knight">Dark Knight</option><option class="added" value="Astrapomancer">Astrapomancer</option><option class="added" value="Geomancer">Geomancer</option><option class="added" value="Hydromancer">Hydromancer</option><option class="added" value="Aeromancer">Aeromancer</option><option class="added" value="Geomancer">Geomancer</option><option class="added" value="Demon Lord">Demon Lord</option>');
-    });
-    function Plus() {
-      if ($('span'+ ".switchery").css('border-color') !=  'rgb(0, 172, 172)') {
-        $('.added').remove();
-        $('select'+'#added_select').remove();
-        $('div'+'#classForm').addClass('input-group');
-        $('select'+'#this').after('<span id="classFormAdd" class="input-group-btn"><button  class="btn btn-default force-border"  type="button" onclick="adDclass1()">+</button></span>');
-        $('option'+ '#changable').text('Choose the First Class of the Character');
-        $('label'+ '#first_class_label').text('First Class ');
-        $('label'+ '#first_class_label').append('<span class="text-danger">*</span>');
-
-
-      }else{
-        $('select' + '#this').append('<option class="added" value="Thunder Knight">Thunder Knight</option><option class="added" value="Flare Fighter">Flare Fighter</option><option class="added" value="Water Mage">Water Mage</option><option class="added" value="Wind Hunter">Wind Hunter</option><option class="added" value="Earth Sentinel">Earth Sentinel</option><option class="added" value="Shadow Reaper">Shadow Reaper</option><option class="added" value="Ligtning Duelist">Ligtning Duelist</option><option class="added" value="Dragoon">Dragoon</option><option class="added" value="Aqueous healer">Aqueous healer</option><option class="added" value="Cyclone Snyper">Cyclone Snyper</option><option class="added" value="Quake Bruiser">Quake Bruiser</option><option class="added" value="Dark Knight">Dark Knight</option><option class="added" value="Astrapomancer">Astrapomancer</option><option class="added" value="Geomancer">Geomancer</option><option class="added" value="Hydromancer">Hydromancer</option><option class="added" value="Aeromancer">Aeromancer</option><option class="added" value="Geomancer">Geomancer</option><option class="added" value="Demon Lord">Demon Lord</option>');
-        $('div'+'#classForm').removeClass('input-group');
-        $('span'+'#classFormAdd').remove();
-        $('option'+ '#changable').text('Choose the Class of the Character');
-        $('label'+ '#first_class_label').text('Class ');
-        $('label'+ '#first_class_label').append('<span class="text-danger">*</span>');
-        $('div'+ '#second_class').remove();
-        $('div'+ '#third_class').remove();
-        $('div'+ '#fourth_class').remove();
-      }
-    }
-
-    function adDclass1(){
-
-      if ($id == 2) {
-        $('div'+'#first_class').after('<div id="second_class" class="form-group row m-b-10"><label class="col-md-3 col-form-label text-md-right">Second Class <span class="text-danger">*</span></label><div class="col-md-5 input-group" ><select data-parsley-group="step-1" data-parsley-required="true" name="class_2" class="form-control" required><option value="">Choose the Second Class of the Character</option><option class="added" value="Thunder Knight">Thunder Knight</option><option class="added" value="Flare Fighter">Flare Fighter</option><option class="added" value="Water Mage">Water Mage</option><option class="added" value="Wind Hunter">Wind Hunter</option><option class="added" value="Earth Sentinel">Earth Sentinel</option><option class="added" value="Shadow Reaper">Shadow Reaper</option></select><span class="input-group-btn"><button class="btn btn-default force-border"  type="button" onclick="adDclass2Minus()">X</button><button id="classFormAdd2" class="btn btn-default force-border"  type="button" onclick="adDclass1()">+</button></span></div></div>');
-      $('span#classFormAdd > button').attr('onClick', '');
-      $('span#classFormAdd > button').addClass('disabled');
-      $id = $id + 1;
-      }else if($id == 3){
-        $('div'+'#second_class').after('<div id="third_class" class="form-group row m-b-10"><label class="col-md-3 col-form-label text-md-right">Third Class <span class="text-danger">*</span></label><div class="col-md-5 input-group" ><select data-parsley-group="step-1" data-parsley-required="true" name="class_3" class="form-control" required><option value="">Choose the Third Class of the Character</option><option class="added" value="Ligtning Duelist">Ligtning Duelist</option><option class="added" value="Dragoon">Dragoon</option><option class="added" value="Aqueous healer">Aqueous healer</option><option class="added" value="Cyclone Snyper">Cyclone Snyper</option><option class="added" value="Quake Bruiser">Quake Bruiser</option><option class="added" value="Dark Knight">Dark Knight</option></select><span class="input-group-btn"><button class="btn btn-default force-border"  type="button" onclick="adDclass2Minus()">X</button><button id="classFormAdd3" class="btn btn-default force-border"  type="button" onclick="adDclass1()">+</button></span></div></div>');
-      $('button#classFormAdd2').attr('onClick', '');
-      $('button#classFormAdd2').addClass('disabled');
-      $id = $id + 1;
-      }else if($id == 4){
-        $('div'+'#third_class').after('<div id="fourth_class" class="form-group row m-b-10"><label class="col-md-3 col-form-label text-md-right">Fourth Class <span class="text-danger">*</span></label><div class="col-md-5 input-group" ><select data-parsley-group="step-1" data-parsley-required="true" name="class_4" class="form-control" required><option value="">Choose the Fourth Class of the Character</option><option class="added" value="Astrapomancer">Astrapomancer</option><option class="added" value="Geomancer">Geomancer</option><option class="added" value="Hydromancer">Hydromancer</option><option class="added" value="Aeromancer">Aeromancer</option><option class="added" value="Geomancer">Geomancer</option><option class="added" value="Demon Lord">Demon Lord</option></select><span  class="input-group-btn"><button class="btn btn-default force-border"  type="button" onclick="adDclass2Minus()">X</button></span></div></div>');
-      $('button#classFormAdd3').attr('onClick', '');
-      $('button#classFormAdd3').addClass('disabled');
-      $id = $id + 1;
-      }else{
-
-      }
-    }
-    function adDclass2Minus(){
-      if ($id === 3) {
-      $('div'+ '#second_class').remove();
-      $('span#classFormAdd > button').attr('onClick', 'adDclass1()');
-      $('span#classFormAdd > button').removeClass('disabled');
-      $id = $id - 1;
-      }else if($id === 4){
-      $('div'+ '#third_class').remove();
-      $('button#classFormAdd2').attr('onClick', 'adDclass1()');
-      $('button#classFormAdd2').removeClass('disabled');
-      $id = $id - 1;
-      }else if($id === 5){
-      $('div'+ '#fourth_class').remove();
-      $('button#classFormAdd3').attr('onClick', 'adDclass1()');
-      $('button#classFormAdd3').removeClass('disabled');
-      $id = $id - 1;
-      }
-    }
-  </script>
+    ClassicEditor
+        .create( document.querySelector( '#desc_1' ), {
+          toolbar: [ 'heading', '|', 'bold', 'italic', 'bulletedList', 'numberedList', 'blockQuote' ],
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 @endsection

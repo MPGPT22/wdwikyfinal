@@ -20,24 +20,17 @@
           <div class="row">
             @foreach ($list as $item)
               <div class="col-lg-6 col-md-12 divide-rows">
-                  <div class="row-left">
-                    @if ($item->public == 1)
-                      <a href="{{ route('classes.set.not.public', $item->id) }}" class="title"><i class="far fa-eye fa-lg"></i></a>
-                    @else
-                      <a href="{{ route('classes.set.public', $item->id) }}" class="title"><i class="far fa-eye fa-lg" style="color:#bbb"></i></a>
-                    @endif
-                  </div>
                   <a class="a_no_style" href="{{route('classes.show', $item->id)}}">
-                  <div class="row-center">
+                  <div class="row-no-left">
                     {{$item->name}}
                   </div>
                   </a>
                   <div class=" row-right">
                     {!! Form::open(['route'=>['classes.destroy', $item->id], 'method' => 'DELETE', 'class' => 'btn100']) !!}
                     <div class="btn-group btn100">
-                      
+
                       <button type="submit" style="margin-left: auto;margin-right: auto;" class='btn btn-danger btn-colormode btn-50'><i style="font-size: 20px;" class="fa fa-trash-alt"></i></button>
-                        
+
                     </div>
                     {!! Form::close() !!}
                   </div>
@@ -51,7 +44,7 @@
               <br>
               <a class="btn btn-primary" href="{{ route('classes.create') }}">Go To Create</a>
             </div>
-              
+
             @else
             <div class="col-md-12 title">
               <h3>We don't have any classes created. Wait until someone creates one.</h3>
@@ -59,6 +52,6 @@
             </div>
             @endif
           @endif
-          
+
         </div>
 @endsection

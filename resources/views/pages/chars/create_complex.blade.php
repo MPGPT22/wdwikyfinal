@@ -148,7 +148,7 @@
                               <div id="first_class" class="form-group row m-b-10">
                                 <label id="first_class_label" class="col-md-3 col-form-label text-md-right">Forth Class <span class="text-danger"></span></label>
                                 <div id="classForm" class="col-md-6" >
-                                  <select name="class_4" class="form-control" required>
+                                  <select name="class_4" class="form-control">
                                     <option id="changable" value="">Choose the Forth Class of the Character</option>
                                     @foreach ($classes as $class)
                                       @if ($class->evo_lvl == 4)
@@ -173,7 +173,7 @@
                               </div>
                               <div class="form-group row m-b-10">
                                 <div class="col-md-6">
-                                    <input name="evol_class" type="hidden">
+                                    <input name="evol_class" type="hidden" value="1">
                                 </div>
                               </div>
                               <!-- end form-group -->

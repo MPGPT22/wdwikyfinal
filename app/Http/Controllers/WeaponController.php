@@ -83,7 +83,6 @@ class WeaponController extends Controller
         $this->validate($request, array(
             'name' => 'required|max:40|min:2',
             'type' => ['required',Rule::in($types_name)],
-            'desc_1' => 'required|min:5',
 
             ));
 

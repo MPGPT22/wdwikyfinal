@@ -19,7 +19,6 @@
           <div class="row">
             <div class="col-md-8">
 
-              {{dd($item)}}
               <h3>{{$item->name}} - {{$item->element}} - {{$item->scope}}</h3>
 
               <br>
@@ -29,6 +28,6 @@
               <p>{{$item->descriptionInicial}}</p>
             </div>
           </div>
-          
+
         </div>
 @endsection

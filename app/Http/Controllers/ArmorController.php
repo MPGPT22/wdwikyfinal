@@ -90,7 +90,6 @@ class ArmorController extends Controller
             'name' => 'required|max:40|min:2',
             'type' => ['required',Rule::in($types_name)],
             'equipment_type' => ['required',Rule::in($equipment_name)],
-            'desc_1' => 'required|min:5',
 
             ));
 

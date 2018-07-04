@@ -91,7 +91,6 @@ class SpellController extends Controller
             'name' => 'required|max:40|min:2',
             'scope' => ['required',Rule::in($scope_name)],
             'element' => ['required',Rule::in($element_name)],
-            'desc_1' => 'required|min:5',
 
             ));
 

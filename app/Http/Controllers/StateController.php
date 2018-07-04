@@ -75,7 +75,6 @@ class StateController extends Controller
     {
         $this->validate($request, array(
             'name' => 'required|max:40|min:2',
-            'desc_1' => 'required|min:5',
 
             ));
 

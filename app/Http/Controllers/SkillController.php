@@ -137,7 +137,7 @@ class SkillController extends Controller
     {
         $skills = skill::find($id);
 
-        return view('pages.skills.item')->withItem($skill);
+        return view('pages.skills.item')->withItem($skills);
     }
     public function showPublic($id)
     {

@@ -69,7 +69,7 @@
                               <!-- begin form-group -->
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">Level <span class="text-danger">*</span></label>
-                                <div id="classForm" class="col-md-4" >
+                                <div id="classForm" class="col-md-6" >
                                   <select name="level" data-parsley-group="step-1" data-parsley-required="true" class="form-control" required>
                                     <option value="">Choose the Class level</option>
                                     <option value="1">1</option>

@@ -18,21 +18,17 @@
 
           <div class="row">
             <div class="col-md-8">
-              <h3>{{$item->name}} - @if ($item->evolClass == 1)
-                {{$item->classStart}} - {{$item->classSecund}} @if (!is_null($item->classThird))
-                  - {{$item->classThird}}
-                @endif @if (!is_null($item->classForth))
-                  - {{$item->classForth}}
-                @endif
-              @else
-              {{$item->classStart}}
-              @endif</h3>
+              <h3>{{$item->name}}</h3>
 
               <br>
 
-              <h5>Desciption</h5>
-
-              <p>{!!$item->descriptionInicial!!}</p>
+              <p>HP:  {{str_replace("i", "level", $item->HP)}}</p>
+              <p>MP: {{str_replace("i", "level",$item->MP)}}</p>
+              <p>ATK: {{str_replace("i", "level",$item->ATK)}}</p>
+              <p>DEF: {{str_replace("i", "level",$item->DEF)}}</p>
+              <p>MAT: {{str_replace("i", "level",$item->MAT)}}</p>
+              <p>MDEF: {{str_replace("i", "level",$item->MDEF)}}</p>
+              <p>AGI: {{str_replace("i", "level",$item->AGI)}}</p>
             </div>
           </div>
 
