@@ -31,7 +31,7 @@
           </div>
           <br>
           <h4 class="panel-title">Creating New Character</h4>
-                {!! Form::open(['route' => 'characters.store', 'name' => 'form-wizard', 'class'=>'form-control-with-bg']) !!}
+                {!! Form::open(['route' => 'characters.update', $item->id, 'name' => 'form-wizard', 'class'=>'form-control-with-bg']) !!}
                 {!! Form::token() !!}
                   <!-- begin wizard -->
                   <div id="wizard">
