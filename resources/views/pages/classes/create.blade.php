@@ -92,7 +92,7 @@
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">MP Calc. <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
-                                  <input type="text" name="MP" placeholder="4x + 150" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
+                                  <input type="text" name="MP" placeholder="4*x+150^2" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
                                 </div>
                               </div>
                               <!-- end form-group -->
@@ -100,7 +100,7 @@
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">ATK Calc. <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
-                                  <input type="text" name="ATK" placeholder="4x + 150" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
+                                  <input type="text" name="ATK" placeholder="4*x+150^2" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
                                 </div>
                               </div>
                               <!-- end form-group -->
@@ -108,7 +108,7 @@
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">DEF Calc. <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
-                                  <input type="text" name="DEF" placeholder="4x + 150" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
+                                  <input type="text" name="DEF" placeholder="4*x+150^2" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
                                 </div>
                               </div>
                               <!-- end form-group -->
@@ -116,7 +116,7 @@
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">MAT Calc. <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
-                                  <input type="text" name="MAT" placeholder="4x + 150" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
+                                  <input type="text" name="MAT" placeholder="4*x+150^2" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
                                 </div>
                               </div>
                               <!-- end form-group -->
@@ -124,7 +124,7 @@
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">MDEF Calc. <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
-                                  <input type="text" name="MDEF" placeholder="4x + 150" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
+                                  <input type="text" name="MDEF" placeholder="4*x+150^2" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
                                 </div>
                               </div>
                               <!-- end form-group -->
@@ -132,7 +132,7 @@
                               <div class="form-group row m-b-10">
                                 <label class="col-md-3 col-form-label text-md-right">AGI Calc. <span class="text-danger">*</span></label>
                                 <div class="col-md-6">
-                                  <input type="text" name="AGI" placeholder="4x + 150" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
+                                  <input type="text" name="AGI" placeholder="4*x+150^2" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
                                 </div>
                               </div>
                               <!-- end form-group -->

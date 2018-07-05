@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="{{asset('plugins/bootstrap-calendar/css/bootstrap_calendar.css')}}">
   <link rel="stylesheet" href="{{asset('plugins/gritter/css/jquery.gritter.css')}}">
 
+  <link href="{{asset('plugins/nvd3/nvd3.min.css')}}" rel="stylesheet">
+
   <link rel="stylesheet" type="text/css" href="{{asset('css/admin/style_edite.css')}}">
 
 @endsection

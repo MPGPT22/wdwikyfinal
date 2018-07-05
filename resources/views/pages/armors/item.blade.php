@@ -24,9 +24,9 @@
 
               <h5>Desciption</h5>
 
-              <p>{{$item->descriptionInicial}}</p>
+              <p>{!!$item->descriptionInicial!!}</p>
             </div>
           </div>
-          
+
         </div>
 @endsection

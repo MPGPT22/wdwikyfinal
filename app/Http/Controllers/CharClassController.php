@@ -89,12 +89,19 @@ class CharClassController extends Controller
 
 
         $HP = preg_replace("/([A-Za-z])+/", 'i' , $request->HP);
+        $HP = str_replace("^", '**' , $HP);
         $MP = preg_replace("/([A-Za-z])+/", 'i' , $request->MP);
+        $MP = str_replace("^", '**' , $MP);
         $ATK = preg_replace("/([A-Za-z])+/", 'i' , $request->ATK);
+        $ATK = str_replace("^", '**' , $ATK);
         $DEF = preg_replace("/([A-Za-z])+/", 'i' , $request->DEF);
+        $DEF = str_replace("^", '**' , $DEF);
         $MAT = preg_replace("/([A-Za-z])+/", 'i' , $request->MAT);
+        $MAT = str_replace("^", '**' , $MAT);
         $MDEF = preg_replace("/([A-Za-z])+/", 'i' , $request->MDEF);
+        $MDEF = str_replace("^", '**' , $MDEF);
         $AGI = preg_replace("/([A-Za-z])+/", 'i' , $request->AGI);
+        $AGI = str_replace("^", '**' , $AGI);
 
 
         $class = new CharClasse;

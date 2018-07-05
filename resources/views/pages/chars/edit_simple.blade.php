@@ -1,6 +1,6 @@
 @extends('Admin')
 
-@section('title', '- Characters | Create')
+@section('title', '- Characters | Edit Simple')
 
 @section('stylesheet')
 
@@ -30,8 +30,8 @@
             </div>
           </div>
           <br>
-          <h4 class="panel-title">Creating New Character</h4>
-                {!! Form::open(['route' => 'characters.store', 'name' => 'form-wizard', 'class'=>'form-control-with-bg']) !!}
+          <h4 class="panel-title">Editing Character</h4>
+                {!! Form::open(['route' => ['characters.update', $item->id],'method' => 'PUT', 'name' => 'form-wizard', 'class'=>'form-control-with-bg']) !!}
                 {!! Form::token() !!}
                   <!-- begin wizard -->
                   <div id="wizard">
@@ -179,7 +179,7 @@
                               <!-- begin form-group -->
                               <div class="col-md-12 m-b-10 btn-group">
                                 <button type="submit" value="another" name="submitbutton" class="btn btn-primary btn-50">
-                                    Finish & Create Another
+                                    Finish & Go to Character
                                 </button>
                                 <button type="submit" value="list" name="submitbutton" class="btn btn-info btn-50">
                                     Finish & Go to List

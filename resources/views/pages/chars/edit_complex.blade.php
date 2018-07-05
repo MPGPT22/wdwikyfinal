@@ -1,6 +1,6 @@
 @extends('Admin')
 
-@section('title', '- Characters | Create')
+@section('title', '- Characters | Edit Complex')
 
 @section('stylesheet')
 
@@ -30,8 +30,8 @@
             </div>
           </div>
           <br>
-          <h4 class="panel-title">Creating New Character</h4>
-                {!! Form::open(['route' => 'characters.update', $item->id, 'name' => 'form-wizard', 'class'=>'form-control-with-bg']) !!}
+          <h4 class="panel-title">Editing Character</h4>
+                {!! Form::open(['route' => ['characters.update', $item->id], 'method' => 'PUT', 'name' => 'form-wizard', 'class'=>'form-control-with-bg']) !!}
                 {!! Form::token() !!}
                   <!-- begin wizard -->
                   <div id="wizard">

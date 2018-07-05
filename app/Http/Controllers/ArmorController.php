@@ -152,7 +152,10 @@ class ArmorController extends Controller
      */
     public function edit($id)
     {
-        //
+      $item = armor::find($id);
+      $types = DB::table('armor_types')->get();
+      $equipments = DB::table('equipment_types')->get();
+      return view('pages.armors.edit')->with(array('type'=>$types,'equipment' => $equipments, 'item' => $item));
     }
 
     /**
@@ -164,7 +167,48 @@ class ArmorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $types = DB::table('armor_types')->get();
+      $equipments = DB::table('equipment_types')->get();
+      $types_name = [];
+      foreach ($types as $type) {
+          array_push($types_name, $type->name);
+      }
+      $equipment_name = [];
+      foreach ($equipments as $equipment) {
+          array_push($equipment_name, $equipment->name);
+      }
+
+      $this->validate($request, array(
+          'name' => 'required|max:40|min:2',
+          'type' => ['required',Rule::in($types_name)],
+          'equipment_type' => ['required',Rule::in($equipment_name)],
+
+          ));
+
+          $armor = armor::find($id);
+
+          $armor->name = $request->name;
+          $armor->type = $request->type;
+          $armor->equipmentType = $request->equipment_type;
+          $armor->descriptionInicial = $request->desc_1;
+
+          $armor->save();
+
+          switch ($request->submitbutton) {
+
+              case 'another':
+
+              return redirect()->route('armors.show', $id);
+
+                  break;
+
+              case 'list':
+
+              return redirect()->route('armors.index');
+
+                  break;
+          }
+
     }
 
     /**
