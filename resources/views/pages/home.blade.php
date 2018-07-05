@@ -342,7 +342,7 @@
                 @else
                   <div class="btn-group download-group">
                     <a style="min-width: 113px;" href="{{asset('WD_win.zip')}}" class="btn btn-primary btn25 btn-colormode" download><i class="fab fa-windows"></i> Windows</a>
-                    <button style="min-width: 113px;" class="btn btn-info btn25 btn-colormode" disabled><i class="fab fa-apple"></i> Mac OS</button>
+                    <a style="min-width: 113px;" href="{{asset('WD_mac.zip')}}" class="btn btn-info btn25 btn-colormode" download><i class="fab fa-apple"></i> Mac OS</a>
                     <button style="min-width: 113px;" class="btn btn-lime btn25 btn-colormode" disabled><i class="fab fa-android"></i> Android</button>
                     <button style="min-width: 113px;" class="btn btn-danger btn25  btn-colormode" disabled><i class="fab fa-chrome"></i> Browser</button>
                   </div>
