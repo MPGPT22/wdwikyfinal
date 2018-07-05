@@ -133,7 +133,8 @@ class StateController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = state::find($id);
+        return view('pages.states.edit')->withItem($item);
     }
 
     /**
@@ -145,7 +146,32 @@ class StateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $this->validate($request, array(
+            'name' => 'required|max:40|min:2',
+
+            ));
+
+        $state = state::find($id);
+
+        $state->name = $request->name;
+        $state->descriptionInicial = $request->desc_1;
+
+        $state->save();
+
+        switch ($request->submitbutton) {
+
+            case 'another':
+
+            return redirect()->route('states.show', $id);
+
+                break;
+
+            case 'list':
+
+            return redirect()->route('states.index');
+
+                break;
+        }
     }
 
     /**

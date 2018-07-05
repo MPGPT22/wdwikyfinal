@@ -220,7 +220,7 @@
                               <!-- begin form-group -->
                               <div class="col-md-12 m-b-10 btn-group">
                                 <button type="submit" value="another" name="submitbutton" class="btn btn-primary btn-50">
-                                    Finish & Create Another
+                                    Finish & Go to Character
                                 </button>
                                 <button type="submit" value="list" name="submitbutton" class="btn btn-info btn-50">
                                     Finish & Go to List

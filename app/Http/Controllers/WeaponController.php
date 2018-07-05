@@ -143,7 +143,9 @@ class WeaponController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = weapon::find($id);
+        $types = DB::table('weapon_types')->get();
+        return view('pages.weapons.edit')->with(array('types'=>$types, 'item' => $item));
     }
 
     /**
@@ -155,7 +157,43 @@ class WeaponController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $types = DB::table('weapon_types')->get();
+        $types_name = [];
+        foreach ($types as $type) {
+            array_push($types_name, $type->name);
+        }
+
+        $this->validate($request, array(
+            'name' => 'required|max:40|min:2',
+            'type' => ['required',Rule::in($types_name)],
+
+            ));
+
+        $weapon = weapon::find($id);
+
+        $weapon->name = $request->name;
+        $weapon->type = $request->type;
+        $weapon->descriptionInicial = $request->desc_1;
+
+        $weapon->save();
+
+        switch ($request->submitbutton) {
+
+            case 'another':
+
+            
+
+            return redirect()->route('weapons.show', $id);
+
+                break;
+
+            case 'list':
+
+
+            return redirect()->route('weapons.index');
+
+                break;
+        }
     }
 
     /**

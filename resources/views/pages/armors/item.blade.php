@@ -14,13 +14,27 @@
 @endsection
 
 @section('content')
-        <div class="col-md-12">
+<div class="container " style="margin-top: 1em;padding: 1em; background: white; border-radius: 5px">
 
           <div class="row">
-            <div class="col-md-8">
-              <h3>{{$item->name}} - {{$item->type}} - {{$item->equipmentType}}</h3>
-
+            <div class="col-md-5">
+              <h3>{{$item->name}}</h3>
               <br>
+              <div class="row">
+                <div class="col-md-3" style="border-right: solid 1px #dcdcdc">
+                  <h5><b>Type: </b></h5>
+                  <p>{{$item->type}}</p>
+                </div>
+                <div class="col-md-9">
+                  <h5><b>Equipment Type: </b></h5>
+                  <p>{{$item->equipmentType}}</p>
+                </div>
+              </div>
+              
+              <br>
+              
+
+
 
               <h5>Desciption</h5>
 

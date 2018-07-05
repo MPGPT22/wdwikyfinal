@@ -22,7 +22,7 @@
 @section('content')
   <div class="col-md-12">
     <h4 class="panel-title">Editing Spell</h4>
-          {!! Form::open(['route' => 'spells.store', 'name' => 'form-wizard', 'class'=>'form-control-with-bg']) !!}
+          {!! Form::open(['route' => ['spells.update', $item->id],'method' => 'PUT' , 'name' => 'form-wizard', 'class'=>'form-control-with-bg']) !!}
           {!! Form::token() !!}
             <!-- begin wizard -->
             <div id="wizard">
@@ -63,7 +63,7 @@
                         <div class="form-group row m-b-10">
                           <label class="col-md-3 col-form-label text-md-right">Name <span class="text-danger">*</span></label>
                           <div class="col-md-6">
-                            <input type="text" name="name" placeholder="Black Hole" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
+                            <input type="text" name="name" placeholder="Black Hole" data-parsley-group="step-1" data-parsley-required="true" class="form-control" value="{{$item->name}}" />
                           </div>
                         </div>
                         <!-- end form-group -->
@@ -74,7 +74,7 @@
                             <select name="scope" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
                               <option value="">Choose the Spell Scope</option>
                               @foreach ($scope as $targets)
-                                      <option value="{{$targets->name}}" >{{$targets->name}}</option>
+                                      <option value="{{$targets->name}}" @if ($targets->name == $item->scope) selected @endif>{{$targets->name}}</option>
                                     @endforeach
                             </select>
                           </div>
@@ -87,7 +87,7 @@
                             <select name="element" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
                               <option value="">Choose the Spell Element</option>
                               @foreach ($elements as $element)
-                                      <option value="{{$element->name}}" >{{$element->name}}</option>
+                                      <option value="{{$element->name}}" @if ($element->name == $item->element) selected @endif>{{$element->name}}</option>
                                     @endforeach
                             </select>
                           </div>
@@ -97,7 +97,7 @@
                         <div class="form-group row m-b-10">
                           <label class="col-md-3 col-form-label text-md-right">Description</label>
                           <div class="col-md-6">
-                            <textarea name="desc_1" data-parsley-group="step-1" class="form-control" id="desc_1"></textarea>
+                            <textarea name="desc_1" data-parsley-group="step-1" class="form-control" id="desc_1">{{$item->descriptionInicial}}</textarea>
                           </div>
                         </div>
                         <!-- end form-group -->
@@ -121,7 +121,7 @@
                         <!-- begin form-group -->
                         <div class="col-md-12 m-b-10 btn-group">
                                 <button type="submit" value="another" name="submitbutton" class="btn btn-primary btn-50">
-                                    Finish & Create Another
+                                    Finish & Go to Spell
                                 </button>
                                 <button type="submit" value="list" name="submitbutton" class="btn btn-info btn-50">
                                     Finish & Go to List

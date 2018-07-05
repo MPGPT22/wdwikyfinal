@@ -1,6 +1,6 @@
 @extends('Admin')
 
-@section('title', '- Spells | Edit')
+@section('title', '- States | Edit')
 
 @section('stylesheet')
 
@@ -21,8 +21,8 @@
 
 @section('content')
   <div class="col-md-12">
-    <h4 class="panel-title">Editing Spell</h4>
-          {!! Form::open(['route' => 'spells.store', 'name' => 'form-wizard', 'class'=>'form-control-with-bg']) !!}
+    <h4 class="panel-title">Editing State</h4>
+          {!! Form::open(['route' => ['states.update', $item->id ], 'method' => 'PUT', 'name' => 'form-wizard', 'class'=>'form-control-with-bg']) !!}
           {!! Form::token() !!}
             <!-- begin wizard -->
             <div id="wizard">
@@ -33,7 +33,7 @@
                     <span class="number">1</span>
                     <span class="info text-ellipsis">
                       Basic Information
-                      <small class="text-ellipsis">Name, Scope, Element and Description</small>
+                      <small class="text-ellipsis">Name and Description</small>
                     </span>
                   </a>
                 </li>
@@ -63,33 +63,7 @@
                         <div class="form-group row m-b-10">
                           <label class="col-md-3 col-form-label text-md-right">Name <span class="text-danger">*</span></label>
                           <div class="col-md-6">
-                            <input type="text" name="name" placeholder="Black Hole" data-parsley-group="step-1" data-parsley-required="true" class="form-control" />
-                          </div>
-                        </div>
-                        <!-- end form-group -->
-                        <!-- begin form-group -->
-                        <div class="form-group row m-b-10">
-                          <label class="col-md-3 col-form-label text-md-right">Scope <span class="text-danger">*</span></label>
-                          <div class="col-md-6">
-                            <select name="scope" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
-                              <option value="">Choose the Spell Scope</option>
-                              @foreach ($scope as $targets)
-                                      <option value="{{$targets->name}}" >{{$targets->name}}</option>
-                                    @endforeach
-                            </select>
-                          </div>
-                        </div>
-                        <!-- end form-group -->
-                        <!-- begin form-group -->
-                        <div class="form-group row m-b-10">
-                          <label class="col-md-3 col-form-label text-md-right">Element <span class="text-danger">*</span></label>
-                          <div class="col-md-6">
-                            <select name="element" class="form-control" data-parsley-group="step-1" data-parsley-group="step-1" required>
-                              <option value="">Choose the Spell Element</option>
-                              @foreach ($elements as $element)
-                                      <option value="{{$element->name}}" >{{$element->name}}</option>
-                                    @endforeach
-                            </select>
+                            <input type="text" name="name" placeholder="Burning" data-parsley-group="step-1" data-parsley-required="true" class="form-control" value="{{$item->name}}" />
                           </div>
                         </div>
                         <!-- end form-group -->
@@ -97,7 +71,7 @@
                         <div class="form-group row m-b-10">
                           <label class="col-md-3 col-form-label text-md-right">Description</label>
                           <div class="col-md-6">
-                            <textarea name="desc_1" data-parsley-group="step-1" class="form-control" id="desc_1"></textarea>
+                            <textarea name="desc_1" data-parsley-group="step-1" class="form-control" id="desc_1"/>{{$item->descriptionInicial}}</textarea>
                           </div>
                         </div>
                         <!-- end form-group -->
@@ -121,7 +95,7 @@
                         <!-- begin form-group -->
                         <div class="col-md-12 m-b-10 btn-group">
                                 <button type="submit" value="another" name="submitbutton" class="btn btn-primary btn-50">
-                                    Finish & Create Another
+                                    Finish & Go to States
                                 </button>
                                 <button type="submit" value="list" name="submitbutton" class="btn btn-info btn-50">
                                     Finish & Go to List

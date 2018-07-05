@@ -154,7 +154,11 @@ class SkillController extends Controller
      */
     public function edit($id)
     {
-        //
+        $element = DB::table('elements')->get();
+        $scope = DB::table('spell_skill_targets')->get();
+        $item = skill::find($id);
+
+        return view('pages.skills.edit')->with(array('elements'=>$element,'scope'=>$scope, 'item' => $item));
     }
 
     /**
@@ -166,7 +170,49 @@ class SkillController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $element = DB::table('elements')->get();
+        $scope = DB::table('spell_skill_targets')->get();
+        $scope_name = [];
+        foreach ($scope as $scopes) {
+            array_push($scope_name, $scopes->name);
+        }
+        $element_name = [];
+        foreach ($element as $elements) {
+            array_push($element_name, $elements->name);
+        }
+
+        $this->validate($request, array(
+            'name' => 'required|max:40|min:2',
+            'scope' => ['required',Rule::in($scope_name)],
+            'element' => ['required',Rule::in($element_name)],
+            'desc_1' => 'required|min:5',
+
+            ));
+
+        $skill = skill::find($id);
+
+        $skill->name = $request->name;
+            $skill->scope = $request->scope;
+            $skill->element = $request->element;
+            $skill->descriptionInicial = $request->desc_1;
+
+            $skill->save();
+
+        switch ($request->submitbutton) {
+
+            case 'another':
+
+
+            return redirect()->route('skills.show', $id);
+
+                break;
+
+            case 'list':
+            
+            return redirect()->route('skills.index');
+
+                break;
+        }
     }
 
     /**

@@ -35,7 +35,7 @@
                   <div class=" row-right">
                     {!! Form::open(['route'=>['weapons.destroy', $item->id], 'method' => 'DELETE', 'class' => 'btn100']) !!}
                     <div class="btn-group btn100">
-                      
+                      <a href="{{ route('weapons.edit', $item->id) }}" class='btn btn-info btn-colormode btn-50'><i style="font-size: 20px;" class="fa fa-cog"></i></a>
                       <button type="submit" style="margin-left: auto;margin-right: auto;" class='btn btn-danger btn-colormode btn-50'><i style="font-size: 20px;" class="fa fa-trash-alt"></i></button>
 
                     </div>

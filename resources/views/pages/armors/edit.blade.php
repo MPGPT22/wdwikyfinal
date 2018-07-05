@@ -21,7 +21,7 @@
 
 @section('content')
   <div class="col-md-12">
-    <h4 class="panel-title">Creating New Armor</h4>
+    <h4 class="panel-title">Editing Armor</h4>
           {!! Form::open(['route' => ['armors.update', $item->id], 'method' => 'PUT', 'name' => 'form-wizard', 'class'=>'form-control-with-bg']) !!}
           {!! Form::token() !!}
             <!-- begin wizard -->
@@ -42,7 +42,7 @@
                     <span class="number">2</span>
                     <span class="info text-ellipsis">
                       Finish
-                      <small class="text-ellipsis">Creation Finish</small>
+                      <small class="text-ellipsis">Edition Finish</small>
                     </span>
                   </a>
                 </li>

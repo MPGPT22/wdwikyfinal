@@ -143,7 +143,9 @@ class ItemController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = item::find($id);
+        $types = DB::table('item_types')->get();
+        return view('pages.items.edit')->with(array('types'=>$types, 'item' => $item));
     }
 
     /**
@@ -155,7 +157,42 @@ class ItemController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $types = DB::table('item_types')->get();;
+        $types_name = [];
+        foreach ($types as $type) {
+            array_push($types_name, $type->name);
+        }
+
+        $this->validate($request, array(
+            'name' => 'required|max:40|min:2',
+            'type' => ['required',Rule::in($types_name)],
+
+            ));
+
+        $item = item::find($id);
+
+        $item->name = $request->name;
+        $item->type = $request->type;
+        $item->descriptionInicial = $request->desc_1;
+
+        $item->save();
+
+        switch ($request->submitbutton) {
+
+            case 'another':
+
+
+            return redirect()->route('items.show', $id);
+
+                break;
+
+            case 'list':
+
+
+            return redirect()->route('items.index');
+
+                break;
+        }
     }
 
     /**

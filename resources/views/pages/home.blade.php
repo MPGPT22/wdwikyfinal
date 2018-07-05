@@ -64,7 +64,7 @@
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
-                          <p>{{str_limit($character->descriptionInicial, 50) }}</p>
+                          <p>{!!str_limit($character->descriptionInicial, 50) !!}</p>
                           <br>
                           <div class="btn-group btn100">
                             <a href="{{route('characters.show.public',$character->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
@@ -107,7 +107,7 @@
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
-                          <p>{{str_limit($skills->descriptionInicial, 50)}}</p>
+                          <p>{!!str_limit($skills->descriptionInicial, 50)!!}</p>
                           <br>
                           <div class="btn-group btn100">
                             <a href="{{route('skills.show.public',$skills->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
@@ -149,7 +149,7 @@
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
-                          <p>{{str_limit($spells->descriptionInicial, 50)}}</p>
+                          <p>{!!str_limit($spells->descriptionInicial, 50)!!}</p>
                           <br>
                           <div class="btn-group btn100">
                             <a href="{{route('spells.show.public',$spells->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
@@ -175,10 +175,10 @@
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
-                          <p>{{str_limit($states->descriptionInicial, 50)}}</p>
+                          <p>{!!str_limit($states->descriptionInicial, 50)!!}</p>
                           <br>
                           <div class="btn-group btn100">
-                            <a href="{{route('states.show.public')}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
+                            <a href="{{route('states.show.public', $states->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
                             <a href="{{route('states.public')}}" class="btn btn-primary btn-50 btn-colormode">States List</a>
                           </div>
                         </div>
@@ -225,7 +225,7 @@
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
-                          <p>{{str_limit($weapons->descriptionInicial, 50)}}</p>
+                          <p>{!!str_limit($weapons->descriptionInicial, 50)!!}</p>
                           <br>
                           <div class="btn-group btn100">
                             <a href="{{route('weapons.show.public',$weapons->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
@@ -267,7 +267,7 @@
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
-                          <p>{{str_limit($armors->descriptionInicial, 50)}}</p>
+                          <p>{!!str_limit($armors->descriptionInicial, 50)!!}</p>
                           <br>
                           <div class="btn-group btn100">
                             <a href="{{route('armors.show.public',$armors->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>
@@ -297,7 +297,7 @@
                       </div>
                       <div class="hljs-wrapper">
                         <div class="hljs">
-                          <p>{{str_limit($items->descriptionInicial, 50)}}</p>
+                          <p>{!!str_limit($items->descriptionInicial, 50)!!}</p>
                           <br>
                           <div class="btn-group btn100">
                             <a href="{{route('items.show.public',$items->id)}}" class="btn btn-info btn-50 btn-colormode">Know More</a>

@@ -177,7 +177,8 @@ class CharClassController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = CharClasse::find($id);
+        return view('pages.classes.edit')->withItem($item);
     }
 
     /**
@@ -189,7 +190,65 @@ class CharClassController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, array(
+            'name' => 'required|max:40|min:2',
+            'level' => ['required',Rule::in(['1','2','3','4',]),],
+            'HP' => 'required',
+            'MP' => 'required',
+            'ATK' => 'required',
+            'DEF' => 'required',
+            'MAT' => 'required',
+            'MDEF' => 'required',
+            'AGI' => 'required',
+
+            ));
+
+
+        $HP = preg_replace("/([A-Za-z])+/", 'i' , $request->HP);
+        $HP = str_replace("^", '**' , $HP);
+        $MP = preg_replace("/([A-Za-z])+/", 'i' , $request->MP);
+        $MP = str_replace("^", '**' , $MP);
+        $ATK = preg_replace("/([A-Za-z])+/", 'i' , $request->ATK);
+        $ATK = str_replace("^", '**' , $ATK);
+        $DEF = preg_replace("/([A-Za-z])+/", 'i' , $request->DEF);
+        $DEF = str_replace("^", '**' , $DEF);
+        $MAT = preg_replace("/([A-Za-z])+/", 'i' , $request->MAT);
+        $MAT = str_replace("^", '**' , $MAT);
+        $MDEF = preg_replace("/([A-Za-z])+/", 'i' , $request->MDEF);
+        $MDEF = str_replace("^", '**' , $MDEF);
+        $AGI = preg_replace("/([A-Za-z])+/", 'i' , $request->AGI);
+        $AGI = str_replace("^", '**' , $AGI);
+
+
+        $class = CharClasse::find($id);
+
+        $class->name = $request->name;
+        $class->evo_lvl = $request->level;
+        $class->HP = $HP;
+        $class->MP = $MP;
+        $class->ATK = $ATK;
+        $class->DEF = $DEF;
+        $class->MAT = $MAT;
+        $class->MDEF = $MDEF;
+        $class->AGI = $AGI;
+
+
+        $class->save();
+
+        switch ($request->submitbutton) {
+
+            case 'another':
+
+            return redirect()->route('classes.show', $id);
+
+                break;
+
+            case 'list':
+
+            return redirect()->route('classes.index');
+
+                break;
+        }
     }
 
     /**

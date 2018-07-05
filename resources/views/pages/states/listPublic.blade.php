@@ -56,7 +56,7 @@
                         </div>
                         <div class="hljs-wrapper">
                           <div class="hljs">
-                            <p>{{str_limit($item->descriptionInicial, 50)}}</p>
+                            <p>{!!str_limit($item->descriptionInicial, 50)!!}</p>
 
                           </div>
                         </div>
